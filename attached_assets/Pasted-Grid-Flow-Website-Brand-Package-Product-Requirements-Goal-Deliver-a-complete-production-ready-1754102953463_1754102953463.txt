@@ -1,0 +1,34 @@
+Grid Flow Website & Brand Package – Product Requirements
+Goal
+Deliver a complete, production-ready website and cohesive brand package for Grid Flow, using the provided Figma prototype as the definitive reference. The final product must closely match all layouts, flows, and UI elements in the Figma, while allowing for tasteful creative and UX enhancements—except for the logo, which must remain unchanged in design, size, and placement.
+
+Reference
+Figma Prototype:
+Grid Flow Design & Flows
+Use this as the authoritative source for all layouts, user flows, and visual style.
+Instructions
+1. Full Site Implementation
+Develop the entire website, including all layouts, user flows, components, and UI patterns as presented in the Figma.
+Ensure pixel-perfect adherence to the Figma for UI/UX, responsiveness, and accessibility.
+All inner pages and navigation flows in the Figma must be fully implemented.
+2. Logo & Brand Assets
+The logo must remain exactly as provided—no changes to design, size, or proportions.
+The logo must appear consistently on every page, in the same position and scale as in the Figma.
+All branding assets (color palette, typography, icons) must follow the Figma’s visual style, except where creative improvements are approved (see below).
+3. Design Inspiration & Improvements
+Use the Figma as the visual and UX foundation.
+Apply tasteful creative enhancements (e.g., microinteractions, modern UI touches, improved illustrations or icons, subtle animations) that fit the established visual language and do not alter the logo.
+Suggest and implement usability or UI/UX improvements that clearly benefit the end user, but confirm all major changes with the product owner before implementation.
+4. Review & Approval
+Any proposed changes outside the Figma scope (other than minor creative polish) must be discussed and approved by the product owner before implementation.
+Regular check-ins and design reviews are expected to ensure alignment.
+Deliverables
+Fully production-ready website, matching the Figma and integrating any agreed creative enhancements.
+Unchanged logo, as provided, on every page.
+Complete brand and asset set (color palette, typography, iconography, etc.).
+Design system documentation for developers (including usage guidelines for all components and assets).
+All source files: code, images, and design assets, delivered in an organized and accessible format.
+Creative Direction
+The Figma prototype is the authoritative style and UX guide.
+Extend the visual and interactive appeal where appropriate, but do not alter the logo.
+For any proposed improvements outside the Figma scope, discuss and confirm with the product owner before implementation.

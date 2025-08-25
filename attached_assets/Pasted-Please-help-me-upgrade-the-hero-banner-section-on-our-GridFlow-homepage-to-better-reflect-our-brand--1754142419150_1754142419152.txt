@@ -1,0 +1,42 @@
+Please help me upgrade the hero banner section on our GridFlow homepage to better reflect our brand’s power, professionalism, and industry focus.
+
+🖼 1. New Hero Banner Image
+Use a new, full-width background image that features:
+High-voltage transmission towers at sunset or dusk
+Visible glowing electric current flowing through the wires
+Subtle electric arcs or pulses between cables
+A dramatic golden-to-blue sky
+Forest or tree silhouettes at the bottom for depth
+Name the image:
+/images/banner.jpg
+Apply a left-to-right or top-to-bottom black gradient overlay to ensure all text is readable and the image feels dramatic and premium.
+🧾 2. Updated Banner Section Code
+Replace the current hero section with the following code (or adapt as needed):
+
+<section className="relative bg-cover bg-center text-white" style={{ backgroundImage: "url('/images/banner.jpg')" }}>
+  <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30 z-10"></div>
+
+  <div className="relative z-20 max-w-7xl mx-auto px-6 py-24 flex flex-col items-start justify-center">
+    <h1 className="text-4xl md:text-5xl font-bold leading-tight max-w-2xl">
+      Powering Western Australia’s Future—
+      <span className="text-yellow-400"> One Project at a Time</span>
+    </h1>
+    <p className="mt-6 text-lg max-w-xl text-white/90">
+      Expert engineering solutions for energy, industry, and infrastructure. Trusted by Western Australia’s leading organizations.
+    </p>
+
+    <div className="mt-8 flex flex-wrap gap-4">
+      <a href="/contact" className="px-6 py-3 bg-yellow-400 text-black font-semibold rounded shadow hover:bg-yellow-300 transition">
+        Get Your Custom Power Solution →
+      </a>
+      <a href="/contact" className="px-6 py-3 bg-white/10 border border-white text-white rounded hover:bg-white/20 transition">
+        Book a Free Consultation
+      </a>
+    </div>
+  </div>
+</section>
+Key Points:
+
+The new image and overlay must make the text pop and feel “electrifying.”
+The color palette and font weights should match the GridFlow brand and logo.
+The section must be fully responsive and look great on all devices.

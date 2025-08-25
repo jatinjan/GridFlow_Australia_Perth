@@ -1,0 +1,70 @@
+Objective
+Elevate the Grid Flow website to a world-class, visually stunning, and conversion-optimized digital experience. The site must impress clients, differentiate Grid Flow as a leader in Western Australia’s power engineering sector, and drive high-quality inquiries.
+
+Brand Reference
+Logo:
+![Grid Flow Logo](attachment or link to logo image)
+Current Site:
+https://974c836c-4746-4c43-9408-33a3eae698f8.spock.prod.repl.run/
+Creative Direction
+1. Visual Identity & Brand Signature
+Use the provided logo exactly as is—do not alter, stretch, or recolor.
+Build the color palette around the logo: deep blue, charcoal, and white, with electric blue/yellow accents for CTAs and highlights.
+Integrate a signature brand element (e.g., animated “power pulse” line or wave) throughout the site for a unique, memorable touch.
+2. Hero Section
+Headline:
+“Powering Western Australia’s Future—One Project at a Time”
+Subheadline:
+“Expert engineering solutions for energy, industry, and infrastructure. Trusted by Western Australia’s leading organizations.”
+CTAs:
+“Get Your Custom Power Solution”
+“Book a Free Consultation”
+Use a dramatic, full-width image of a Western Australian landscape, power grid, or industrial site as the background, with a semi-transparent brand gradient overlay.
+Add subtle animation (e.g., fade-in, slide-up, or animated underline) to the headline.
+3. Typography
+Upgrade to a premium, modern sans-serif font for headings (e.g., Inter, Manrope, IBM Plex Sans).
+Use larger, bolder headings with increased letter-spacing for impact.
+Section headers should be uppercase and/or use color accents for structure.
+4. Imagery & Visual Storytelling
+Replace or overlay all images with high-quality, industry-specific visuals (e.g., dramatic power grids, engineers at work, project sites).
+Use full-width, immersive images for hero and key sections.
+Overlay images with semi-transparent brand gradients for mood and consistency.
+Add short, punchy captions or stats to images (e.g., “15+ years powering Australia’s industries”).
+5. Content & Messaging
+Rewrite all headlines and CTAs to be bold, benefit-driven, and action-oriented.
+Add testimonials, stats, and case study highlights to build trust.
+Use microcopy that speaks directly to client needs and aspirations.
+6. UI/UX & Interactivity
+Implement a card-based mega menu with icons, short descriptions, and a featured image/CTA.
+Add microinteractions: button ripple/glow on hover, icons animate, cards “lift” on hover.
+Use sticky header with subtle shadow and animated scroll cues.
+Animate section transitions (fade-in, slide-up) for a polished, dynamic feel.
+7. Layout & Consistency
+Maintain a clean grid, consistent spacing, and visual hierarchy across all pages.
+Use accent colors for CTAs and highlights.
+Ensure all UI elements (buttons, cards, forms) are visually consistent and modern.
+8. Footer & Legal
+Lighten the footer visually: more spacing, smaller text, subtle background pattern or gradient.
+Highlight the acknowledgement section with a color block or border.
+9. Mobile & Accessibility
+All pages must be fully responsive and touch-friendly.
+Increase touch target sizes, stack cards/sections vertically on mobile.
+Ensure all icons/images have descriptive alt text, high color contrast, and clear focus states.
+Deliverables
+Fully redesigned, production-ready website with all pages visually and functionally upgraded.
+All content rewritten for clarity, impact, and conversion.
+Custom or curated imagery and iconography.
+Card-based mega menu with visual accent and CTA.
+Signature brand animation or element.
+Responsive and accessible design.
+All source files (code, images, design assets) and a style guide for future updates.
+Success Metrics
+Client and stakeholder feedback: “10/10” on visual impact and user experience.
+Increased average session duration and pages per session.
+Higher conversion rate on CTAs (contact, consultation requests).
+Positive feedback from target users and industry peers.
+Review & Approval
+All major creative changes (fonts, colors, imagery, animations) must be reviewed and approved before launch.
+Provide Figma or live previews for feedback at each major milestone.
+Note:
+This PRD is intended to inspire creative excellence and set a new standard for Grid Flow’s digital presence. Push boundaries, but always ensure usability and brand alignment.

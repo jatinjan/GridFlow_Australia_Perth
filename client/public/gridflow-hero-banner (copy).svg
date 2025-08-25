@@ -1,0 +1,114 @@
+<svg width="1920" height="800" viewBox="0 0 1920 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Deep navy to sunset gradient exactly matching reference -->
+    <linearGradient id="referenceSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F172A;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#1E293B;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#334155;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#64748B;stop-opacity:1" />
+      <stop offset="85%" style="stop-color:#F97316;stop-opacity:1" />
+      <stop offset="95%" style="stop-color:#FB923C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FED7AA;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Clean overlay for text readability -->
+    <linearGradient id="textReadability" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#000000;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.25" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Reference matching sky background -->
+  <rect width="1920" height="800" fill="url(#referenceSky)"/>
+  
+  <!-- Transmission Tower Network - Reference Layout -->
+  <g opacity="0.85">
+    <!-- Left tower cluster -->
+    <g transform="translate(80, 350)">
+      <path d="M0,250 L-25,250 L-20,220 L-30,190 L-25,160 L-20,130 L-15,100 L-10,70 L-5,40 L0,0 L5,40 L10,70 L15,100 L20,130 L25,160 L30,190 L20,220 L25,250 Z" 
+            fill="#1F2937"/>
+      <path d="M-30,190 L30,190" stroke="#1F2937" stroke-width="2"/>
+      <path d="M-25,220 L25,220" stroke="#1F2937" stroke-width="2"/>
+    </g>
+    
+    <!-- Center-left major tower -->
+    <g transform="translate(320, 280)">
+      <path d="M0,320 L-35,320 L-30,280 L-40,240 L-35,200 L-30,160 L-25,120 L-20,80 L-15,40 L0,0 L15,40 L20,80 L25,120 L30,160 L35,200 L40,240 L30,280 L35,320 Z" 
+            fill="#1F2937"/>
+      <path d="M-40,240 L40,240" stroke="#1F2937" stroke-width="3"/>
+      <path d="M-35,280 L35,280" stroke="#1F2937" stroke-width="3"/>
+      <path d="M-30,160 L30,160" stroke="#1F2937" stroke-width="3"/>
+    </g>
+    
+    <!-- Center dominant tower -->
+    <g transform="translate(600, 250)">
+      <path d="M0,350 L-45,350 L-40,300 L-50,250 L-45,200 L-40,150 L-35,100 L-30,50 L-15,25 L0,0 L15,25 L30,50 L35,100 L40,150 L45,200 L50,250 L40,300 L45,350 Z" 
+            fill="#1F2937"/>
+      <path d="M-50,250 L50,250" stroke="#1F2937" stroke-width="4"/>
+      <path d="M-45,300 L45,300" stroke="#1F2937" stroke-width="4"/>
+      <path d="M-40,150 L40,150" stroke="#1F2937" stroke-width="4"/>
+    </g>
+    
+    <!-- Center-right tower -->
+    <g transform="translate(900, 290)">
+      <path d="M0,310 L-38,310 L-33,270 L-43,230 L-38,190 L-33,150 L-28,110 L-23,70 L-18,30 L0,0 L18,30 L23,70 L28,110 L33,150 L38,190 L43,230 L33,270 L38,310 Z" 
+            fill="#1F2937"/>
+      <path d="M-43,230 L43,230" stroke="#1F2937" stroke-width="3"/>
+      <path d="M-38,270 L38,270" stroke="#1F2937" stroke-width="3"/>
+      <path d="M-33,150 L33,150" stroke="#1F2937" stroke-width="3"/>
+    </g>
+    
+    <!-- Right tower -->
+    <g transform="translate(1200, 320)">
+      <path d="M0,280 L-32,280 L-27,245 L-37,210 L-32,175 L-27,140 L-22,105 L-17,70 L-12,35 L0,0 L12,35 L17,70 L22,105 L27,140 L32,175 L37,210 L27,245 L32,280 Z" 
+            fill="#1F2937"/>
+      <path d="M-37,210 L37,210" stroke="#1F2937" stroke-width="2"/>
+      <path d="M-32,245 L32,245" stroke="#1F2937" stroke-width="2"/>
+      <path d="M-27,140 L27,140" stroke="#1F2937" stroke-width="2"/>
+    </g>
+    
+    <!-- Far right tower -->
+    <g transform="translate(1500, 360)">
+      <path d="M0,240 L-28,240 L-23,210 L-33,180 L-28,150 L-23,120 L-18,90 L-13,60 L-8,30 L0,0 L8,30 L13,60 L18,90 L23,120 L28,150 L33,180 L23,210 L28,240 Z" 
+            fill="#1F2937"/>
+      <path d="M-33,180 L33,180" stroke="#1F2937" stroke-width="2"/>
+      <path d="M-28,210 L28,210" stroke="#1F2937" stroke-width="2"/>
+    </g>
+    
+    <!-- Background distant towers -->
+    <g transform="translate(1700, 380)">
+      <path d="M0,220 L-22,220 L-18,195 L-28,170 L-23,145 L-18,120 L-13,95 L-8,70 L-3,45 L0,0 L3,45 L8,70 L13,95 L18,120 L23,145 L28,170 L18,195 L22,220 Z" 
+            fill="#1F2937"/>
+      <path d="M-28,170 L28,170" stroke="#1F2937" stroke-width="1.5"/>
+    </g>
+  </g>
+  
+  <!-- Power Lines Network -->
+  <g opacity="0.7">
+    <!-- Top level transmission lines -->
+    <path d="M55,600 Q200,580 285,600 Q450,620 565,600 Q750,580 865,600 Q1050,620 1168,610 Q1350,600 1472,610 Q1650,620 1722,620" 
+          stroke="#1F2937" stroke-width="1.8" fill="none"/>
+    <path d="M55,610 Q200,590 285,610 Q450,630 565,610 Q750,590 865,610 Q1050,630 1168,620 Q1350,610 1472,620 Q1650,630 1722,630" 
+          stroke="#1F2937" stroke-width="1.8" fill="none"/>
+    <path d="M55,620 Q200,600 285,620 Q450,640 565,620 Q750,600 865,620 Q1050,640 1168,630 Q1350,620 1472,630 Q1650,640 1722,640" 
+          stroke="#1F2937" stroke-width="1.8" fill="none"/>
+    
+    <!-- Lower level transmission lines -->
+    <path d="M55,650 Q200,630 285,650 Q450,670 565,650 Q750,630 865,650 Q1050,670 1168,660 Q1350,650 1472,660 Q1650,670 1722,670" 
+          stroke="#1F2937" stroke-width="1.8" fill="none"/>
+    <path d="M55,660 Q200,640 285,660 Q450,680 565,660 Q750,640 865,660 Q1050,680 1168,670 Q1350,660 1472,670 Q1650,680 1722,680" 
+          stroke="#1F2937" stroke-width="1.8" fill="none"/>
+    <path d="M55,670 Q200,650 285,670 Q450,690 565,670 Q750,650 865,670 Q1050,690 1168,680 Q1350,670 1472,680 Q1650,690 1722,690" 
+          stroke="#1F2937" stroke-width="1.8" fill="none"/>
+  </g>
+  
+  <!-- Professional text overlay -->
+  <rect x="0" y="0" width="1920" height="800" fill="url(#textReadability)"/>
+  
+  <!-- GridFlow logo placement area -->
+  <rect x="40" y="40" width="400" height="120" fill="none" stroke="none" opacity="0"/>
+  
+  <!-- Content area for headlines and CTAs -->
+  <rect x="300" y="180" width="1320" height="400" fill="none" stroke="none" opacity="0"/>
+</svg>

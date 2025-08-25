@@ -1,0 +1,76 @@
+I want these sections to visually match the improved design style shown in the attached screenshot. The new layout should reflect the following sections from the screenshit reference https://www.figma.com/proto/zy5olZkqzW5k0FxI8gNgj7/Grid-Flow?node-id=156-94&t=BoaxnUS9VongvRB3-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1 ✅ Reference Sections to Imitate (see attached screenshot): Industries We Serve
+
+Why Choose Grid Flow
+
+Ready to Start Your Project (contact form & info)
+
+🛠️ Required Redesign Instructions:
+
+Visual Styling Use a consistent layout and font style as in the reference image. Use a clean grid layout, consistent padding, font weights, and background colors.
+
+Use modern icons with light backgrounds and a soft shadow.
+
+Add subtle animations or hover effects for interactivity.
+
+Section: Why Choose Grid Flow Place a strong image (on the left or right). Add 3 key highlights with icons: e.g., Proven Expertise, Safety First, On-Time Delivery.
+
+Each point should have an icon, bold title, and a short description (refer to image).
+
+Contact / CTA Section: Use a prominent heading like “Ready to Start Your Project?” Divide it into two clear parts:
+
+Left: Contact Information with icons for Phone, Email, Address, and Business Hours.
+
+Right: A clean contact form with input fields for name, email, project type, and message.
+
+Use blue background and white or light text for contrast.
+
+This is a clear and actionable set of redesign instructions. Here’s how I would structure this as a PRD section, making it easy for your designer/developer to follow and ensuring the final product visually matches your Figma reference and screenshot:
+
+Visual & Section Redesign Requirements Reference for Visual Style Primary Source: Figma Prototype All new and redesigned sections must visually match the layout, font, color palette, and UI style shown in the Figma reference. Required Sections to Imitate
+
+Industries We Serve Use a clean, grid-based layout. Each industry should be represented with a modern icon, bold title, and short description. Consistent padding, font weights, and background colors as per the Figma. Add subtle hover effects for interactivity.
+Why Choose Grid Flow Layout: Place a strong, relevant image on either the left or right side. Content: Three key highlights, each with: A modern icon (with light background and soft shadow) Bold title (e.g., “Proven Expertise”) Short, clear description Use a consistent grid and spacing as in the reference. Add subtle animations or hover effects for each highlight.
+Ready to Start Your Project (Contact / CTA Section) Prominent heading: “Ready to Start Your Project?” Split layout: Left: Contact information with icons for Phone, Email, Address, and Business Hours. Use a clean, vertical stack with clear iconography. Right: Contact form with fields for Name, Email, Project Type, and Message. Clean, modern input styling. Visuals: Use a blue background with white or light text for strong contrast. Consistent padding and spacing. Add a soft shadow or card effect to the form for depth. General Visual Styling Instructions Use the same font family, weights, and sizes as the Figma reference. Maintain a clean grid layout with consistent spacing and alignment. All icons should be modern, with light backgrounds and soft shadows. Add subtle animations or hover effects to interactive elements (e.g., cards, buttons). Ensure all sections are fully responsive and accessible.
+Excellent reference and clear requirements, Jatin. Here’s a PRD-ready section you can add directly to your document. This will ensure your designer/developer knows exactly what to build and how to visually match the Figma and screenshot you provided.
+
+Visual & Section Redesign Requirements
+Reference for Visual Style
+Primary Source:
+Figma Prototype
+All new and redesigned sections must visually match the layout, font, color palette, and UI style shown in the Figma and attached screenshot.
+Required Sections to Imitate
+1. Industries We Serve
+Use a clean, grid-based layout as shown in the screenshot.
+Each industry must have:
+A modern icon with a light background and soft shadow.
+Bold title and short description.
+Consistent padding, font weights, and background colors as per the Figma.
+Add subtle hover effects for interactivity.
+2. Why Choose Grid Flow
+Layout: Place a strong, relevant image on the left or right (as in the screenshot).
+Content:
+Three key highlights, each with:
+A modern icon (light background, soft shadow)
+Bold title (e.g., “Proven Expertise”)
+Short, clear description
+Use a consistent grid and spacing as in the reference.
+Add subtle animations or hover effects for each highlight.
+3. Ready to Start Your Project (Contact / CTA Section)
+Prominent heading: “Ready to Start Your Project?”
+Split layout:
+Left:
+Contact information with icons for Phone, Email, Address, and Business Hours.
+Clean, vertical stack with clear iconography.
+Right:
+Contact form with fields for Name, Email, Project Type, and Message.
+Clean, modern input styling.
+Visuals:
+Use a blue background with white or light text for strong contrast.
+Consistent padding and spacing.
+Add a soft shadow or card effect to the form for depth.
+General Visual Styling Instructions
+Use the same font family, weights, and sizes as the Figma reference.
+Maintain a clean grid layout with consistent spacing and alignment.
+All icons should be modern, with light backgrounds and soft shadows.
+Add subtle animations or hover effects to interactive elements (e.g., cards, buttons).
+Ensure all sections are fully responsive and accessible.

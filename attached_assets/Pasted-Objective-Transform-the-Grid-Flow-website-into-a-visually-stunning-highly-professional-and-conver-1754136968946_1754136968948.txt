@@ -1,0 +1,74 @@
+Objective
+Transform the Grid Flow website into a visually stunning, highly professional, and conversion-focused digital experience. The site must immediately impress visitors, clearly communicate expertise, and drive high-quality inquiries—even as a new business with limited testimonials or project history.
+
+Brand Reference
+Logo:
+The official Grid Flow logo is already present on the website. Do not alter, stretch, or recolor it. All design and color choices must harmonize with the logo.
+
+Current Site for Reference:
+https://60993d6c-f14a-4b68-a5f4-0eb2197bd2cb-00-fpwim93m8sn8.spock.replit.dev/
+
+Creative Direction
+1. Visual Identity & Color Palette
+Build the color palette around the logo: deep blue, charcoal, and white, with electric blue/yellow accents for CTAs and highlights.
+Use gradients and soft shadows for depth and modernity.
+All icons and illustrations should be custom or highly curated—avoid generic stock.
+2. Hero Section
+Banner Image:
+Use a high-impact, full-width image or illustration that clearly signals electrical/power engineering (e.g., power lines, substations, engineers at work, or a stylized energy grid).
+Overlay:
+Apply a subtle blue gradient (matching the logo) for brand consistency and text legibility.
+Headline:
+“Powering Western Australia’s Future—One Project at a Time”
+Subheadline:
+“Expert engineering solutions for energy, industry, and infrastructure. Trusted by Western Australia’s leading organizations.”
+CTAs:
+“Get Your Custom Power Solution”
+“Book a Free Consultation”
+Signature Brand Element:
+Add a subtle animated “power pulse” or electric arc as a unique visual touch.
+3. Messaging & Content
+Focus on expertise, vision, and values—since the business is new, emphasize the founder’s experience, mission, and commitment to safety and innovation.
+Add a section: “Our Mission & Values” with 3–4 key values (e.g., Safety, Innovation, Reliability, Customer Focus) and icons.
+Add “Meet the Founder” or “Our Story” with a photo, short bio, and vision statement.
+“What We Offer” section: grid of services/capabilities with icons and short, benefit-driven descriptions.
+“Industries We Serve”: icons and short text for each industry (even if not all have been served yet).
+Use future-focused, benefit-driven headlines and microcopy throughout.
+CTAs should be bold, action-oriented, and always visible.
+4. UI/UX & Interactivity
+Implement a card-based mega menu with icons, short descriptions, and a featured image/CTA.
+Add microinteractions: button ripple/glow on hover, icons animate, cards “lift” on hover.
+Use sticky header with subtle shadow and animated scroll cues.
+Animate section transitions (fade-in, slide-up) for a polished, dynamic feel.
+All forms (contact, inquiry) should be simple, modern, and easy to use.
+5. Layout & Consistency
+Maintain a clean grid, consistent spacing, and visual hierarchy across all pages.
+Use accent colors for CTAs and highlights.
+Ensure all UI elements (buttons, cards, forms) are visually consistent and modern.
+6. Imagery
+Use only high-quality, relevant images (no generic office or handshake photos).
+If real project photos are unavailable, use stylized illustrations or stock images of power infrastructure, grids, or engineering teams.
+Overlay images with semi-transparent brand gradients for mood and consistency.
+7. Footer & Legal
+Use the logo, brand colors, and a simple, clean layout.
+Lighten the footer visually: more spacing, smaller text, subtle background pattern or gradient.
+Highlight the acknowledgement section with a color block or border.
+8. Mobile & Accessibility
+All pages must be fully responsive and touch-friendly.
+Increase touch target sizes, stack cards/sections vertically on mobile.
+Ensure all icons/images have descriptive alt text, high color contrast, and clear focus states.
+Deliverables
+Fully redesigned, production-ready website with all pages visually and functionally upgraded.
+All content rewritten for clarity, impact, and conversion.
+Custom or curated imagery and iconography.
+Card-based mega menu with visual accent and CTA.
+Signature brand animation or element.
+Responsive and accessible design.
+All source files (code, images, design assets) and a style guide for future updates.
+Success Metrics
+Stakeholder feedback: “10/10” on visual impact and user experience.
+Increased average session duration and pages per session.
+Higher conversion rate on CTAs (contact, consultation requests).
+Positive feedback from target users and industry peers.
+Review & Approval
+All major creative changes (fonts, colors, imagery, animations) must be reviewed and approved before launch.

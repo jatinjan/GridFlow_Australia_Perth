@@ -1,0 +1,54 @@
+Build out all remaining pages for the Grid Flow website, ensuring each page is visually stunning, content-rich, and consistent with the completed home/landing page. All content, images, and layouts must be relevant to a modern power engineering consultancy and match the high standards set by the homepage.
+
+Instructions:
+
+Page List & Structure
+
+Complete the following pages (in addition to the homepage):
+About Us
+Our Team
+Services (with subpages for each service if needed)
+Case Studies
+News/Blog
+Contact
+Any other pages referenced in the navigation or footer
+Content & Research
+
+Research and write high-quality, relevant content for each page, tailored to the power engineering/consultancy industry.
+Use clear, professional language that communicates expertise, trust, and innovation.
+For “Services,” provide detailed descriptions, benefits, and (where possible) relevant case examples.
+For “Case Studies,” create compelling project stories with measurable outcomes and client testimonials (can be anonymized or fictionalized if needed).
+For “Our Team,” include professional bios, roles, and high-quality images (use relevant stock or AI-generated images if real ones are not available).
+For “News/Blog,” add 2–3 sample articles on industry trends, company updates, or thought leadership.
+Imagery & Visuals
+
+Embed high-quality, relevant images on every page (e.g., power systems, industrial sites, team at work, project sites, etc.).
+All images must be visually consistent with the homepage and relevant to the content.
+Use modern iconography and infographics where appropriate.
+Layout & Consistency
+
+Follow the same grid, spacing, font, and color palette as the homepage.
+Maintain consistent header, footer, and navigation across all pages.
+Use section layouts and visual hierarchy that match the homepage’s style.
+Interactivity & UX
+
+Add subtle animations, hover effects, and microinteractions to buttons, cards, and images.
+Ensure all forms (e.g., contact, newsletter) are functional and styled consistently.
+Responsiveness & Accessibility
+
+All pages must be fully responsive and accessible on desktop, tablet, and mobile.
+Ensure high color contrast, legible fonts, and keyboard accessibility.
+Branding
+
+Use the Grid Flow logo and brand assets exactly as on the homepage.
+Do not alter or replace any branding elements.
+Quality & Review
+
+Each page must be reviewed for content accuracy, visual polish, and UX quality.
+Any new creative elements must fit the established brand and design language.
+Deliverable:
+A fully completed, production-ready Grid Flow website with all pages filled with relevant, high-quality content and imagery, visually consistent with the homepage, and ready for launch.
+
+Note:
+If you need to propose new sections or features, ensure they are relevant to a power engineering consultancy and get approval before implementation.
+
