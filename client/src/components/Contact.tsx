@@ -6,12 +6,16 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { MapPin, Phone, Mail, Clock, AlertTriangle, Shield } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 // reCAPTCHA v3 site key - Replace with your actual site key
 const RECAPTCHA_SITE_KEY = "6LdDRrIrAAAAAIDwSOpBpgwAaue7tVzN-d40MK4u";
+
+// EmailJS configuration - Replace with your actual EmailJS credentials
+const EMAILJS_SERVICE_ID = "service_5qettsv";
+const EMAILJS_TEMPLATE_ID = "template_hl39txj"; 
+const EMAILJS_PUBLIC_KEY = "D1Hja_w6KAtKNGEha";
 
 // Declare grecaptcha for TypeScript
 declare global {
@@ -34,8 +38,9 @@ const Contact = () => {
     message: ""
   });
   const [isRecaptchaReady, setIsRecaptchaReady] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Initialize reCAPTCHA
+  // Initialize reCAPTCHA and EmailJS
   useEffect(() => {
     const initializeRecaptcha = () => {
       if (window.grecaptcha) {
@@ -48,36 +53,26 @@ const Contact = () => {
       }
     };
     
+    // Initialize EmailJS
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+    
     initializeRecaptcha();
   }, []);
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: typeof formData & { recaptchaToken: string }) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
-    },
-    onSuccess: (data) => {
-      toast({
-        title: "Success!",
-        description: data.message,
-      });
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        company: "",
-        projectType: "",
-        message: ""
-      });
-    },
-    onError: (error) => {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
+  // EmailJS send function
+  const sendEmail = async (templateParams: any) => {
+    try {
+      const result = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  };
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -86,6 +81,8 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (isSubmitting) return;
     
     // Enhanced validation
     if (!formData.firstName.trim() || !formData.lastName.trim()) {
@@ -134,23 +131,54 @@ const Contact = () => {
       return;
     }
 
+    setIsSubmitting(true);
+
     try {
       // Execute reCAPTCHA with 'contact_form' action
       const recaptchaToken = await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, {
         action: 'contact_form'
       });
 
-      // Submit form with reCAPTCHA token
-      contactMutation.mutate({
-        ...formData,
-        recaptchaToken
-      });
-    } catch (error) {
+      // Prepare email template parameters
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        company: formData.company || 'Not specified',
+        project_type: formData.projectType,
+        message: formData.message,
+        to_email: 'admin@gridflow.com.au',
+        reply_to: formData.email,
+        recaptcha_token: recaptchaToken
+      };
+
+      // Send email using EmailJS
+      await sendEmail(templateParams);
+
+      // Success notification
       toast({
-        title: "Security Verification Failed",
-        description: "Please refresh the page and try again.",
+        title: "Message Sent Successfully! 🎉",
+        description: "Thank you for your inquiry! We'll respond within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        company: "",
+        projectType: "",
+        message: ""
+      });
+
+    } catch (error) {
+      console.error('Email send error:', error);
+      toast({
+        title: "Failed to Send Message",
+        description: "Please try again or contact us directly at admin@gridflow.com.au",
         variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -293,12 +321,12 @@ const Contact = () => {
                 <Button 
                   type="submit" 
                   className="w-full bg-gradient-to-r from-grid-vibrant-yellow to-yellow-400 hover:from-yellow-300 hover:to-yellow-500 text-grid-deep-navy py-4 font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-yellow-300/50"
-                  disabled={contactMutation.isPending || !isRecaptchaReady}
+                  disabled={isSubmitting || !isRecaptchaReady}
                 >
-                  {contactMutation.isPending ? (
+                  {isSubmitting ? (
                     <div className="flex items-center space-x-2">
                       <div className="w-4 h-4 border-2 border-grid-deep-navy border-t-transparent rounded-full animate-spin"></div>
-                      <span>Sending...</span>
+                      <span>Sending Email...</span>
                     </div>
                   ) : !isRecaptchaReady ? (
                     <div className="flex items-center space-x-2">
@@ -306,7 +334,10 @@ const Contact = () => {
                       <span>Loading Security...</span>
                     </div>
                   ) : (
-                    "Send Message"
+                    <div className="flex items-center space-x-2">
+                      <Mail className="h-4 w-4" />
+                      <span>Send Message</span>
+                    </div>
                   )}
                 </Button>
               </form>
