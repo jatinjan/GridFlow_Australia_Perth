@@ -1,9 +1,9 @@
 Objective
-Elevate the Grid Flow website to a world-class, visually stunning, and conversion-optimized digital experience. The site must impress clients, differentiate Grid Flow as a leader in Western Australia’s power engineering sector, and drive high-quality inquiries.
+Elevate the GridFlow website to a world-class, visually stunning, and conversion-optimized digital experience. The site must impress clients, differentiate GridFlow as a leader in Western Australia’s power engineering sector, and drive high-quality inquiries.
 
 Brand Reference
 Logo:
-![Grid Flow Logo](attachment or link to logo image)
+![GridFlow Logo](attachment or link to logo image)
 Current Site:
 https://974c836c-4746-4c43-9408-33a3eae698f8.spock.prod.repl.run/
 Creative Direction
@@ -67,4 +67,4 @@ Review & Approval
 All major creative changes (fonts, colors, imagery, animations) must be reviewed and approved before launch.
 Provide Figma or live previews for feedback at each major milestone.
 Note:
-This PRD is intended to inspire creative excellence and set a new standard for Grid Flow’s digital presence. Push boundaries, but always ensure usability and brand alignment.
+This PRD is intended to inspire creative excellence and set a new standard for GridFlow’s digital presence. Push boundaries, but always ensure usability and brand alignment.

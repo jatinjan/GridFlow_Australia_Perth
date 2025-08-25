@@ -5,22 +5,43 @@ import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [location] = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const isActive = (path: string) =>
     location === path || location.startsWith(path + "/");
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/30 via-black/10 to-transparent backdrop-blur-sm">
-      <div className="flex items-center justify-between w-full px-6 md:px-8 py-4 md:py-6">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-grid-dark-gradient backdrop-blur-md border-b border-white/10 shadow-lg' 
+        : 'bg-gradient-to-b from-black/30 via-black/10 to-transparent backdrop-blur-sm'
+    }`}>
+      <div className="flex items-center justify-between w-full px-6 md:px-8 py-4 md:py-4">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <Link href="/">
-            <img
-              src="/logo.png"
-              alt="Grid Flow - Power Engineering Solutions"
-              className="h-16 md:h-20 lg:h-22 w-auto brightness-110 drop-shadow-xl transition-all duration-300 hover:opacity-90 hover:scale-105"
-            />
+          <Link href="/" className="block group">
+            <div className="bg-white backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white">
+              <img
+                src="/logo-white-bg.png"
+                alt="GridFlow - Power Engineering Solutions"
+                className="h-10 md:h-12 lg:h-14 w-auto transition-all duration-300 hover:scale-[1.02]"
+                onError={(e) => {
+                  // Fallback to original logo if the new one fails to load
+                  (e.target as HTMLImageElement).src = "/logo.png";
+                }}
+              />
+            </div>
           </Link>
         </div>
 
@@ -87,6 +108,12 @@ const Navigation = () => {
                       ? "text-yellow-300 bg-white/10 border-white/20"
                       : "text-white/90 hover:text-yellow-300 hover:bg-white/5"
                   }`}
+                  onClick={() => {
+                    // Always scroll to top when navigating to services
+                    setTimeout(() => {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }, 100);
+                  }}
                 >
                   Services
                 </span>
@@ -199,7 +226,13 @@ const Navigation = () => {
             </a>
             <Link
               href="/services"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                // Always scroll to top when navigating to services
+                setTimeout(() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
+              }}
             >
               <span className="block px-4 py-3 text-base font-medium text-white/90 hover:text-yellow-300 hover:bg-white/10 rounded-lg transition-all duration-300">
                 Services

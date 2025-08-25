@@ -6,7 +6,7 @@ const WhyChooseGridFlow = () => {
     {
       icon: Award,
       title: "Proven Expertise",
-      description: "15+ years of proven founder expertise delivering complex power engineering projects across industries."
+      description: "Proven expertise delivering complex power engineering projects across mining, oil & gas, and industrial sectors throughout Western Australia."
     },
     {
       icon: Shield,

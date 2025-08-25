@@ -119,14 +119,14 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      
+
       {/* Hero Section */}
-      <section 
-        id="contact-hero" 
+      <section
+        id="contact-hero"
         className="relative min-h-screen w-full flex items-center justify-center text-white overflow-hidden"
       >
         {/* Background with overlay */}
-        <div 
+        <div
           className="absolute inset-0 w-full h-full"
           style={{
             backgroundImage: `url(/gridflow-hero-banner.png)`,
@@ -135,11 +135,11 @@ const ContactPage = () => {
             backgroundRepeat: 'no-repeat'
           }}
         ></div>
-        
+
         {/* Strong dark overlay for better text visibility */}
         <div className="absolute inset-0 bg-black/70 z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-grid-deep-navy/80 via-grid-charcoal/70 to-grid-deep-navy/80 z-15"></div>
-        
+
         {/* Subtle grid pattern overlay */}
         <div className="absolute inset-0 opacity-5 z-20">
           <div className="absolute inset-0" style={{
@@ -147,16 +147,16 @@ const ContactPage = () => {
             backgroundSize: '40px 40px'
           }}></div>
         </div>
-        
+
         <div className="relative z-30 w-full max-w-7xl mx-auto px-6 pt-32 pb-24 text-center">
           {/* Service badge */}
           <div className="animate-in slide-in-from-bottom-8 duration-1000 delay-200">
-            <div className="inline-flex items-center px-6 py-3 bg-grid-vibrant-yellow/90 rounded-full border border-grid-vibrant-yellow mb-8 backdrop-blur-sm shadow-lg">
-              <Zap className="h-5 w-5 mr-2 text-grid-deep-navy" />
-              <span className="text-sm text-white font-semibold text-grid-deep-navy tracking-wide">Ready to Connect</span>
+            <div className="inline-flex items-center px-6 py-3 bg-transparent rounded-full border-2 border-grid-vibrant-yellow mb-8 shadow-xl backdrop-blur-sm">
+              <Zap className="h-5 w-5 mr-2 text-grid-vibrant-yellow" />
+              <span className="text-sm font-bold text-grid-vibrant-yellow tracking-wide">Ready to Connect</span>
             </div>
           </div>
-          
+
           {/* Main headline with better contrast */}
           <div className="animate-in slide-in-from-bottom-6 duration-1000 delay-300">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 relative">
@@ -167,18 +167,18 @@ const ContactPage = () => {
               </span>
             </h1>
           </div>
-          
+
           {/* Enhanced subheading with better visibility */}
           <div className="animate-in slide-in-from-bottom-4 duration-1000 delay-500">
             <p className="mt-8 text-xl max-w-4xl mx-auto text-white mb-12 leading-relaxed drop-shadow-lg font-medium">
               Your power engineering project starts with a conversation. Connect with Australia's leading electrical engineers and let's turn your vision into reality.
             </p>
           </div>
-          
+
           {/* Enhanced CTAs */}
           <div className="animate-in slide-in-from-bottom-2 duration-1000 delay-700">
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button 
+              <Button
                 onClick={() => scrollToSection('contact-form')}
                 className="px-10 py-4 bg-grid-vibrant-yellow text-grid-deep-navy font-bold rounded-xl shadow-2xl hover:bg-yellow-300 transition-all duration-300 hover:scale-105 hover:shadow-yellow-400/25 focus:ring-4 focus:ring-yellow-400/50 group text-lg border-2 border-grid-vibrant-yellow"
               >
@@ -186,7 +186,7 @@ const ContactPage = () => {
                 Start Your Project
                 <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button 
+              <Button
                 onClick={() => scrollToSection('contact-options')}
                 className="px-10 py-4 bg-transparent hover:bg-white/10 text-white rounded-xl shadow-lg transition-all duration-300 hover:scale-105 focus:ring-4 focus:ring-white/20 font-semibold text-lg border-2 border-white/30 hover:border-white/50 backdrop-blur-sm"
               >
@@ -196,7 +196,7 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce z-30">
           <div className="flex flex-col items-center">
@@ -217,7 +217,7 @@ const ContactPage = () => {
             backgroundSize: '60px 60px'
           }}></div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-grid-electric-blue/10 text-grid-electric-blue rounded-full text-sm font-semibold mb-4">
@@ -231,7 +231,7 @@ const ContactPage = () => {
               Choose the best way to connect with our expert team based on your specific needs and project requirements.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {contactOptions.map((option, index) => {
               const IconComponent = option.icon;
@@ -239,7 +239,7 @@ const ContactPage = () => {
                 <Card key={index} className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 overflow-hidden relative">
                   {/* Gradient background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${option.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-                  
+
                   <CardContent className="p-8 text-center relative">
                     <div className={`w-16 h-16 bg-gradient-to-br ${option.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                       <IconComponent className="h-8 w-8 text-white" />
@@ -271,7 +271,7 @@ const ContactPage = () => {
           <div className="absolute top-20 left-10 w-72 h-72 bg-grid-electric-blue rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-grid-vibrant-yellow rounded-full blur-3xl"></div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
             <div className="inline-flex items-center px-4 py-2 bg-grid-vibrant-yellow text-grid-deep-navy rounded-full text-sm font-semibold mb-6 shadow-lg">
@@ -285,7 +285,7 @@ const ContactPage = () => {
               Fill out the form below or reach out directly. Our team of experts will get back to you within 24 hours.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Contact Form */}
             <div className="lg:col-span-3">
@@ -377,8 +377,8 @@ const ContactPage = () => {
                         required
                       />
                     </div>
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
                       className="w-full bg-gradient-to-r from-grid-deep-navy to-grid-electric-blue hover:from-grid-electric-blue hover:to-grid-deep-navy text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg"
                       disabled={contactMutation.isPending}
                     >
@@ -403,7 +403,7 @@ const ContactPage = () => {
             <div className="lg:col-span-2 space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-6 tracking-tight">Get in Touch</h3>
-                
+
                 {/* Email Card */}
                 <Card className="bg-white/95 backdrop-blur-sm rounded-2xl border-0 mb-6 shadow-xl">
                   <CardContent className="p-6">
@@ -508,101 +508,107 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Contact CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-full h-full" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px'
+      {/* Professional CTA Section */}
+      <section className="py-32 bg-white relative overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Ccircle cx='40' cy='40' r='0.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '80px 80px'
           }}></div>
         </div>
-        
-        {/* Floating elements */}
-        <div className="absolute top-20 left-20 w-32 h-32 bg-grid-electric-blue/10 rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-grid-vibrant-yellow/10 rounded-full blur-xl"></div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-6 py-3 bg-grid-electric-blue/10 text-grid-electric-blue rounded-full text-sm font-semibold mb-6 border border-grid-electric-blue/20">
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header Section */}
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-5 py-2 bg-grid-deep-navy text-white rounded-full text-sm font-medium mb-8 shadow-lg">
               <Bolt className="h-4 w-4 mr-2" />
               Ready to Get Started?
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-grid-deep-navy mb-6 tracking-tight">
-              Power Your Vision with <span className="text-grid-electric-blue">GridFlow</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-grid-deep-navy mb-8 leading-tight tracking-tight">
+              Transform Your Vision into
+              <span className="block text-grid-electric-blue mt-2">Power Engineering Excellence</span>
             </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed mb-12">
-              Join hundreds of satisfied clients who trust GridFlow for their power engineering needs. Let's build something extraordinary together.
+            <p className="text-gray-600 text-xl max-w-4xl mx-auto leading-relaxed font-medium">
+              Join industry leaders who trust GridFlow to deliver world-class power engineering solutions across Australia.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-              <Button 
-                onClick={() => scrollToSection('contact-form')}
-                className="bg-gradient-to-r from-grid-deep-navy to-grid-electric-blue hover:from-grid-electric-blue hover:to-grid-deep-navy font-bold px-12 py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-grid-electric-blue/25 group border-0"              
-              >
-                <Zap className="mr-3 h-5 w-5 group-hover:animate-pulse" style={{ color: 'white' }} />
-                <span>Start Your Project Today</span>
-                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" style={{ color: 'white' }} />
-              </Button>
-              <Button 
-                onClick={() => scrollToSection('contact-options')}
-                className="border-2 border-grid-electric-blue bg-white text-grid-electric-blue hover:bg-grid-electric-blue hover:text-white px-12 py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105 font-semibold shadow-lg"
-              >
-                <MessageSquare className="mr-3 h-5 w-5" />
-                <span>Explore Contact Options</span>
-              </Button>
-            </div>
           </div>
-          
-          {/* Enhanced Trust indicators */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-            <Card className="text-center p-6 bg-white shadow-lg rounded-2xl border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="w-16 h-16 bg-gradient-to-br from-grid-electric-blue to-blue-600 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-                <Zap className="h-8 w-8 text-white" />
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-24">
+            <Button
+              onClick={() => scrollToSection('contact-form')}
+              className="bg-grid-deep-navy hover:bg-grid-charcoal text-white font-semibold px-10 py-4 text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl group border-0 min-w-[280px]"
+            >
+              <Send className="mr-3 h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
+              Start Your Project Today
+              <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
+            </Button>
+            <Button
+              onClick={() => scrollToSection('contact-options')}
+              className="border-2 border-grid-deep-navy bg-transparent hover:bg-gray-50 text-grid-deep-navy px-10 py-4 text-lg rounded-lg transition-all duration-300 font-semibold group min-w-[280px]"
+            >
+              <MessageSquare className="mr-3 h-5 w-5" />
+              Explore Our Services
+            </Button>
+          </div>
+
+                    {/* Trust Indicators - Modern Grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+            <div className="text-center group">
+              <div className="w-24 h-24 bg-grid-electric-blue rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border-2 border-white relative">
+                <div className="absolute inset-0 bg-white/10 rounded-2xl"></div>
+                <Zap className="h-12 w-12 text-white relative z-10" strokeWidth={2.5} />
               </div>
-              <h4 className="text-grid-deep-navy font-bold text-lg mb-2">Quick Response</h4>
-              <p className="text-gray-600 text-sm font-medium">24-hour response guarantee</p>
-            </Card>
+              <h4 className="text-grid-deep-navy font-bold text-lg mb-2">24hr Response</h4>
+              <p className="text-gray-600 text-sm">Guaranteed quick turnaround</p>
+            </div>
             
-            <Card className="text-center p-6 bg-white shadow-lg rounded-2xl border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-                <Users className="h-8 w-8 text-white" />
+            <div className="text-center group">
+              <div className="w-24 h-24 bg-emerald-600 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border-2 border-white relative">
+                <div className="absolute inset-0 bg-white/10 rounded-2xl"></div>
+                <Users className="h-12 w-12 text-white relative z-10" strokeWidth={2.5} />
               </div>
-              <h4 className="text-grid-deep-navy font-bold text-lg mb-2">Expert Team</h4>
-              <p className="text-gray-600 text-sm font-medium">Qualified power engineers</p>
-            </Card>
+              <h4 className="text-grid-deep-navy font-bold text-lg mb-2">Expert Engineers</h4>
+              <p className="text-gray-600 text-sm">Certified professionals</p>
+            </div>
             
-            <Card className="text-center p-6 bg-white shadow-lg rounded-2xl border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="w-16 h-16 bg-gradient-to-br from-grid-vibrant-yellow to-yellow-400 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-                <Target className="h-8 w-8 text-grid-deep-navy" />
+            <div className="text-center group">
+              <div className="w-24 h-24 bg-grid-vibrant-yellow rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border-2 border-white relative">
+                <div className="absolute inset-0 bg-black/5 rounded-2xl"></div>
+                <Target className="h-12 w-12 text-grid-deep-navy relative z-10" strokeWidth={2.5} />
               </div>
               <h4 className="text-grid-deep-navy font-bold text-lg mb-2">Proven Results</h4>
-              <p className="text-gray-600 text-sm font-medium">200+ successful projects</p>
-            </Card>
+              <p className="text-gray-600 text-sm">200+ successful projects</p>
+            </div>
             
-            <Card className="text-center p-6 bg-white shadow-lg rounded-2xl border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-600 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-                <Globe className="h-8 w-8 text-white" />
+            <div className="text-center group">
+              <div className="w-24 h-24 bg-purple-600 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border-2 border-white relative">
+                <div className="absolute inset-0 bg-white/10 rounded-2xl"></div>
+                <Globe className="h-12 w-12 text-white relative z-10" strokeWidth={2.5} />
               </div>
               <h4 className="text-grid-deep-navy font-bold text-lg mb-2">Australia Wide</h4>
-              <p className="text-gray-600 text-sm font-medium">Serving all major cities</p>
-            </Card>
+              <p className="text-gray-600 text-sm">Nationwide coverage</p>
+            </div>
           </div>
-          
-          {/* Stats Section */}
-          <div className="bg-gradient-to-r from-grid-deep-navy via-grid-charcoal to-grid-deep-navy rounded-3xl p-8 shadow-2xl">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+
+          {/* Stats Section - Professional Card */}
+          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-16 shadow-inner border border-gray-200">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
               <div>
-                <div className="text-4xl md:text-5xl font-bold text-grid-vibrant-yellow mb-2 drop-shadow-lg">200+</div>
-                <p className="text-white font-semibold text-lg drop-shadow-md">Projects Completed</p>
+                <div className="text-5xl md:text-6xl font-bold text-grid-deep-navy mb-4">200+</div>
+                <p className="text-gray-700 font-semibold text-lg">Projects Completed</p>
+                <p className="text-gray-500 text-sm mt-2">Across major Australian cities</p>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-bold text-grid-vibrant-yellow mb-2 drop-shadow-lg">15+</div>
-                <p className="text-white font-semibold text-lg drop-shadow-md">Years Experience</p>
+                <div className="text-5xl md:text-6xl font-bold text-grid-deep-navy mb-4">15+</div>
+                <p className="text-gray-700 font-semibold text-lg">Years Experience</p>
+                <p className="text-gray-500 text-sm mt-2">Industry-leading expertise</p>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-bold text-grid-vibrant-yellow mb-2 drop-shadow-lg">24hr</div>
-                <p className="text-white font-semibold text-lg drop-shadow-md">Response Time</p>
+                <div className="text-5xl md:text-6xl font-bold text-grid-deep-navy mb-4">24hr</div>
+                <p className="text-gray-700 font-semibold text-lg">Response Time</p>
+                <p className="text-gray-500 text-sm mt-2">Fast, reliable communication</p>
               </div>
             </div>
           </div>

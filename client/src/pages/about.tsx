@@ -63,12 +63,9 @@ const About = () => {
         ></div>
         
         {/* Simple dark gradient for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/50 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/50 z-10"></div>      
         
-        {/* Power pulse animation line */}
-        <div className="absolute top-0 left-0 w-full h-1 power-pulse z-20" />
-        
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pt-32 pb-24 flex flex-col items-start justify-center text-left">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pt-32 pb-24 flex flex-col items-center md:items-start justify-center text-center md:text-left">
           {/* Service badge */}
           <div className="animate-in slide-in-from-bottom-8 duration-1000 delay-200">
             <div className="inline-flex items-center px-4 py-2 bg-yellow-400/20 rounded-full border border-yellow-400/30 mb-8">
@@ -79,7 +76,7 @@ const About = () => {
           
           {/* Main headline with premium typography and animations */}
           <div className="animate-in slide-in-from-bottom-6 duration-1000 delay-300">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl mb-6 relative text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl md:mb-6 relative text-white">
               Powering Australia's Future—
               <span className="text-yellow-400 relative inline-block"> With Fresh Innovation
                 {/* Subtle glow effect */}
@@ -91,13 +88,13 @@ const About = () => {
           {/* Enhanced subheading */}
           <div className="animate-in slide-in-from-bottom-4 duration-1000 delay-500">
             <p className="mt-6 text-xl max-w-3xl text-gray-200 mb-8 leading-relaxed font-medium">
-              Founded by electrical engineering specialists with 14+ years of proven expertise. We bring fresh innovation backed by deep industry knowledge to transform Australia's power infrastructure.
+              Founded by electrical engineering specialists with extensive industry expertise. We bring fresh innovation backed by deep technical knowledge to transform Australia's power infrastructure.
             </p>
           </div>
           
           {/* Enhanced CTAs with animations */}
           <div className="animate-in slide-in-from-bottom-2 duration-1000 delay-700">
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 items-start">
+            <div className="flex flex-col sm:flex-row gap-4 items-center md:items-start mt-2 sm:mt-10">
               <Button 
                 onClick={() => scrollToSection('company-story')}
                 className="px-8 py-4 bg-yellow-400 text-black font-bold rounded-lg shadow-lg hover:bg-yellow-300 transition-all duration-300 hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-yellow-400/50 group text-lg"
@@ -116,15 +113,15 @@ const About = () => {
           </div>
         </div>
         
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-          <div className="flex flex-col items-center">
-            <span className="text-sm mb-2 text-gray-300">Discover our story</span>
-            <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-yellow-400 rounded-full mt-2 animate-pulse" />
-            </div>
+        {/* Scroll indicator - bottom center */}
+        <div className="absolute bottom-6 sm:bottom-8 lg:bottom-10 inset-x-0 text-white animate-bounce z-30">
+        <div className="flex flex-col items-center justify-center text-center w-full">
+          <span className="text-sm sm:text-base mb-3 sm:mb-4 text-gray-200 font-medium drop-shadow-lg">Scroll to explore</span>
+          <div className="w-7 h-12 sm:w-8 sm:h-14 border-2 border-gray-200 rounded-full flex justify-center bg-black/20 backdrop-blur-sm">
+            <div className="w-1.5 h-4 sm:w-2 sm:h-5 bg-yellow-400 rounded-full mt-2 sm:mt-3 animate-pulse shadow-lg" />
           </div>
         </div>
+      </div>
       </section>
 
       {/* Company Story */}
@@ -134,8 +131,8 @@ const About = () => {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-grid-dark-blue mb-6">Our Story</h2>
               <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                Grid Flow Engineering Solutions emerged from a vision to transform Australia's 
-                power infrastructure landscape. Founded by industry veterans with 15+ years of combined experience, 
+                GridFlow Engineering Solutions emerged from a vision to transform Australia's 
+                power infrastructure landscape. Founded by industry veterans with 14+ years of combined experience, 
                 we bring fresh innovation backed by proven expertise to serve utilities, industrial clients, and government agencies.
               </p>
               <p className="text-gray-600 text-lg mb-6 leading-relaxed">

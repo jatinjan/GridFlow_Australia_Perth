@@ -16,7 +16,7 @@ const Team = () => {
       name: "Dr. Sarah Mitchell",
       role: "Managing Director & Principal Engineer",
       image: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
-      bio: "With over 25 years in power systems engineering, Sarah leads Grid Flow's strategic vision. She holds a PhD in Electrical Engineering from UNSW and has been instrumental in developing Australia's renewable energy infrastructure. Sarah has led major grid integration projects worth over $2 billion.",
+      bio: "With over 25 years in power systems engineering, Sarah leads GridFlow's strategic vision. She holds a PhD in Electrical Engineering from UNSW and has been instrumental in developing Australia's renewable energy infrastructure. Sarah has led major grid integration projects worth over $2 billion.",
       credentials: "PhD Electrical Engineering, CPEng, MIEAust",
       specialties: ["Power Systems", "Grid Integration", "Renewable Energy"]
     },
@@ -24,7 +24,7 @@ const Team = () => {
       name: "Mark Thompson",
       role: "Technical Director",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
-      bio: "Mark brings 22 years of industrial automation expertise to Grid Flow. He's responsible for our technical delivery and quality assurance. Previously with Schneider Electric, Mark has overseen the automation of major mining and manufacturing facilities across Australia.",
+      bio: "Mark brings 22 years of industrial automation expertise to GridFlow. He's responsible for our technical delivery and quality assurance. Previously with Schneider Electric, Mark has overseen the automation of major mining and manufacturing facilities across Australia.",
       credentials: "MEng Industrial Automation, CPEng, RPEQ",
       specialties: ["Industrial Automation", "SCADA Systems", "Process Control"]
     }
@@ -130,7 +130,7 @@ const Team = () => {
           {/* Enhanced subheading */}
           <div className="animate-in slide-in-from-bottom-4 duration-1000 delay-500">
             <p className="mt-6 text-xl max-w-3xl text-gray-200 mb-8 leading-relaxed font-medium">
-              Meet the experienced professionals who bring Grid Flow's projects to life with technical excellence and innovative thinking. Industry veterans with 15+ years of collective expertise.
+              Meet the experienced professionals who bring GridFlow's projects to life with technical excellence and innovative thinking. Industry veterans with extensive collective expertise.
             </p>
           </div>
           
@@ -172,7 +172,7 @@ const Team = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-grid-dark-blue mb-4">Leadership Team</h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Our leadership combines 15+ years of proven engineering expertise with strategic vision to guide Grid Flow's continued growth and innovation.
+              Our leadership combines extensive proven engineering expertise with strategic vision to guide GridFlow's continued growth and innovation.
             </p>
           </div>
           

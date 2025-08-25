@@ -6,7 +6,7 @@ const Testimonials = () => {
       name: "Sarah Mitchell",
       title: "Infrastructure Director",
       company: "Western Mining Corp",
-      text: "Grid Flow delivered our $50M substation project ahead of schedule and under budget. Their expertise in Western Australia's unique challenges is unmatched.",
+      text: "GridFlow delivered our $50M substation project ahead of schedule and under budget. Their expertise in Western Australia's unique challenges is unmatched.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
     },
@@ -14,7 +14,7 @@ const Testimonials = () => {
       name: "David Chen",
       title: "Chief Engineer",
       company: "Perth Energy Solutions",
-      text: "Working with Grid Flow has been exceptional - their team's 15+ years of founder expertise shows in every project. They're our go-to partner for critical infrastructure.",
+      text: "Working with GridFlow has been exceptional - their team's 15+ years of founder expertise shows in every project. They're our go-to partner for critical infrastructure.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
     },
@@ -22,7 +22,7 @@ const Testimonials = () => {
       name: "Amanda Roberts",
       title: "Operations Manager",
       company: "Pilbara Industrial Group",
-      text: "Grid Flow's renewable integration expertise helped us transition to sustainable power while maintaining 100% uptime. Exceptional results.",
+      text: "GridFlow's renewable integration expertise helped us transition to sustainable power while maintaining 100% uptime. Exceptional results.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
     }

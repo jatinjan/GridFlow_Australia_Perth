@@ -1,8 +1,8 @@
-# Grid Flow Website - Power Engineering Solutions
+# GridFlow Website - Power Engineering Solutions
 
 ## Overview
 
-Grid Flow is a professional power engineering website built as a full-stack application showcasing comprehensive electrical infrastructure and power systems engineering services. The project implements a modern, responsive design based on a Figma prototype, featuring a complete company website with service offerings, portfolio showcase, and contact functionality. The application serves as both a marketing platform and lead generation tool for a new power engineering consultancy founded by industry veterans with 15+ years of proven expertise.
+GridFlow is a professional power engineering website built as a full-stack application showcasing comprehensive electrical infrastructure and power systems engineering services. The project implements a modern, responsive design based on a Figma prototype, featuring a complete company website with service offerings, portfolio showcase, and contact functionality. The application serves as both a marketing platform and lead generation tool for a new power engineering consultancy founded by industry veterans with 15+ years of proven expertise.
 
 ## User Preferences
 

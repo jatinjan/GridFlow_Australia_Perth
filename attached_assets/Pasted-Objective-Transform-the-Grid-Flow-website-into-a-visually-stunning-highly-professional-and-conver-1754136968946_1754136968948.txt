@@ -1,9 +1,9 @@
 Objective
-Transform the Grid Flow website into a visually stunning, highly professional, and conversion-focused digital experience. The site must immediately impress visitors, clearly communicate expertise, and drive high-quality inquiries—even as a new business with limited testimonials or project history.
+Transform the GridFlow website into a visually stunning, highly professional, and conversion-focused digital experience. The site must immediately impress visitors, clearly communicate expertise, and drive high-quality inquiries—even as a new business with limited testimonials or project history.
 
 Brand Reference
 Logo:
-The official Grid Flow logo is already present on the website. Do not alter, stretch, or recolor it. All design and color choices must harmonize with the logo.
+The official GridFlow logo is already present on the website. Do not alter, stretch, or recolor it. All design and color choices must harmonize with the logo.
 
 Current Site for Reference:
 https://60993d6c-f14a-4b68-a5f4-0eb2197bd2cb-00-fpwim93m8sn8.spock.replit.dev/

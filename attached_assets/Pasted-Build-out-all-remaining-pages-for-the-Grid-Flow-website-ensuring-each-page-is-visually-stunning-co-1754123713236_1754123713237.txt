@@ -1,4 +1,4 @@
-Build out all remaining pages for the Grid Flow website, ensuring each page is visually stunning, content-rich, and consistent with the completed home/landing page. All content, images, and layouts must be relevant to a modern power engineering consultancy and match the high standards set by the homepage.
+Build out all remaining pages for the GridFlow website, ensuring each page is visually stunning, content-rich, and consistent with the completed home/landing page. All content, images, and layouts must be relevant to a modern power engineering consultancy and match the high standards set by the homepage.
 
 Instructions:
 
@@ -40,14 +40,14 @@ All pages must be fully responsive and accessible on desktop, tablet, and mobile
 Ensure high color contrast, legible fonts, and keyboard accessibility.
 Branding
 
-Use the Grid Flow logo and brand assets exactly as on the homepage.
+Use the GridFlow logo and brand assets exactly as on the homepage.
 Do not alter or replace any branding elements.
 Quality & Review
 
 Each page must be reviewed for content accuracy, visual polish, and UX quality.
 Any new creative elements must fit the established brand and design language.
 Deliverable:
-A fully completed, production-ready Grid Flow website with all pages filled with relevant, high-quality content and imagery, visually consistent with the homepage, and ready for launch.
+A fully completed, production-ready GridFlow website with all pages filled with relevant, high-quality content and imagery, visually consistent with the homepage, and ready for launch.
 
 Note:
 If you need to propose new sections or features, ensure they are relevant to a power engineering consultancy and get approval before implementation.

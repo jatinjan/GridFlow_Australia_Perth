@@ -1,11 +1,25 @@
 import { Facebook, Linkedin, Instagram } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
+import { useLocation } from "wouter";
 
 const Footer = () => {
+  const [location, setLocation] = useLocation();
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const navigateToService = (serviceId: string) => {
+    if (location === '/services') {
+      // If already on services page, just scroll
+      scrollToSection(serviceId);
+    } else {
+      // Navigate to services page first, then scroll
+      setLocation('/services');
+      setTimeout(() => scrollToSection(serviceId), 200);
     }
   };
 
@@ -65,7 +79,7 @@ const Footer = () => {
             <div className="lg:col-span-1 fade-in-up text-center lg:text-left">
               <img 
                 src="/logo.png" 
-                alt="Grid Flow - Power Engineering Solutions" 
+                alt="GridFlow - Power Engineering Solutions" 
                 className="h-16 sm:h-20 w-auto mb-6 brightness-150 drop-shadow-xl logo-glow mx-auto lg:mx-0"
               />
               <p className="text-gray-300 mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed max-w-sm mx-auto lg:mx-0">
@@ -97,12 +111,47 @@ const Footer = () => {
             <div className="text-center lg:text-left">
               <h4 className="text-white font-semibold text-lg sm:text-xl mb-4 sm:mb-6">Services</h4>
               <ul className="space-y-2 sm:space-y-3">
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">Power Systems</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">Renewable Energy</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">Industrial Automation</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">Electrical Safety</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">Maintenance</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">Consulting</a></li>
+                <li>
+                  <button 
+                    onClick={() => navigateToService('power-systems-engineering')}
+                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-left bg-transparent border-none cursor-pointer"
+                  >
+                    Power Systems
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => navigateToService('renewable-energy-storage-systems')}
+                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-left bg-transparent border-none cursor-pointer"
+                  >
+                    Renewable Energy
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => navigateToService('industrial-automation-control')}
+                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-left bg-transparent border-none cursor-pointer"
+                  >
+                    Industrial Automation
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => navigateToService('power-safety-compliance')}
+                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-left bg-transparent border-none cursor-pointer"
+                  >
+                    Electrical Safety
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => navigateToService('maintenance-support')}
+                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-left bg-transparent border-none cursor-pointer"
+                  >
+                    Maintenance
+                  </button>
+                </li>
+                <li><a href="/services" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">Consulting</a></li>
               </ul>
             </div>
 
@@ -118,18 +167,9 @@ const Footer = () => {
                     About Us
                   </button>
                 </li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">Our Team</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">Careers</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">Case Studies</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">News</a></li>
-                <li>
-                  <button 
-                    onClick={() => scrollToSection('contact')}
-                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 mx-auto lg:mx-0"
-                  >
-                    Contact
-                  </button>
-                </li>
+                <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">Our Team</a></li>
+                <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">Careers</a></li>  
+                <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">Contact</a></li>
               </ul>
             </div>
           </div>
@@ -140,7 +180,7 @@ const Footer = () => {
       {/* <div className="border-t border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">© 2025 Grid Flow Engineering Solutions. All rights reserved.</p>
+            <p className="text-gray-400 text-sm">© 2025 GridFlow Engineering Solutions. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Policy & privacy</a>
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms & conditions</a>

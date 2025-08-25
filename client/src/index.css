@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  /* Enhanced Grid Flow Brand Palette */
+  /* Enhanced GridFlow Brand Palette */
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(220, 13%, 18%);
   --muted: hsl(220, 13%, 96%);
@@ -27,7 +27,7 @@
   --ring: hsl(214, 84%, 56%);
   --radius: 0.75rem;
 
-  /* Grid Flow Brand Colors - Enhanced */
+  /* GridFlow Brand Colors - Enhanced */
   --grid-electric-blue: hsl(214, 84%, 56%);
   --grid-deep-blue: hsl(214, 94%, 36%);
   --grid-deep-navy: hsl(220, 26%, 14%);
@@ -37,7 +37,7 @@
   --grid-medium-gray: hsl(220, 9%, 46%);
   --grid-white: hsl(0, 0%, 100%);
 
-  /* Legacy Grid Flow Colors (for compatibility) */
+  /* Legacy GridFlow Colors (for compatibility) */
   --grid-blue: hsl(214, 84%, 56%);
   --grid-dark-blue: hsl(220, 26%, 14%);
   --grid-gray: hsl(220, 9%, 46%);
@@ -138,7 +138,7 @@
     filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.6));
   }
 
-  /* Enhanced Grid Flow Brand Utilities */
+  /* Enhanced GridFlow Brand Utilities */
   .text-grid-electric-blue {
     color: var(--grid-electric-blue);
   }

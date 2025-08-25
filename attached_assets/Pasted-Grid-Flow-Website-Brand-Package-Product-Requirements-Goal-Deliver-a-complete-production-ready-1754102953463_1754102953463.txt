@@ -1,10 +1,10 @@
-Grid Flow Website & Brand Package – Product Requirements
+GridFlow Website & Brand Package – Product Requirements
 Goal
-Deliver a complete, production-ready website and cohesive brand package for Grid Flow, using the provided Figma prototype as the definitive reference. The final product must closely match all layouts, flows, and UI elements in the Figma, while allowing for tasteful creative and UX enhancements—except for the logo, which must remain unchanged in design, size, and placement.
+Deliver a complete, production-ready website and cohesive brand package for GridFlow, using the provided Figma prototype as the definitive reference. The final product must closely match all layouts, flows, and UI elements in the Figma, while allowing for tasteful creative and UX enhancements—except for the logo, which must remain unchanged in design, size, and placement.
 
 Reference
 Figma Prototype:
-Grid Flow Design & Flows
+GridFlow Design & Flows
 Use this as the authoritative source for all layouts, user flows, and visual style.
 Instructions
 1. Full Site Implementation

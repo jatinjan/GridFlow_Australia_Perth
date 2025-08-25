@@ -21,7 +21,7 @@ const VisionCapabilities = () => {
     },
     {
       icon: Award,
-      title: "15+ Years Founder Expertise",
+      title: "14+ Years Founder Expertise",
       description:
         "Proven founder experience in power systems study and electrical infrastructure",
     },
@@ -65,7 +65,7 @@ const VisionCapabilities = () => {
               Ready to Power Your Vision
             </h2>
             <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-              At Grid Flow, we bring together over 14 years of proven expertise
+              At GridFlow, we bring together over 14 years of proven expertise
               with the latest SOTA software to deliver innovative,
               reliable electrical engineering solutions across Western
               Australia. Whether it’s a large-scale infrastructure project or a

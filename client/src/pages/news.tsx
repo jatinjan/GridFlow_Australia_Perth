@@ -28,11 +28,11 @@ const News = () => {
   const articles = [
     {
       id: 2,
-      title: "Grid Flow Completes Major Solar Integration Project in Queensland",
+      title: "GridFlow Completes Major Solar Integration Project in Queensland",
       excerpt: "Our team successfully connected a 200MW solar farm to the Queensland grid, implementing advanced voltage regulation and power quality management systems.",
       image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300",
       category: "Company News",
-      author: "Grid Flow Team",
+      author: "GridFlow Team",
       date: "January 10, 2025",
       readTime: "5 min read"
     },
@@ -68,11 +68,11 @@ const News = () => {
     },
     {
       id: 6,
-      title: "Grid Flow Expands Team with Senior Automation Specialists",
+      title: "GridFlow Expands Team with Senior Automation Specialists",
       excerpt: "We're excited to welcome three new senior engineers to our automation team, strengthening our capabilities in industrial control systems and SCADA implementation.",
       image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300",
       category: "Company News",
-      author: "Grid Flow Team",
+      author: "GridFlow Team",
       date: "December 28, 2024",
       readTime: "3 min read"
     },
@@ -139,7 +139,7 @@ const News = () => {
           {/* Enhanced subheading */}
           <div className="animate-in slide-in-from-bottom-4 duration-1000 delay-500">
             <p className="mt-6 text-xl max-w-3xl text-gray-200 mb-8 leading-relaxed font-medium">
-              Stay informed with the latest developments in power engineering, industry trends, technological innovations, and Grid Flow company updates.
+              Stay informed with the latest developments in power engineering, industry trends, technological innovations, and GridFlow company updates.
             </p>
           </div>
           

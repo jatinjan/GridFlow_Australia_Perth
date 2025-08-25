@@ -271,14 +271,14 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
-      
+
       {/* Hero Section - Enhanced with modern design */}
-      <section 
-        id="services-hero" 
-        className="relative min-h-[94vh] w-full flex items-center justify-center text-white overflow-hidden"
+      <section
+        id="services-hero"
+        className="relative min-h-[100vh] w-full flex items-center justify-center text-white overflow-hidden"
       >
         {/* Background with enhanced overlay */}
-        <div 
+        <div
           className="absolute inset-0 w-full h-full"
           style={{
             backgroundImage: `url(/gridflow-hero-banner.png)`,
@@ -287,12 +287,12 @@ const Services = () => {
             backgroundRepeat: 'no-repeat'
           }}
         ></div>
-        
+
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-navy-800/70 to-black/60 z-10"></div>
-        
+
         {/* Animated elements */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 via-blue-500 to-yellow-400 animate-pulse z-20" />
-        
+
         <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
           <div className="text-center max-w-4xl mx-auto">
             {/* Service badge */}
@@ -302,7 +302,7 @@ const Services = () => {
                 Complete Engineering Services
               </Badge>
             </div>
-            
+
             {/* Main headline */}
             <div className="animate-in slide-in-from-bottom-6 duration-1000 delay-300">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
@@ -310,18 +310,18 @@ const Services = () => {
                 <span className="text-yellow-400 block mt-2">All Services Under One Roof</span>
               </h1>
             </div>
-            
+
             {/* Subheading */}
             <div className="animate-in slide-in-from-bottom-4 duration-1000 delay-500">
               <p className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
                 From power systems study to renewable integration, automation control, and construction support—discover our complete range of electrical engineering services.
               </p>
             </div>
-            
+
             {/* CTAs */}
             <div className="animate-in slide-in-from-bottom-2 duration-1000 delay-700">
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button 
+                <Button
                   onClick={() => scrollToSection('comprehensive-services')}
                   size="lg"
                   className="px-8 py-4 bg-yellow-400 text-black font-bold rounded-lg shadow-lg hover:bg-yellow-300 transition-all duration-300 hover:scale-105 group"
@@ -330,7 +330,7 @@ const Services = () => {
                   Explore All Services
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button 
+                <Button
                   onClick={() => scrollToSection('contact')}
                   size="lg"
                   variant="outline"
@@ -342,13 +342,13 @@ const Services = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Scroll indicator */}
-        <div className="absolute bottom-2 sm:bottom-2 left-1/2 right-1/2 transform -translate-x-1/2 text-white animate-bounce">
-          <div className="flex flex-col items-center justify-center">
-            <span className="text-xs sm:text-sm mb-3 sm:mb-4 text-gray-300 text-center whitespace-nowrap">Discover services</span>
-            <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-gray-300 rounded-full flex justify-center">
-              <div className="w-1 h-2 sm:h-3 bg-yellow-400 rounded-full mt-1 sm:mt-2 animate-pulse" />
+        <div className="absolute bottom-0 sm:bottom-8 lg:bottom-0 inset-x-0 text-white animate-bounce z-30">
+          <div className="flex flex-col items-center justify-center text-center w-full">
+            <span className="text-sm sm:text-base mb-3 sm:mb-4 text-gray-200 font-medium drop-shadow-lg">Scroll to explore</span>
+            <div className="w-7 h-12 sm:w-8 sm:h-14 border-2 border-gray-200 rounded-full flex justify-center bg-black/20 backdrop-blur-sm">
+              <div className="w-1.5 h-4 sm:w-2 sm:h-5 bg-yellow-400 rounded-full mt-2 sm:mt-3 animate-pulse shadow-lg" />
             </div>
           </div>
         </div>
@@ -366,7 +366,7 @@ const Services = () => {
               Engineering Solutions Across All Voltage Levels
             </h2>
             <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-              With expertise spanning LV to 350kV systems, we deliver integrated engineering solutions backed by 15+ years of proven founder experience, 
+              With expertise spanning LV to 330kV systems, we deliver integrated engineering solutions backed by proven industry experience,
               advanced simulation tools, and deep understanding of Australian standards and grid requirements.
             </p>
           </div>
@@ -375,13 +375,19 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
             {mainServices.map((service, index) => {
               const IconComponent = service.icon;
-              
+
+              // Generate ID for anchor links
+              const serviceId = service.title.toLowerCase()
+                .replace(/&/g, '')
+                .replace(/\s+/g, '-')
+                .replace(/[^a-z0-9-]/g, '');
+
               return (
-                <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg overflow-hidden bg-white">
+                <Card key={index} id={serviceId} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg overflow-hidden bg-white">
                   <div className="relative">
-                    <img 
-                      src={service.image} 
-                      alt={service.title} 
+                    <img
+                      src={service.image}
+                      alt={service.title}
                       className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -391,12 +397,12 @@ const Services = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   <CardContent className="p-6">
                     <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                       {service.title}
                     </h3>
-                    
+
                     <p className="text-gray-600 text-sm sm:text-base mb-6 leading-relaxed line-clamp-3">
                       {service.description}
                     </p>
@@ -438,8 +444,8 @@ const Services = () => {
                       </div>
                     </div>
 
-                    <Button 
-                      variant="outline" 
+                    <Button
+                      variant="outline"
                       onClick={() => openServiceModal(service)}
                       className="w-full border-blue-200 text-blue-700 hover:bg-blue-50 group-hover:border-blue-300 transition-all"
                     >
@@ -466,7 +472,7 @@ const Services = () => {
               Industries We Serve
             </h2>
             <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-              Founded by industry veterans with deep expertise across critical industries. 
+              Founded by industry veterans with deep expertise across critical industries.
               We understand the unique challenges and compliance requirements of each sector.
             </p>
           </div>
@@ -499,7 +505,7 @@ const Services = () => {
       </section>
 
       {/* Why Choose Us - New section */}
-      <section className="py-16 sm:py-20 bg-white">
+      {/* <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <Badge variant="outline" className="mb-4 px-3 py-1 bg-yellow-50 border-yellow-200 text-yellow-700">
@@ -571,11 +577,10 @@ const Services = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action - Enhanced design */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-navy-800 text-white relative overflow-hidden">
-        {/* Background pattern */}
+      {/* <section className="py-16 sm:py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-navy-800 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -606,14 +611,6 @@ const Services = () => {
                 <Zap className="mr-2 h-5 w-5" />
                 Schedule Technical Discussion
               </Button>
-              {/* <Button 
-                variant="outline" 
-                size="lg"
-                className="px-8 py-4 border-2 border-white bg-transparent !text-white hover:!bg-white hover:!text-blue-900 transition-all duration-300 font-semibold"
-              >
-                <ArrowRight className="mr-2 h-5 w-5" />
-                Download Capability Statement
-              </Button> */}
             </div>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-blue-200">
@@ -628,7 +625,7 @@ const Services = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Service Details Modal */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
@@ -652,14 +649,14 @@ const Services = () => {
                 {/* Left Column - Image and Description */}
                 <div className="space-y-6">
                   <div className="relative overflow-hidden rounded-lg">
-                    <img 
-                      src={selectedService.image} 
+                    <img
+                      src={selectedService.image}
                       alt={selectedService.title}
                       className="w-full h-56 sm:h-72 object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>
-                  
+
                   <div>
                     <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">Service Overview</h3>
                     <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
@@ -704,7 +701,7 @@ const Services = () => {
 
                   {/* Call to Action */}
                   <div className="pt-6 border-t border-gray-200">
-                    <Button 
+                    <Button
                       onClick={() => {
                         setIsModalOpen(false);
                         window.location.href = '/contact';

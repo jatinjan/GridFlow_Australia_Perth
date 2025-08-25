@@ -24,7 +24,7 @@ const CaseStudies = () => {
       value: "$45M",
       image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
       challenge: "A major iron ore mining operation needed to reduce energy costs and carbon emissions while maintaining 24/7 reliable power supply for critical mining equipment and processing facilities.",
-      solution: "Grid Flow designed and delivered a hybrid renewable energy system combining 50MW solar PV, 20MW battery storage, and intelligent grid integration with existing diesel generation. The system includes advanced SCADA controls and predictive maintenance capabilities.",
+      solution: "GridFlow designed and delivered a hybrid renewable energy system combining 50MW solar PV, 20MW battery storage, and intelligent grid integration with existing diesel generation. The system includes advanced SCADA controls and predictive maintenance capabilities.",
       results: [
         "35% reduction in overall energy costs ($12M annual savings)",
         "60% reduction in carbon emissions (45,000 tonnes CO2/year)",
@@ -34,7 +34,7 @@ const CaseStudies = () => {
       ],
       technologies: ["Solar PV", "Battery Storage", "SCADA", "Grid Integration", "Predictive Maintenance"],
       testimonial: {
-        quote: "Grid Flow delivered an exceptional solution that exceeded our expectations. The hybrid system has dramatically reduced our operating costs while improving our environmental footprint. Their technical expertise and project management was outstanding.",
+        quote: "GridFlow delivered an exceptional solution that exceeded our expectations. The hybrid system has dramatically reduced our operating costs while improving our environmental footprint. Their technical expertise and project management was outstanding.",
         author: "Operations Director",
         company: "Major Mining Corporation"
       }
@@ -59,7 +59,7 @@ const CaseStudies = () => {
       ],
       technologies: ["PLC Programming", "HMI Development", "MES Integration", "Energy Management", "Predictive Analytics"],
       testimonial: {
-        quote: "The transformation of our manufacturing facility by Grid Flow has been remarkable. We've seen significant improvements in efficiency and quality while reducing our environmental impact. The team's expertise in automation is world-class.",
+        quote: "The transformation of our manufacturing facility by GridFlow has been remarkable. We've seen significant improvements in efficiency and quality while reducing our environmental impact. The team's expertise in automation is world-class.",
         author: "Plant Manager",
         company: "Advanced Manufacturing Solutions"
       }
@@ -84,7 +84,7 @@ const CaseStudies = () => {
       ],
       technologies: ["High Voltage Systems", "UPS Design", "Power Quality", "Emergency Systems", "DCIM Integration"],
       testimonial: {
-        quote: "Grid Flow's expertise in critical power systems is unmatched. They delivered a complex upgrade without any service interruption, which was crucial for our business. The system performance has been exceptional.",
+        quote: "GridFlow's expertise in critical power systems is unmatched. They delivered a complex upgrade without any service interruption, which was crucial for our business. The system performance has been exceptional.",
         author: "Chief Technology Officer",
         company: "Metro Data Centers"
       }
@@ -109,7 +109,7 @@ const CaseStudies = () => {
       ],
       technologies: ["Wind Turbine Integration", "HV Substation", "STATCOM", "Grid Codes", "SCADA Systems"],
       testimonial: {
-        quote: "Grid Flow's deep understanding of grid integration challenges was instrumental in our project success. They navigated complex regulatory requirements and delivered exceptional technical solutions that enable optimal wind farm performance.",
+        quote: "GridFlow's deep understanding of grid integration challenges was instrumental in our project success. They navigated complex regulatory requirements and delivered exceptional technical solutions that enable optimal wind farm performance.",
         author: "Project Director",
         company: "GreenPower Energy"
       }
@@ -165,7 +165,7 @@ const CaseStudies = () => {
           {/* Enhanced subheading */}
           <div className="animate-in slide-in-from-bottom-4 duration-1000 delay-500">
             <p className="mt-6 text-xl max-w-3xl text-gray-200 mb-8 leading-relaxed font-medium">
-              Explore how Grid Flow delivers exceptional results for clients across diverse industries with innovative power engineering solutions and proven methodologies.
+              Explore how GridFlow delivers exceptional results for clients across diverse industries with innovative power engineering solutions and proven methodologies.
             </p>
           </div>
           
@@ -333,7 +333,7 @@ const CaseStudies = () => {
             Ready to Be Our Next Success Story?
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-8">
-            Let's discuss how Grid Flow can deliver exceptional results for your next power engineering project.
+            Let's discuss how GridFlow can deliver exceptional results for your next power engineering project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-grid-blue hover:bg-grid-dark-blue text-white px-8 py-3 text-lg">

@@ -38,7 +38,7 @@ const Portfolio = () => {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-grid-dark-blue mb-6">Experience & Portfolio</h2>
             <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-              Founded by industry veterans with 15+ years of proven expertise, our team brings deep power engineering knowledge to deliver projects across various industries and scales. From small commercial installations to large utility-scale infrastructure projects.
+              Founded by industry veterans with extensive proven expertise, our team brings deep power engineering knowledge to deliver projects across various industries and scales. From small commercial installations to large utility-scale infrastructure projects.
             </p>
             <div className="grid grid-cols-2 gap-6 mb-8">
               {stats.map((stat, index) => (
