@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -8,9 +8,26 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
-import { MapPin, Phone, Mail, Clock, MessageSquare, Users, Globe, ArrowRight, Bolt, Headphones, Send, Zap, Target } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageSquare, Users, Globe, ArrowRight, Bolt, Headphones, Send, Zap, Target, Shield } from "lucide-react";
+import emailjs from '@emailjs/browser';
+
+// reCAPTCHA v3 site key
+const RECAPTCHA_SITE_KEY = "6LdDRrIrAAAAAIDwSOpBpgwAaue7tVzN-d40MK4u";
+
+// EmailJS configuration
+const EMAILJS_SERVICE_ID = "service_5qettsv";
+const EMAILJS_TEMPLATE_ID = "template_hl39txj"; 
+const EMAILJS_PUBLIC_KEY = "D1Hja_w6KAtKNGEha";
+
+// Declare grecaptcha for TypeScript
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (callback: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+    };
+  }
+}
 
 const ContactPage = () => {
   const scrollToSection = (sectionId: string) => {
@@ -29,17 +46,130 @@ const ContactPage = () => {
     projectType: "",
     message: ""
   });
+  const [isRecaptchaReady, setIsRecaptchaReady] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: typeof formData) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
-    },
-    onSuccess: (data) => {
+  // Initialize reCAPTCHA and EmailJS
+  useEffect(() => {
+    const initializeRecaptcha = () => {
+      if (window.grecaptcha) {
+        window.grecaptcha.ready(() => {
+          setIsRecaptchaReady(true);
+        });
+      } else {
+        // Retry after a short delay if grecaptcha is not yet loaded
+        setTimeout(initializeRecaptcha, 100);
+      }
+    };
+    
+    // Initialize EmailJS
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+    
+    initializeRecaptcha();
+  }, []);
+
+  // EmailJS send function
+  const sendEmail = async (templateParams: any) => {
+    try {
+      const result = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (isSubmitting) return;
+    
+    // Enhanced validation
+    if (!formData.firstName.trim() || !formData.lastName.trim()) {
       toast({
-        title: "Success!",
-        description: data.message,
+        title: "Missing Information",
+        description: "Please enter your first and last name.",
+        variant: "destructive",
       });
+      return;
+    }
+    
+    if (!validateEmail(formData.email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    if (!formData.projectType) {
+      toast({
+        title: "Project Type Required",
+        description: "Please select a project type to help us serve you better.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    if (!formData.message.trim() || formData.message.trim().length < 10) {
+      toast({
+        title: "Message Too Short",
+        description: "Please provide more details about your project (minimum 10 characters).",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Execute reCAPTCHA v3
+    if (!isRecaptchaReady) {
+      toast({
+        title: "Security Check Loading",
+        description: "Please wait a moment for security verification to load.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Execute reCAPTCHA with 'contact_form' action
+      const recaptchaToken = await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, {
+        action: 'contact_form'
+      });
+
+      // Prepare email template parameters
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        company: formData.company || 'Not specified',
+        project_type: formData.projectType,
+        message: formData.message,
+        to_email: 'admin@gridflow.com.au',
+        reply_to: formData.email,
+        recaptcha_token: recaptchaToken
+      };
+
+      // Send email using EmailJS
+      await sendEmail(templateParams);
+
+      // Success notification
+      toast({
+        title: "Message Sent Successfully! 🎉",
+        description: "Thank you for your inquiry! We'll respond within 24 hours.",
+      });
+
+      // Reset form
       setFormData({
         firstName: "",
         lastName: "",
@@ -48,19 +178,17 @@ const ContactPage = () => {
         projectType: "",
         message: ""
       });
-    },
-    onError: (error) => {
+
+    } catch (error) {
+      console.error('Email send error:', error);
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
+        title: "Failed to Send Message",
+        description: "Please try again or contact us directly at admin@gridflow.com.au",
         variant: "destructive",
       });
-    },
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    contactMutation.mutate(formData);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -377,15 +505,27 @@ const ContactPage = () => {
                         required
                       />
                     </div>
+                    {/* reCAPTCHA Notice */}
+                    <div className="flex items-center justify-center space-x-2 text-xs text-gray-500 mb-4">
+                      <Shield className="h-4 w-4" />
+                      <span>Protected by reCAPTCHA v3</span>
+                      {isRecaptchaReady && <span className="text-green-500">✓</span>}
+                    </div>
+                    
                     <Button
                       type="submit"
                       className="w-full bg-gradient-to-r from-grid-deep-navy to-grid-electric-blue hover:from-grid-electric-blue hover:to-grid-deep-navy text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg"
-                      disabled={contactMutation.isPending}
+                      disabled={isSubmitting || !isRecaptchaReady}
                     >
-                      {contactMutation.isPending ? (
+                      {isSubmitting ? (
                         <>
                           <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
-                          Sending Message...
+                          Sending Email...
+                        </>
+                      ) : !isRecaptchaReady ? (
+                        <>
+                          <Shield className="mr-3 h-5 w-5" />
+                          Loading Security...
                         </>
                       ) : (
                         <>
