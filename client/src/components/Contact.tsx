@@ -211,7 +211,7 @@ const Contact = () => {
                       type="text"
                       value={formData.firstName}
                       onChange={(e) => handleInputChange("firstName", e.target.value)}
-                      className="w-full bg-grid-charcoal/60 border-grid-electric-blue/40 text-white placeholder:text-gray-400 focus:border-grid-electric-blue focus:bg-grid-charcoal/80 transition-all duration-300 rounded-lg"
+                      className="w-full bg-white/90 border-2 border-grid-electric-blue/50 text-grid-deep-navy placeholder:text-gray-500 focus:border-grid-electric-blue focus:bg-white transition-all duration-300 rounded-lg backdrop-blur-sm"
                       placeholder="Your first name"
                       required
                     />
@@ -223,7 +223,7 @@ const Contact = () => {
                       type="text"
                       value={formData.lastName}
                       onChange={(e) => handleInputChange("lastName", e.target.value)}
-                      className="w-full bg-grid-charcoal/60 border-grid-electric-blue/40 text-white placeholder:text-gray-400 focus:border-grid-electric-blue focus:bg-grid-charcoal/80 transition-all duration-300 rounded-lg"
+                      className="w-full bg-white/90 border-2 border-grid-electric-blue/50 text-grid-deep-navy placeholder:text-gray-500 focus:border-grid-electric-blue focus:bg-white transition-all duration-300 rounded-lg backdrop-blur-sm"
                       placeholder="Your last name"
                       required
                     />
@@ -236,16 +236,27 @@ const Contact = () => {
                     type="email"
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
-                    className="w-full bg-grid-charcoal/60 border-grid-electric-blue/40 text-white placeholder:text-gray-400 focus:border-grid-electric-blue focus:bg-grid-charcoal/80 transition-all duration-300 rounded-lg"
+                    className="w-full bg-white/90 border-2 border-grid-electric-blue/50 text-grid-deep-navy placeholder:text-gray-500 focus:border-grid-electric-blue focus:bg-white transition-all duration-300 rounded-lg backdrop-blur-sm"
                     placeholder="your.email@example.com"
                     required
                   />
                 </div>
                 <div>
+                  <Label htmlFor="company" className="block text-sm font-medium text-white mb-2">Company (Optional)</Label>
+                  <Input
+                    id="company"
+                    type="text"
+                    value={formData.company}
+                    onChange={(e) => handleInputChange("company", e.target.value)}
+                    className="w-full bg-white/90 border-2 border-grid-electric-blue/50 text-grid-deep-navy placeholder:text-gray-500 focus:border-grid-electric-blue focus:bg-white transition-all duration-300 rounded-lg backdrop-blur-sm"
+                    placeholder="Your company name"
+                  />
+                </div>
+                <div>
                   <Label htmlFor="projectType" className="block text-sm font-medium text-white mb-2">Project Type</Label>
                   <Select value={formData.projectType} onValueChange={(value) => handleInputChange("projectType", value)}>
-                    <SelectTrigger className="w-full bg-grid-charcoal/60 border-grid-electric-blue/40 text-white focus:border-grid-electric-blue transition-all duration-300 rounded-lg">
-                      <SelectValue placeholder="Select project type" className="text-blue-200" />
+                    <SelectTrigger className="w-full bg-white/90 border-2 border-grid-electric-blue/50 text-grid-deep-navy focus:border-grid-electric-blue transition-all duration-300 rounded-lg backdrop-blur-sm">
+                      <SelectValue placeholder="Select project type" className="text-gray-500" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="power-systems">Power Systems Study</SelectItem>
@@ -266,7 +277,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={(e) => handleInputChange("message", e.target.value)}
                     rows={4}
-                    className="w-full bg-grid-charcoal/60 border-grid-electric-blue/40 text-white placeholder:text-gray-400 focus:border-grid-electric-blue focus:bg-grid-charcoal/80 transition-all duration-300 rounded-lg resize-none"
+                    className="w-full bg-white/90 border-2 border-grid-electric-blue/50 text-grid-deep-navy placeholder:text-gray-500 focus:border-grid-electric-blue focus:bg-white transition-all duration-300 rounded-lg resize-none backdrop-blur-sm"
                     placeholder="Describe your project requirements, timeline, and any specific challenges you're facing..."
                     required
                     minLength={10}
