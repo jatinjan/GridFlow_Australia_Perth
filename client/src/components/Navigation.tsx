@@ -42,7 +42,7 @@ const Navigation = () => {
             </li>
             <li>
               <a
-                href="#services-lines-and-cables-design"
+                href="/#services-lines-and-cables-design"
                 className="relative px-3 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 text-white/90 hover:text-yellow-300 hover:bg-white/5 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10"
                 onClick={(e) => {
                   const event = new Event('forceHighlight');
@@ -55,7 +55,7 @@ const Navigation = () => {
             </li>
             <li>
               <a
-                href="#services-industrial-automation"
+                href="/#services-industrial-automation"
                 className="relative px-3 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 text-white/90 hover:text-yellow-300 hover:bg-white/5 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10"
                 onClick={(e) => {
                   const event = new Event('forceHighlight');
@@ -68,7 +68,7 @@ const Navigation = () => {
             </li>
             <li>
               <a
-                href="#services-construction-support"
+                href="/#services-construction-support"
                 className="relative px-3 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 text-white/90 hover:text-yellow-300 hover:bg-white/5 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10"
                 onClick={(e) => {
                   const event = new Event('forceHighlight');
@@ -150,7 +150,7 @@ const Navigation = () => {
         <div className="lg:hidden border-t border-white/20 bg-black/80 backdrop-blur-md">
           <div className="px-4 pt-2 pb-3 space-y-1">
             <a
-              href="#services-power-systems-design-analysis"
+              href="/#services-power-systems-design-analysis"
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 const event = new Event('forceHighlight');
@@ -162,7 +162,7 @@ const Navigation = () => {
               Power Systems Study
             </a>
             <a
-              href="#services-lines-and-cables-design"
+              href="/#services-lines-and-cables-design"
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 const event = new Event('forceHighlight');
@@ -174,7 +174,7 @@ const Navigation = () => {
               Lines & Cables Design
             </a>
             <a
-              href="#services-industrial-automation"
+              href="/#services-industrial-automation"
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 const event = new Event('forceHighlight');
@@ -186,7 +186,7 @@ const Navigation = () => {
               Industrial Automation
             </a>
             <a
-              href="#services-construction-support"
+              href="/#services-construction-support"
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 const event = new Event('forceHighlight');
@@ -206,7 +206,7 @@ const Navigation = () => {
               </span>
             </Link>
             <a
-              href="#industries"
+              href="/#industries"
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 const element = document.getElementById('industries');
