@@ -29,7 +29,7 @@ const Navigation = () => {
           <ul className="flex items-center space-x-6 xl:space-x-8 list-none text-sm xl:text-base font-semibold">
             <li>
               <a
-                href="#services-power-systems-design-analysis"
+                href="/#services-power-systems-design-analysis"
                 className="relative px-3 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 text-white/90 hover:text-yellow-300 hover:bg-white/5 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10"
                 onClick={(e) => {
                   const event = new Event('forceHighlight');
