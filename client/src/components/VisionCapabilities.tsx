@@ -97,7 +97,7 @@ const VisionCapabilities = () => {
                 alt="Modern electrical control room with advanced monitoring and power grid management systems"
                 className="w-full h-auto"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-grid-blue/20 to-transparent" />
+              {/* <div className="absolute inset-0 bg-gradient-to-t from-grid-blue/20 to-transparent" /> */}
             </div>
           </div>
         </div>

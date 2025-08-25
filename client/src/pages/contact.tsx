@@ -159,7 +159,7 @@ const ContactPage = () => {
 
           {/* Main headline with better contrast */}
           <div className="animate-in slide-in-from-bottom-6 duration-1000 delay-300">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 relative">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 relative">
               <span className="text-white drop-shadow-2xl">Let's Build the</span>
               <span className="block text-grid-vibrant-yellow mt-2 relative drop-shadow-2xl">
                 Future Together
@@ -198,11 +198,11 @@ const ContactPage = () => {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce z-30">
+        <div className="absolute bottom-0 md:bottom-8 left-0 right-0 flex justify-center text-white animate-bounce z-30">
           <div className="flex flex-col items-center">
             <span className="text-sm mb-3 text-white font-medium drop-shadow-lg">Scroll to explore</span>
-            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center shadow-lg">
-              <div className="w-1 h-3 bg-grid-vibrant-yellow rounded-full mt-2 animate-pulse shadow-sm" />
+            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center items-center shadow-lg">
+              <div className="w-1 h-3 bg-grid-vibrant-yellow rounded-full animate-pulse shadow-sm" />
             </div>
           </div>
         </div>
