@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -8,7 +8,20 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import { MapPin, Phone, Mail, Clock, AlertTriangle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, AlertTriangle, Shield } from "lucide-react";
+
+// reCAPTCHA v3 site key - Replace with your actual site key
+const RECAPTCHA_SITE_KEY = "6LdDRrIrAAAAAIDwSOpBpgwAaue7tVzN-d40MK4u";
+
+// Declare grecaptcha for TypeScript
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (callback: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+    };
+  }
+}
 
 const Contact = () => {
   const { toast } = useToast();
@@ -20,9 +33,26 @@ const Contact = () => {
     projectType: "",
     message: ""
   });
+  const [isRecaptchaReady, setIsRecaptchaReady] = useState(false);
+
+  // Initialize reCAPTCHA
+  useEffect(() => {
+    const initializeRecaptcha = () => {
+      if (window.grecaptcha) {
+        window.grecaptcha.ready(() => {
+          setIsRecaptchaReady(true);
+        });
+      } else {
+        // Retry after a short delay if grecaptcha is not yet loaded
+        setTimeout(initializeRecaptcha, 100);
+      }
+    };
+    
+    initializeRecaptcha();
+  }, []);
 
   const contactMutation = useMutation({
-    mutationFn: async (data: typeof formData) => {
+    mutationFn: async (data: typeof formData & { recaptchaToken: string }) => {
       const response = await apiRequest("POST", "/api/contact", data);
       return response.json();
     },
@@ -54,7 +84,7 @@ const Contact = () => {
     return emailRegex.test(email);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Enhanced validation
@@ -93,8 +123,35 @@ const Contact = () => {
       });
       return;
     }
-    
-    contactMutation.mutate(formData);
+
+    // Execute reCAPTCHA v3
+    if (!isRecaptchaReady) {
+      toast({
+        title: "Security Check Loading",
+        description: "Please wait a moment for security verification to load.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      // Execute reCAPTCHA with 'contact_form' action
+      const recaptchaToken = await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, {
+        action: 'contact_form'
+      });
+
+      // Submit form with reCAPTCHA token
+      contactMutation.mutate({
+        ...formData,
+        recaptchaToken
+      });
+    } catch (error) {
+      toast({
+        title: "Security Verification Failed",
+        description: "Please refresh the page and try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -215,12 +272,31 @@ const Contact = () => {
                     minLength={10}
                   />
                 </div>
+                {/* reCAPTCHA Notice */}
+                <div className="flex items-center justify-center space-x-2 text-xs text-gray-400 mb-4">
+                  <Shield className="h-4 w-4" />
+                  <span>Protected by reCAPTCHA v3</span>
+                  {isRecaptchaReady && <span className="text-green-400">✓</span>}
+                </div>
+                
                 <Button 
                   type="submit" 
                   className="w-full bg-gradient-to-r from-grid-vibrant-yellow to-yellow-400 hover:from-yellow-300 hover:to-yellow-500 text-grid-deep-navy py-4 font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-yellow-300/50"
-                  disabled={contactMutation.isPending}
+                  disabled={contactMutation.isPending || !isRecaptchaReady}
                 >
-                  {contactMutation.isPending ? "Sending..." : "Send Message"}
+                  {contactMutation.isPending ? (
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 border-2 border-grid-deep-navy border-t-transparent rounded-full animate-spin"></div>
+                      <span>Sending...</span>
+                    </div>
+                  ) : !isRecaptchaReady ? (
+                    <div className="flex items-center space-x-2">
+                      <Shield className="h-4 w-4" />
+                      <span>Loading Security...</span>
+                    </div>
+                  ) : (
+                    "Send Message"
+                  )}
                 </Button>
               </form>
             </CardContent>

@@ -4,12 +4,74 @@ import { storage } from "./storage";
 import { insertContactInquirySchema } from "@shared/schema";
 import { z } from "zod";
 
+// reCAPTCHA v3 secret key - Replace with your actual secret key
+const RECAPTCHA_SECRET_KEY = "6LdDRrIrAAAAAFlbVes7115xgOp2sW3LPSDN1oCV";
+
+// Function to verify reCAPTCHA token
+async function verifyRecaptcha(token: string, remoteIp: string): Promise<{ success: boolean; score?: number; action?: string }> {
+  try {
+    const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        secret: RECAPTCHA_SECRET_KEY,
+        response: token,
+        remoteip: remoteIp,
+      }),
+    });
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error("reCAPTCHA verification error:", error);
+    return { success: false };
+  }
+}
+
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission
   app.post("/api/contact", async (req, res) => {
     try {
       const validatedData = insertContactInquirySchema.parse(req.body);
-      const inquiry = await storage.createContactInquiry(validatedData);
+      const { recaptchaToken, ...contactData } = validatedData;
+      
+      // Get client IP address
+      const clientIp = req.headers['x-forwarded-for']?.toString().split(',')[0] || 
+                      req.headers['x-real-ip']?.toString() || 
+                      req.connection.remoteAddress || 
+                      req.ip || 
+                      '';
+
+      // Verify reCAPTCHA token
+      const recaptchaResult = await verifyRecaptcha(recaptchaToken, clientIp);
+      
+      if (!recaptchaResult.success) {
+        return res.status(400).json({ 
+          success: false, 
+          message: "reCAPTCHA verification failed. Please try again." 
+        });
+      }
+
+      // Check reCAPTCHA score (optional - you can adjust the threshold)
+      const scoreThreshold = 0.5;
+      if (recaptchaResult.score !== undefined && recaptchaResult.score < scoreThreshold) {
+        console.log(`Low reCAPTCHA score: ${recaptchaResult.score} for IP: ${clientIp}`);
+        // You can choose to reject low scores or flag them for manual review
+        // For now, we'll allow it but log it
+      }
+
+      // Verify the action name matches what we expect
+      if (recaptchaResult.action !== 'contact_form') {
+        return res.status(400).json({ 
+          success: false, 
+          message: "Invalid reCAPTCHA action." 
+        });
+      }
+
+      // Create the contact inquiry (without the reCAPTCHA token)
+      const inquiry = await storage.createContactInquiry(contactData);
       
       res.json({ 
         success: true, 
@@ -24,6 +86,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           errors: error.errors 
         });
       } else {
+        console.error("Contact form error:", error);
         res.status(500).json({ 
           success: false, 
           message: "Internal server error" 

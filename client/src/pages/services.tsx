@@ -146,26 +146,26 @@ const Services = () => {
         "Performance guarantees & warranties"
       ]
     }, */
-    {
-      icon: Bolt,
-      title: "Power Systems Study & Feasibility Analysis",
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      description: "Comprehensive power system design and analysis services from feasibility studies to detailed engineering. Our certified engineers deliver optimized solutions using advanced modeling software and deep understanding of Australian grid codes.",
-      capabilities: [
-        "Load flow studies using ETAP, PSS®E, and PowerFactory",
-        "Short circuit & arc flash analysis per IEEE/IEC standards",
-        "Transient stability and harmonic analysis",
-        "Protection coordination studies (11kV to 350kV)",
-        "Power quality assessment and mitigation design",
-        "Grid code compliance verification and modeling"
-      ],
-      benefits: [
-        "99.9%+ system reliability through optimized design",
-        "30% reduction in protection coordination time",
-        "Full AEMO and utility compliance guaranteed",
-        "15% improvement in power factor and efficiency"
-      ]
-    },
+    // {
+    //   icon: Bolt,
+    //   title: "Power Systems Study & Feasibility Analysis",
+    //   image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+    //   description: "Comprehensive power system design and analysis services from feasibility studies to detailed engineering. Our certified engineers deliver optimized solutions using advanced modeling software and deep understanding of Australian grid codes.",
+    //   capabilities: [
+    //     "Load flow studies using ETAP, PSS®E, and PowerFactory",
+    //     "Short circuit & arc flash analysis per IEEE/IEC standards",
+    //     "Transient stability and harmonic analysis",
+    //     "Protection coordination studies (11kV to 350kV)",
+    //     "Power quality assessment and mitigation design",
+    //     "Grid code compliance verification and modeling"
+    //   ],
+    //   benefits: [
+    //     "99.9%+ system reliability through optimized design",
+    //     "30% reduction in protection coordination time",
+    //     "Full AEMO and utility compliance guaranteed",
+    //     "15% improvement in power factor and efficiency"
+    //   ]
+    // },
     {
       icon: Cable,
       title: "Lines and Cables Design",

@@ -1,11 +1,14 @@
 import { type User, type InsertUser, type ContactInquiry, type InsertContactInquiry } from "@shared/schema";
 import { randomUUID } from "crypto";
 
+// Contact inquiry without reCAPTCHA token for storage
+type ContactInquiryData = Omit<InsertContactInquiry, 'recaptchaToken'>;
+
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
-  createContactInquiry(inquiry: InsertContactInquiry): Promise<ContactInquiry>;
+  createContactInquiry(inquiry: ContactInquiryData): Promise<ContactInquiry>;
   getContactInquiries(): Promise<ContactInquiry[]>;
 }
 
@@ -35,12 +38,15 @@ export class MemStorage implements IStorage {
     return user;
   }
 
-  async createContactInquiry(insertInquiry: InsertContactInquiry): Promise<ContactInquiry> {
+  async createContactInquiry(insertInquiry: ContactInquiryData): Promise<ContactInquiry> {
     const id = randomUUID();
+    const inquiryData = insertInquiry;
     const inquiry: ContactInquiry = {
-      ...insertInquiry,
+      ...inquiryData,
       id,
       createdAt: new Date(),
+      company: inquiryData.company ?? null,
+      projectType: inquiryData.projectType ?? null,
     };
     this.contactInquiries.set(id, inquiry);
     return inquiry;

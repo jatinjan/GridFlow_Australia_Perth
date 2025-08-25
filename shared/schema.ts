@@ -28,6 +28,8 @@ export const insertUserSchema = createInsertSchema(users).pick({
 export const insertContactInquirySchema = createInsertSchema(contactInquiries).omit({
   id: true,
   createdAt: true,
+}).extend({
+  recaptchaToken: z.string().min(1, "reCAPTCHA token is required"),
 });
 
 export type InsertUser = z.infer<typeof insertUserSchema>;

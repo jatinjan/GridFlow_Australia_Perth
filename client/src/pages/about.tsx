@@ -76,8 +76,8 @@ const About = () => {
           
           {/* Main headline with premium typography and animations */}
           <div className="animate-in slide-in-from-bottom-6 duration-1000 delay-300">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl md:mb-6 relative text-white">
-              Powering Australia's Future—
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl md:mb-6 relative text-white">
+              Powering Australia's Future —
               <span className="text-yellow-400 relative inline-block"> With Fresh Innovation
                 {/* Subtle glow effect */}
                 <div className="absolute inset-0 blur-sm text-yellow-400 opacity-30 animate-pulse"></div>
@@ -114,7 +114,7 @@ const About = () => {
         </div>
         
         {/* Scroll indicator - bottom center */}
-        <div className="absolute bottom-6 sm:bottom-8 lg:bottom-10 inset-x-0 text-white animate-bounce z-30">
+        <div className="absolute bottom-0 sm:bottom-8 lg:bottom-10 inset-x-0 text-white animate-bounce z-30">
         <div className="flex flex-col items-center justify-center text-center w-full">
           <span className="text-sm sm:text-base mb-3 sm:mb-4 text-gray-200 font-medium drop-shadow-lg">Scroll to explore</span>
           <div className="w-7 h-12 sm:w-8 sm:h-14 border-2 border-gray-200 rounded-full flex justify-center bg-black/20 backdrop-blur-sm">
