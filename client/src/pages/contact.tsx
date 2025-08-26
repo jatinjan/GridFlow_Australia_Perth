@@ -37,6 +37,20 @@ const ContactPage = () => {
     }
   };
 
+  // Handle hash fragments on page load
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      // Wait for the page to load completely before scrolling
+      const timer = setTimeout(() => {
+        const sectionId = hash.substring(1); // Remove the '#' character
+        scrollToSection(sectionId);
+      }, 100);
+      
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     firstName: "",
@@ -380,7 +394,15 @@ const ContactPage = () => {
                         <span className="break-all">admin@gridflow.com.au</span>
                       </div>
                     </div>
-                    <Button className={`w-full sm:w-auto bg-gradient-to-r ${option.color} hover:shadow-lg text-white font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-xl transition-all duration-300 group-hover:scale-105 border-0 text-sm sm:text-base`}>
+                    <Button
+                      className={`w-full sm:w-auto bg-gradient-to-r ${option.color} hover:shadow-lg text-white font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-xl transition-all duration-300 group-hover:scale-105 border-0 text-sm sm:text-base`}
+                      onClick={() => {
+                        const formSection = document.getElementById('contact-form');
+                        if (formSection) {
+                          formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
+                    >
                       {option.action}
                       <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform" />
                     </Button>

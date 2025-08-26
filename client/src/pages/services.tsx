@@ -8,6 +8,7 @@ import { Check, ArrowRight, Zap, Settings, Leaf, Shield, Wrench, Users, Bolt, Ca
 import { useState } from "react";
 import linesCablesImage from "@assets/generated_images/transmission_lines_cable_infrastructure_702654b7.png";
 import maintenanceSupportImage from "@assets/generated_images/electrical_maintenance_support_services_8b02cc3f.png";
+import { Link } from "wouter";
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState<any>(null);
@@ -330,14 +331,15 @@ const Services = () => {
                   Explore All Services
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button
-                  onClick={() => scrollToSection('contact')}
-                  size="lg"
-                  variant="outline"
-                  className="px-8 py-4 border-2 border-white bg-transparent !text-white hover:!bg-white hover:!text-blue-900 transition-all duration-300 font-semibold"
-                >
-                  Get Technical Consultation
-                </Button>
+                <Link href="/contact#contact-form">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="px-8 py-4 border-2 border-white bg-transparent !text-white hover:!bg-white hover:!text-blue-900 transition-all duration-300 font-semibold"
+                  >
+                    Get Technical Consultation
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -704,7 +706,7 @@ const Services = () => {
                     <Button
                       onClick={() => {
                         setIsModalOpen(false);
-                        window.location.href = '/contact';
+                        window.location.href = '/contact#contact-form';
                       }}
                       className="w-full bg-blue-600 hover:bg-blue-700 text-white text-base py-4 font-semibold"
                     >
