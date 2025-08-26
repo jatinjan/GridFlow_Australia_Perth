@@ -35,7 +35,11 @@ const Navigation = () => {
               <img
                 src="/logo-white-bg.png"
                 alt="GridFlow - Power Engineering Solutions"
-                className="h-10 md:h-12 lg:h-14 w-auto transition-all duration-300 hover:scale-[1.02]"
+                className={`w-auto transition-all duration-300 hover:scale-[1.02] ${
+                  isScrolled 
+                    ? 'h-12 md:h-14 lg:h-16' 
+                    : 'h-16 md:h-20 lg:h-24'
+                }`}
                 onError={(e) => {
                   // Fallback to original logo if the new one fails to load
                   (e.target as HTMLImageElement).src = "/logo.png";
