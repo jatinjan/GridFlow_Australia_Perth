@@ -37,6 +37,11 @@ const ContactPage = () => {
     }
   };
 
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   // Handle hash fragments on page load
   useEffect(() => {
     const hash = window.location.hash;
@@ -423,245 +428,232 @@ const ContactPage = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 sm:mb-16 text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-grid-vibrant-yellow text-grid-deep-navy rounded-full text-sm font-semibold mb-4 sm:mb-6 shadow-lg">
+          {/* Header Section */}
+          <div className="mb-16 sm:mb-20 text-center">
+            <div className="inline-flex items-center px-6 py-3 bg-grid-vibrant-yellow text-grid-deep-navy rounded-full text-sm font-bold mb-6 sm:mb-8 shadow-lg transform hover:scale-105 transition-transform">
               <Send className="h-4 w-4 mr-2" />
               Ready to Connect
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 tracking-tight px-2">
-              Let's Start the <span className="text-grid-vibrant-yellow">Conversation</span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 tracking-tight leading-tight">
+              Let's Start the <span className="text-grid-vibrant-yellow bg-gradient-to-r from-grid-vibrant-yellow to-yellow-400 bg-clip-text text-transparent">Conversation</span>
             </h2>
-            <p className="text-gray-200 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-gray-300 text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed font-medium">
               Fill out the form below or reach out directly. Our team of experts will get back to you within 24 hours.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-12">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-12">
             {/* Contact Form */}
-            <div className="lg:col-span-3">
-              <Card className="bg-white rounded-3xl shadow-2xl border-0 overflow-hidden">
-                <CardHeader className="bg-gradient-to-r from-grid-deep-navy via-grid-charcoal to-grid-deep-navy text-white p-6 sm:p-8">
-                  <CardTitle className="text-xl sm:text-2xl font-bold flex items-center text-white">
-                    <MessageSquare className="h-5 w-5 sm:h-6 sm:w-6 mr-2 sm:mr-3 text-white" />
+            <div className="xl:col-span-8">
+              <Card className="bg-white rounded-3xl shadow-2xl border-0 overflow-hidden backdrop-blur-sm">
+                <CardHeader className="bg-gradient-to-r from-grid-deep-navy via-slate-800 to-grid-deep-navy text-white p-8">
+                  <CardTitle className="text-2xl sm:text-3xl font-bold flex items-center text-white mb-2">
+                    <MessageSquare className="h-6 w-6 sm:h-7 sm:w-7 mr-3 text-grid-vibrant-yellow" />
                     Send Us a Message
                   </CardTitle>
-                  <p className="text-gray-200 mt-2 font-medium text-sm sm:text-base">We'll respond within 24 hours</p>
+                  <p className="text-gray-200 font-medium text-base">We'll respond within 24 hours with a detailed proposal</p>
                 </CardHeader>
-                <CardContent className="p-6 sm:p-8">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <CardContent className="p-8">
+                  <form onSubmit={handleSubmit} className="space-y-8">
+                    {/* Personal Information Section */}
+                    <div className="space-y-6">
+                      <div className="border-l-4 border-grid-electric-blue pl-4">
+                        <h3 className="text-lg font-bold text-grid-deep-navy mb-1">Personal Information</h3>
+                        <p className="text-gray-600 text-sm">Tell us about yourself</p>
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <Label htmlFor="firstName" className="text-sm font-semibold text-grid-deep-navy flex items-center">
+                            First Name <span className="text-red-500 ml-1">*</span>
+                          </Label>
+                          <Input
+                            id="firstName"
+                            type="text"
+                            value={formData.firstName}
+                            onChange={(e) => handleInputChange("firstName", e.target.value)}
+                            className="w-full h-14 border-2 border-gray-200 hover:border-gray-300 focus:border-grid-electric-blue focus:ring-2 focus:ring-grid-electric-blue/20 rounded-xl transition-all text-base"
+                            placeholder="John"
+                            required
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="lastName" className="text-sm font-semibold text-grid-deep-navy flex items-center">
+                            Last Name <span className="text-red-500 ml-1">*</span>
+                          </Label>
+                          <Input
+                            id="lastName"
+                            type="text"
+                            value={formData.lastName}
+                            onChange={(e) => handleInputChange("lastName", e.target.value)}
+                            className="w-full h-14 border-2 border-gray-200 hover:border-gray-300 focus:border-grid-electric-blue focus:ring-2 focus:ring-grid-electric-blue/20 rounded-xl transition-all text-base"
+                            placeholder="Doe"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <Label htmlFor="email" className="text-sm font-semibold text-grid-deep-navy flex items-center">
+                            Email Address <span className="text-red-500 ml-1">*</span>
+                          </Label>
+                          <Input
+                            id="email"
+                            type="email"
+                            value={formData.email}
+                            onChange={(e) => handleInputChange("email", e.target.value)}
+                            className="w-full h-14 border-2 border-gray-200 hover:border-gray-300 focus:border-grid-electric-blue focus:ring-2 focus:ring-grid-electric-blue/20 rounded-xl transition-all text-base"
+                            placeholder="john.doe@company.com"
+                            required
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="company" className="text-sm font-semibold text-grid-deep-navy">Company / Organization</Label>
+                          <Input
+                            id="company"
+                            type="text"
+                            value={formData.company}
+                            onChange={(e) => handleInputChange("company", e.target.value)}
+                            className="w-full h-14 border-2 border-gray-200 hover:border-gray-300 focus:border-grid-electric-blue focus:ring-2 focus:ring-grid-electric-blue/20 rounded-xl transition-all text-base"
+                            placeholder="Your Company Name"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Project Information Section */}
+                    <div className="space-y-6">
+                      <div className="border-l-4 border-grid-vibrant-yellow pl-4">
+                        <h3 className="text-lg font-bold text-grid-deep-navy mb-1">Project Information</h3>
+                        <p className="text-gray-600 text-sm">Help us understand your needs</p>
+                      </div>
                       <div className="space-y-2">
-                        <Label htmlFor="firstName" className="text-sm font-semibold text-grid-deep-navy">First Name *</Label>
-                        <Input
-                          id="firstName"
-                          type="text"
-                          value={formData.firstName}
-                          onChange={(e) => handleInputChange("firstName", e.target.value)}
-                          className="w-full h-12 border-2 border-gray-200 focus:border-grid-electric-blue focus:ring-2 focus:ring-grid-electric-blue/20 rounded-xl transition-all"
-                          placeholder="John"
+                        <Label htmlFor="projectType" className="text-sm font-semibold text-grid-deep-navy">Project Type</Label>
+                        <Select value={formData.projectType} onValueChange={(value) => handleInputChange("projectType", value)}>
+                          <SelectTrigger className="w-full h-14 border-2 border-gray-200 hover:border-gray-300 focus:border-grid-electric-blue focus:ring-2 focus:ring-grid-electric-blue/20 rounded-xl transition-all text-base">
+                            <SelectValue placeholder="Select your project type" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="power-systems-study">Power Systems Study & Feasibility Analysis</SelectItem>
+                            <SelectItem value="lines-cables-design">Lines and Cables Design</SelectItem>
+                            <SelectItem value="earthing-lightning">Earthing & Lightning Protection</SelectItem>
+                            <SelectItem value="industrial-automation">Industrial Automation</SelectItem>
+                            <SelectItem value="renewable-energy">Renewable Energy Solutions</SelectItem>
+                            <SelectItem value="surveying">Surveying</SelectItem>
+                            <SelectItem value="power-safety-compliance">Power Safety & Compliance</SelectItem>
+                            <SelectItem value="construction-support">Construction Support</SelectItem>
+                            <SelectItem value="maintenance-support">Maintenance & Support</SelectItem>
+                            <SelectItem value="other">Other</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="message" className="text-sm font-semibold text-grid-deep-navy flex items-center">
+                          Project Details <span className="text-red-500 ml-1">*</span>
+                        </Label>
+                        <Textarea
+                          id="message"
+                          value={formData.message}
+                          onChange={(e) => handleInputChange("message", e.target.value)}
+                          rows={6}
+                          className="w-full border-2 border-gray-200 hover:border-gray-300 focus:border-grid-electric-blue focus:ring-2 focus:ring-grid-electric-blue/20 rounded-xl transition-all resize-none text-base leading-relaxed"
+                          placeholder="Tell us about your project requirements, timeline, budget, and any specific challenges you're facing. The more details you provide, the better we can assist you."
                           required
                         />
                       </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="lastName" className="text-sm font-semibold text-grid-deep-navy">Last Name *</Label>
-                        <Input
-                          id="lastName"
-                          type="text"
-                          value={formData.lastName}
-                          onChange={(e) => handleInputChange("lastName", e.target.value)}
-                          className="w-full h-12 border-2 border-gray-200 focus:border-grid-electric-blue focus:ring-2 focus:ring-grid-electric-blue/20 rounded-xl transition-all"
-                          placeholder="Doe"
-                          required
-                        />
+                    </div>
+
+                    {/* Security & Submit Section */}
+                    <div className="space-y-6 pt-4 border-t border-gray-100">
+                      <div className="flex items-center justify-center space-x-2 text-sm text-gray-500">
+                        <Shield className="h-4 w-4" />
+                        <span>Protected by reCAPTCHA v3</span>
+                        {isRecaptchaReady && <span className="text-green-500 font-medium">✓ Ready</span>}
                       </div>
+                      
+                      <Button
+                        type="submit"
+                        className="w-full bg-gradient-to-r from-grid-deep-navy to-grid-electric-blue hover:from-grid-electric-blue hover:to-grid-deep-navy text-white font-bold py-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 text-lg transform hover:scale-[1.02]"
+                        disabled={isSubmitting || !isRecaptchaReady}
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
+                            Sending Message...
+                          </>
+                        ) : !isRecaptchaReady ? (
+                          <>
+                            <Shield className="mr-3 h-5 w-5" />
+                            Loading Security...
+                          </>
+                        ) : (
+                          <>
+                            <Send className="mr-3 h-5 w-5" />
+                            Send Message & Get Quote
+                          </>
+                        )}
+                      </Button>
                     </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email" className="text-sm font-semibold text-grid-deep-navy">Email Address *</Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => handleInputChange("email", e.target.value)}
-                        className="w-full h-12 border-2 border-gray-200 focus:border-grid-electric-blue focus:ring-2 focus:ring-grid-electric-blue/20 rounded-xl transition-all"
-                        placeholder="john.doe@company.com"
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="company" className="text-sm font-semibold text-grid-deep-navy">Company</Label>
-                      <Input
-                        id="company"
-                        type="text"
-                        value={formData.company}
-                        onChange={(e) => handleInputChange("company", e.target.value)}
-                        className="w-full h-12 border-2 border-gray-200 focus:border-grid-electric-blue focus:ring-2 focus:ring-grid-electric-blue/20 rounded-xl transition-all"
-                        placeholder="Your Company Name"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="projectType" className="text-sm font-semibold text-grid-deep-navy">Project Type</Label>
-                      <Select value={formData.projectType} onValueChange={(value) => handleInputChange("projectType", value)}>
-                        <SelectTrigger className="w-full h-12 border-2 border-gray-200 focus:border-grid-electric-blue focus:ring-2 focus:ring-grid-electric-blue/20 rounded-xl transition-all">
-                          <SelectValue placeholder="Select your project type" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="power-systems">Power Systems Engineering</SelectItem>
-                          <SelectItem value="renewable-energy">Renewable Energy Integration</SelectItem>
-                          <SelectItem value="industrial-automation">Industrial Automation</SelectItem>
-                          <SelectItem value="electrical-safety">Electrical Safety & Compliance</SelectItem>
-                          <SelectItem value="maintenance">Maintenance & Asset Management</SelectItem>
-                          <SelectItem value="consulting">Engineering Consulting</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="message" className="text-sm font-semibold text-grid-deep-navy">Project Details *</Label>
-                      <Textarea
-                        id="message"
-                        value={formData.message}
-                        onChange={(e) => handleInputChange("message", e.target.value)}
-                        rows={5}
-                        className="w-full border-2 border-gray-200 focus:border-grid-electric-blue focus:ring-2 focus:ring-grid-electric-blue/20 rounded-xl transition-all resize-none"
-                        placeholder="Tell us about your project requirements, timeline, budget, and any specific challenges you're facing..."
-                        required
-                      />
-                    </div>
-                    {/* reCAPTCHA Notice */}
-                    <div className="flex items-center justify-center space-x-2 text-xs text-gray-500 mb-4">
-                      <Shield className="h-4 w-4" />
-                      <span>Protected by reCAPTCHA v3</span>
-                      {isRecaptchaReady && <span className="text-green-500">✓</span>}
-                    </div>
-                    
-                    <Button
-                      type="submit"
-                      className="w-full bg-gradient-to-r from-grid-deep-navy to-grid-electric-blue hover:from-grid-electric-blue hover:to-grid-deep-navy text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg"
-                      disabled={isSubmitting || !isRecaptchaReady}
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
-                          Sending Email...
-                        </>
-                      ) : !isRecaptchaReady ? (
-                        <>
-                          <Shield className="mr-3 h-5 w-5" />
-                          Loading Security...
-                        </>
-                      ) : (
-                        <>
-                          <Send className="mr-3 h-5 w-5" />
-                          Send Message
-                        </>
-                      )}
-                    </Button>
                   </form>
                 </CardContent>
               </Card>
             </div>
 
-            {/* Contact Information */}
-            <div className="lg:col-span-2 space-y-6 sm:space-y-8">
-              <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 tracking-tight px-2 lg:px-0">Get in Touch</h3>
+            {/* Contact Information Sidebar */}
+            <div className="xl:col-span-4">
+              <div className="sticky top-8 space-y-6">
+                <div className="text-center xl:text-left">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 tracking-tight">Get in Touch</h3>
+                  <p className="text-gray-300 text-base leading-relaxed mb-8">
+                    Prefer to reach out directly? We're here to help with any questions about your power engineering needs.
+                  </p>
+                </div>
 
                 {/* Email Card */}
-                <Card className="bg-white/95 backdrop-blur-sm rounded-2xl border-0 mb-4 sm:mb-6 shadow-xl">
-                  <CardContent className="p-4 sm:p-6">
+                <Card className="bg-white/95 backdrop-blur-sm rounded-2xl border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                  <CardContent className="p-6">
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-grid-electric-blue to-blue-600 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
-                        <Mail className="h-5 w-5 sm:h-7 sm:w-7 text-white" />
+                      <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-grid-electric-blue to-blue-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                        <Mail className="h-7 w-7 text-white" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-base sm:text-lg font-bold text-grid-deep-navy mb-1 sm:mb-2">Email Us</h4>
-                        <p className="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">Quick response guaranteed</p>
-                        <div className="inline-flex items-center px-2 sm:px-3 py-1 bg-gray-100 rounded-full text-xs sm:text-sm text-gray-700">
-                          <Mail className="h-3 w-3 mr-1 sm:mr-2" />
-                          <span className="break-all">admin@gridflow.com.au</span>
+                        <h4 className="text-lg font-bold text-grid-deep-navy mb-2">Email Us</h4>
+                        <p className="text-gray-600 text-sm mb-3 leading-relaxed">Quick response guaranteed within 24 hours</p>
+                        <div className="inline-flex items-center px-3 py-2 bg-gray-100 rounded-full text-sm text-gray-700 hover:bg-gray-200 transition-colors">
+                          <Mail className="h-3 w-3 mr-2" />
+                          <span className="break-all font-medium">admin@gridflow.com.au</span>
                         </div>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                {/* Phone Card */}
-                <Card className="bg-white/95 backdrop-blur-sm rounded-2xl border-0 mb-4 sm:mb-6 shadow-xl">
-                  <CardContent className="p-4 sm:p-6">
+                {/* Response Time Card */}
+                <Card className="bg-white/95 backdrop-blur-sm rounded-2xl border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                  <CardContent className="p-6">
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
-                        <Phone className="h-5 w-5 sm:h-7 sm:w-7 text-white" />
+                      <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-grid-deep-navy to-slate-700 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                        <Zap className="h-7 w-7 text-grid-vibrant-yellow" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-base sm:text-lg font-bold text-grid-deep-navy mb-1 sm:mb-2">Call Us</h4>
-                        <p className="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">Speak directly with our team</p>
-                        <div className="space-y-1 sm:space-y-2">
-                          <div className="inline-flex items-center px-2 sm:px-3 py-1 bg-gray-100 rounded-full text-xs sm:text-sm text-gray-700">
-                            <Phone className="h-3 w-3 mr-1 sm:mr-2" />
-                            +61 8 6365 9012
-                          </div>
-                          <p className="text-xs text-gray-500">Perth Office</p>
-                        </div>
+                        <h4 className="text-lg font-bold text-grid-deep-navy mb-2">Quick Response</h4>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          We typically respond within <span className="font-semibold text-grid-deep-navy">2-4 hours</span> during business hours with detailed information about your project.
+                        </p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                {/* Business Hours Card */}
-                <Card className="bg-white/95 backdrop-blur-sm rounded-2xl border-0 shadow-xl mb-4 sm:mb-6">
-                  <CardContent className="p-4 sm:p-6">
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
-                        <Clock className="h-5 w-5 sm:h-7 sm:w-7 text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-base sm:text-lg font-bold text-grid-deep-navy mb-1 sm:mb-2">Business Hours</h4>
-                        <div className="text-gray-600 text-xs sm:text-sm space-y-1">
-                          <p className="font-medium">Monday - Friday</p>
-                          <p>8:00 AM - 6:00 PM AWST</p>
-                          <div className="inline-flex items-center px-2 sm:px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-medium mt-1 sm:mt-2">
-                            <div className="w-2 h-2 bg-emerald-500 rounded-full mr-1 sm:mr-2 animate-pulse"></div>
-                            Available Now
-                          </div>
-                        </div>
-                      </div>
+                {/* Trust Indicator */}
+                <div className="bg-gradient-to-r from-grid-deep-navy/10 to-grid-electric-blue/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                  <div className="text-center">
+                    <div className="inline-flex items-center justify-center w-12 h-12 bg-grid-vibrant-yellow rounded-full mb-4">
+                      <Users className="h-6 w-6 text-grid-deep-navy" />
                     </div>
-                  </CardContent>
-                </Card>
-
-                {/* Office Location */}
-                <Card className="bg-white/95 backdrop-blur-sm rounded-2xl border-0 shadow-xl mb-4 sm:mb-6">
-                  <CardContent className="p-4 sm:p-6">
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
-                        <MapPin className="h-5 w-5 sm:h-7 sm:w-7 text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-base sm:text-lg font-bold text-grid-deep-navy mb-1 sm:mb-2">Perth Office</h4>
-                        <div className="text-gray-600 text-xs sm:text-sm space-y-1">
-                          <p>Central Park</p>
-                          <p>152-158 St Georges Terrace</p>
-                          <p>Perth WA 6000</p>
-                          <div className="inline-flex items-center px-2 sm:px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium mt-1 sm:mt-2">
-                            <MapPin className="w-2 h-2 mr-1 sm:mr-2" />
-                            Headquarters
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Response Time */}
-                <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-xl">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-grid-deep-navy rounded-xl flex items-center justify-center mr-3 sm:mr-4">
-                      <Zap className="h-5 w-5 sm:h-7 sm:w-7 text-grid-vibrant-yellow" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-base sm:text-lg font-bold text-grid-deep-navy mb-1">Quick Response</h4>
-                      <p className="text-grid-deep-navy text-xs sm:text-sm font-medium">We typically respond within 2-4 hours during business hours</p>
-                    </div>
+                    <h4 className="text-lg font-bold text-white mb-2">Trusted by Industry Leaders</h4>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      Join hundreds of satisfied clients across Australia who trust GridFlow for their power engineering solutions.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -669,114 +661,6 @@ const ContactPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Professional CTA Section */}
-      <section className="py-20 sm:py-32 bg-white relative overflow-hidden">
-        {/* Subtle background pattern */}
-        <div className="absolute inset-0 opacity-[0.02]">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Ccircle cx='40' cy='40' r='0.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '80px 80px'
-          }}></div>
-        </div>
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header Section */}
-          <div className="text-center mb-16 sm:mb-20">
-            <div className="inline-flex items-center px-4 sm:px-5 py-2 bg-grid-deep-navy text-white rounded-full text-sm font-medium mb-6 sm:mb-8 shadow-lg">
-              <Bolt className="h-4 w-4 mr-2" />
-              Ready to Get Started?
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-grid-deep-navy mb-6 sm:mb-8 leading-tight tracking-tight px-2">
-              Transform Your Vision into
-              <span className="block text-grid-electric-blue mt-1 sm:mt-2">Power Engineering Excellence</span>
-            </h2>
-            <p className="text-gray-600 text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed font-medium px-4">
-              Join industry leaders who trust GridFlow to deliver world-class power engineering solutions across Australia.
-            </p>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-16 sm:mb-24 px-4">
-            <Button
-              onClick={() => scrollToSection('contact-form')}
-              className="w-full sm:w-auto bg-grid-deep-navy hover:bg-grid-charcoal text-white font-semibold px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl group border-0 sm:min-w-[280px]"
-            >
-              <Send className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-0.5 transition-transform" />
-              Start Your Project Today
-              <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-0.5 transition-transform" />
-            </Button>
-            <Button
-              onClick={() => scrollToSection('contact-options')}
-              className="w-full sm:w-auto border-2 border-grid-deep-navy bg-transparent hover:bg-gray-50 text-grid-deep-navy px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-lg transition-all duration-300 font-semibold group sm:min-w-[280px]"
-            >
-              <MessageSquare className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
-              Explore Our Services
-            </Button>
-          </div>
-
-                    {/* Trust Indicators - Modern Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16 sm:mb-20">
-            <div className="text-center group">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-grid-electric-blue rounded-2xl mx-auto mb-4 sm:mb-6 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border-2 border-white relative">
-                <div className="absolute inset-0 bg-white/10 rounded-2xl"></div>
-                <Zap className="h-8 w-8 sm:h-12 sm:w-12 text-white relative z-10" strokeWidth={2.5} />
-              </div>
-              <h4 className="text-grid-deep-navy font-bold text-base sm:text-lg mb-1 sm:mb-2">24hr Response</h4>
-              <p className="text-gray-600 text-xs sm:text-sm">Guaranteed quick turnaround</p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-emerald-600 rounded-2xl mx-auto mb-4 sm:mb-6 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border-2 border-white relative">
-                <div className="absolute inset-0 bg-white/10 rounded-2xl"></div>
-                <Users className="h-8 w-8 sm:h-12 sm:w-12 text-white relative z-10" strokeWidth={2.5} />
-              </div>
-              <h4 className="text-grid-deep-navy font-bold text-base sm:text-lg mb-1 sm:mb-2">Expert Engineers</h4>
-              <p className="text-gray-600 text-xs sm:text-sm">Certified professionals</p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-grid-vibrant-yellow rounded-2xl mx-auto mb-4 sm:mb-6 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border-2 border-white relative">
-                <div className="absolute inset-0 bg-black/5 rounded-2xl"></div>
-                <Target className="h-8 w-8 sm:h-12 sm:w-12 text-grid-deep-navy relative z-10" strokeWidth={2.5} />
-              </div>
-              <h4 className="text-grid-deep-navy font-bold text-base sm:text-lg mb-1 sm:mb-2">Proven Results</h4>
-              <p className="text-gray-600 text-xs sm:text-sm">200+ successful projects</p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-purple-600 rounded-2xl mx-auto mb-4 sm:mb-6 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border-2 border-white relative">
-                <div className="absolute inset-0 bg-white/10 rounded-2xl"></div>
-                <Globe className="h-8 w-8 sm:h-12 sm:w-12 text-white relative z-10" strokeWidth={2.5} />
-              </div>
-              <h4 className="text-grid-deep-navy font-bold text-base sm:text-lg mb-1 sm:mb-2">Australia Wide</h4>
-              <p className="text-gray-600 text-xs sm:text-sm">Nationwide coverage</p>
-            </div>
-          </div>
-
-          {/* Stats Section - Professional Card */}
-          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 sm:p-16 shadow-inner border border-gray-200">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-16 text-center">
-              <div>
-                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-grid-deep-navy mb-3 sm:mb-4">200+</div>
-                <p className="text-gray-700 font-semibold text-base sm:text-lg">Projects Completed</p>
-                <p className="text-gray-500 text-xs sm:text-sm mt-1 sm:mt-2">Across major Australian cities</p>
-              </div>
-              <div>
-                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-grid-deep-navy mb-3 sm:mb-4">15+</div>
-                <p className="text-gray-700 font-semibold text-base sm:text-lg">Years Experience</p>
-                <p className="text-gray-500 text-xs sm:text-sm mt-1 sm:mt-2">Industry-leading expertise</p>
-              </div>
-              <div>
-                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-grid-deep-navy mb-3 sm:mb-4">24hr</div>
-                <p className="text-gray-700 font-semibold text-base sm:text-lg">Response Time</p>
-                <p className="text-gray-500 text-xs sm:text-sm mt-1 sm:mt-2">Fast, reliable communication</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );

@@ -287,14 +287,16 @@ const Contact = () => {
                       <SelectValue placeholder="Select project type" className="text-gray-500" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="power-systems">Power Systems Study</SelectItem>
-                      <SelectItem value="renewable-energy">Renewable Energy Integration</SelectItem>
+                      <SelectItem value="power-systems-study">Power Systems Study & Feasibility Analysis</SelectItem>
+                      <SelectItem value="lines-cables-design">Lines and Cables Design</SelectItem>
+                      <SelectItem value="earthing-lightning">Earthing & Lightning Protection</SelectItem>
                       <SelectItem value="industrial-automation">Industrial Automation</SelectItem>
-                      <SelectItem value="substation-design">Substation Design</SelectItem>
-                      <SelectItem value="grid-integration">Grid Integration</SelectItem>
-                      <SelectItem value="safety-compliance">Safety & Compliance Audit</SelectItem>
-                      <SelectItem value="maintenance">Maintenance & Support</SelectItem>
-                      <SelectItem value="consulting">General Consulting</SelectItem>
+                      <SelectItem value="renewable-energy">Renewable Energy Solutions</SelectItem>
+                      <SelectItem value="surveying">Surveying</SelectItem>
+                      <SelectItem value="power-safety-compliance">Power Safety & Compliance</SelectItem>
+                      <SelectItem value="construction-support">Construction Support</SelectItem>
+                      <SelectItem value="maintenance-support">Maintenance & Support</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Check, ArrowRight, Zap, Settings, Leaf, Shield, Wrench, Users, Bolt, Cable, MapPin, ShieldCheck, HardHat, Headphones, Star, Award, TrendingUp, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import linesCablesImage from "@assets/generated_images/transmission_lines_cable_infrastructure_702654b7.png";
 import maintenanceSupportImage from "@assets/generated_images/electrical_maintenance_support_services_8b02cc3f.png";
 import { Link } from "wouter";
@@ -25,6 +25,18 @@ const Services = () => {
     setSelectedService(service);
     setIsModalOpen(true);
   };
+
+  const closeServiceModal = () => {
+    setIsModalOpen(false);
+    setSelectedService(null);
+    
+    // Clear URL parameters to prevent modal from reopening
+    const url = new URL(window.location.href);
+    url.searchParams.delete('service');
+    window.history.replaceState({}, '', url.toString());
+  };
+
+
 
   const mainServices = [
     {
@@ -268,6 +280,63 @@ const Services = () => {
       ]
     }
   ];
+
+  // Handle URL parameters to open specific service modals
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const serviceParam = urlParams.get('service');
+    
+    console.log('Services page loaded, URL params:', window.location.search, 'Service param:', serviceParam);
+    
+    if (serviceParam) {
+      // Create mapping from URL parameters to service objects
+      const serviceMapping: { [key: string]: any } = {
+        "power-systems-study": mainServices[0], // Power Systems Engineering
+        "renewable-energy": mainServices[1], // Renewable Energy & Storage Systems
+        "industrial-automation": mainServices[2], // Industrial Automation & Control
+        "lines-cables-design": mainServices[4], // Lines and Cables Design
+        "earthing-lightning": mainServices[6], // Power Safety & Compliance (closest match for earthing/lightning)
+        "surveying": mainServices[5], // Surveying
+        "power-safety-compliance": mainServices[6], // Power Safety & Compliance
+        "construction-support": mainServices[7], // Construction Support
+        "maintenance-support": mainServices[8] // Maintenance & Support
+      };
+      
+      const serviceToOpen = serviceMapping[serviceParam];
+      console.log('Service to open:', serviceToOpen);
+      if (serviceToOpen) {
+        // First scroll to the service card, then open modal
+        const serviceId = serviceToOpen.title.toLowerCase()
+          .replace(/&/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/[^a-z0-9-]/g, '');
+        
+        console.log('Generated service ID for scrolling:', serviceId);
+        
+        // Small delay to ensure page is fully loaded
+        setTimeout(() => {
+          const serviceCard = document.getElementById(serviceId);
+          console.log('Service card found:', !!serviceCard, serviceCard);
+          if (serviceCard) {
+            serviceCard.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'center' 
+            });
+            
+            // Wait for scroll to complete before opening modal
+            setTimeout(() => {
+              console.log('Opening modal for service:', serviceToOpen.title);
+              openServiceModal(serviceToOpen);
+            }, 800);
+          } else {
+            // If card not found, just open modal
+            console.log('Service card not found, opening modal directly');
+            openServiceModal(serviceToOpen);
+          }
+        }, 300);
+      }
+    }
+  }, []); // Remove mainServices dependency to prevent re-triggering
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -628,7 +697,11 @@ const Services = () => {
       </section> */}
 
       {/* Service Details Modal */}
-      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+      <Dialog open={isModalOpen} onOpenChange={(open) => {
+        if (!open) {
+          closeServiceModal();
+        }
+      }}>
         <DialogContent className="max-w-6xl max-h-[95vh] w-[95vw] overflow-y-auto mx-2 sm:mx-4">
           {selectedService && (
             <>
@@ -703,7 +776,7 @@ const Services = () => {
                   <div className="pt-6 border-t border-gray-200">
                     <Button
                       onClick={() => {
-                        setIsModalOpen(false);
+                        closeServiceModal();
                         window.location.href = '/contact#contact-form';
                       }}
                       className="w-full bg-blue-600 hover:bg-blue-700 text-white text-base py-4 font-semibold"

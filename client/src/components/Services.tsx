@@ -2,12 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useLocation } from "wouter";
 import powerSystemsImage from "@assets/generated_images/Power_systems_design_analysis_92130843.png";
 import linesCablesImage from "@assets/generated_images/Lines_cables_design_engineering_f728920c.png";
 import surveyingImage from "@assets/generated_images/Professional_surveying_services_7f582449.png";
 
 const Services = () => {
   const [highlightedCard, setHighlightedCard] = useState<string | null>(null);
+  const [, setLocation] = useLocation();
 
   useEffect(() => {
     const triggerHighlight = (hash: string) => {
@@ -219,7 +221,30 @@ const Services = () => {
                   ))}
                 </ul>
                 <Button
-                  onClick={() => (window.location.href = "/services")}
+                  onClick={() => {
+                    // Create a mapping of service titles to service page identifiers
+                    const serviceMapping: { [key: string]: string } = {
+                      "Power Systems Study & Feasibility Analysis": "power-systems-study",
+                      "Lines and Cables Design": "lines-cables-design", 
+                      "Earthing & Lightning Protection": "earthing-lightning",
+                      "Industrial Automation": "industrial-automation",
+                      "Renewable Energy Solutions": "renewable-energy",
+                      "Surveying": "surveying",
+                      "Power Safety & Compliance": "power-safety-compliance",
+                      "Construction Support": "construction-support",
+                      "Maintenance & Support": "maintenance-support"
+                    };
+                    
+                    const serviceId = serviceMapping[service.title];
+                    console.log('Service clicked:', service.title, 'Mapped ID:', serviceId);
+                    if (serviceId) {
+                      console.log('Navigating to:', `/services?service=${serviceId}`);
+                      setLocation(`/services?service=${serviceId}`);
+                    } else {
+                      console.log('No mapping found, navigating to /services');
+                      setLocation("/services");
+                    }
+                  }}
                   variant="link"
                   className="text-grid-blue hover:text-grid-dark-blue font-semibold p-0 group text-sm sm:text-base self-start mt-auto"
                   data-testid={`service-learn-more-${service.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}

@@ -11,6 +11,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+import { Link } from "wouter";
+
 const VisionCapabilities = () => {
   const capabilities = [
     {
@@ -83,10 +85,12 @@ const VisionCapabilities = () => {
               ))}
             </div>
 
-            <Button className="bg-grid-electric-blue hover:bg-grid-deep-navy text-white btn-glow group w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8 py-3">
-              Start Your Project
-              <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Link href="/contact">
+              <Button className="bg-grid-electric-blue hover:bg-grid-deep-navy text-white btn-glow group w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8 py-3">
+                Start Your Project
+                <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
 
           <div className="relative mt-8 lg:mt-0">

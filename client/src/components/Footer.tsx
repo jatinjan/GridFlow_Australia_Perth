@@ -87,7 +87,7 @@ const Footer = () => {
               </p>
               <div className="flex justify-center lg:justify-start space-x-4 sm:space-x-5 mt-6 sm:mt-8">
                 <a 
-                  href="https://www.linkedin.com/company/gridflow-engineering" 
+                  href="https://www.linkedin.com/company/gridflowau/" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 sm:w-14 sm:h-14 bg-grid-electric-blue/20 rounded-full flex items-center justify-center hover:bg-grid-electric-blue hover:scale-110 transition-all duration-300"
@@ -96,7 +96,7 @@ const Footer = () => {
                   <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />
                 </a>
                 <a 
-                  href="https://www.facebook.com/gridflowengineering" 
+                  href="https://www.facebook.com/profile.php?id=61579916007200#" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-600/20 rounded-full flex items-center justify-center hover:bg-gray-500 hover:scale-110 transition-all duration-300"
@@ -160,12 +160,7 @@ const Footer = () => {
               <h4 className="text-white font-semibold text-lg sm:text-xl mb-4 sm:mb-6">Company</h4>
               <ul className="space-y-2 sm:space-y-3">
                 <li>
-                  <button 
-                    onClick={() => scrollToSection('about')}
-                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 mx-auto lg:mx-0"
-                  >
-                    About Us
-                  </button>
+                  <a href="/about" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">About Us</a>                
                 </li>
                 <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">Our Team</a></li>
                 <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">Careers</a></li>  

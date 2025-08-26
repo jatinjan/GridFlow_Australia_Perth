@@ -6,7 +6,7 @@ const IndustriesWeServe = () => {
     {
       icon: Building2,
       title: "Commercial",
-      description: "Comprehensive electrical systems for office complexes, retail centers, and high-rise developments with focus on energy efficiency and smart building integration.",
+      description: "Comprehensive electrical systems for office complexes, retail centres, and high-rise developments with a focus on energy efficiency and smart building integration.",
       color: "bg-blue-100 text-blue-600"
     },
     {
