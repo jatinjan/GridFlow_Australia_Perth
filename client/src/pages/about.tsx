@@ -3,8 +3,10 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, Users, Globe, Clock, Zap, Shield, ArrowRight, Building } from "lucide-react";
+import { Link} from "wouter";
 
 const About = () => {
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -45,14 +47,14 @@ const About = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      
+
       {/* Hero Section */}
-      <section 
-        id="about-hero" 
+      <section
+        id="about-hero"
         className="relative min-h-screen w-full flex items-center justify-center text-white overflow-hidden"
       >
         {/* Background image - clean without filters */}
-        <div 
+        <div
           className="absolute inset-0 w-full h-full"
           style={{
             backgroundImage: `url(/gridflow-hero-banner.png)`,
@@ -61,10 +63,10 @@ const About = () => {
             backgroundRepeat: 'no-repeat'
           }}
         ></div>
-        
+
         {/* Simple dark gradient for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/50 z-10"></div>      
-        
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/50 z-10"></div>
+
         <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pt-32 pb-24 flex flex-col items-center md:items-start justify-center text-center md:text-left">
           {/* Service badge */}
           <div className="animate-in slide-in-from-bottom-8 duration-1000 delay-200">
@@ -73,7 +75,7 @@ const About = () => {
               <span className="text-sm font-medium text-yellow-400">Founded by Industry Specialists</span>
             </div>
           </div>
-          
+
           {/* Main headline with premium typography and animations */}
           <div className="animate-in slide-in-from-bottom-6 duration-1000 delay-300">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl md:mb-6 relative text-white">
@@ -84,44 +86,45 @@ const About = () => {
               </span>
             </h1>
           </div>
-          
+
           {/* Enhanced subheading */}
           <div className="animate-in slide-in-from-bottom-4 duration-1000 delay-500">
             <p className="mt-6 text-xl max-w-3xl text-gray-200 mb-8 leading-relaxed font-medium">
               Founded by electrical engineering specialists with extensive industry expertise. We bring fresh innovation backed by deep technical knowledge to transform Australia's power infrastructure.
             </p>
           </div>
-          
+
           {/* Enhanced CTAs with animations */}
           <div className="animate-in slide-in-from-bottom-2 duration-1000 delay-700">
             <div className="flex flex-col sm:flex-row gap-4 items-center md:items-start mt-2 sm:mt-10">
-              <Button 
+              <Button
                 onClick={() => scrollToSection('company-story')}
-                className="px-8 py-4 bg-yellow-400 text-black font-bold rounded-lg shadow-lg hover:bg-yellow-300 transition-all duration-300 hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-yellow-400/50 group text-lg"
+                className="px-8 py-4 bg-yellow-400 text-black font-bold rounded-lg shadow-lg hover:bg-yellow-300 transition-all duration-300 hover:shadow-xl focus:ring-4 focus:ring-yellow-400/50 group text-lg"
               >
                 <Building className="mr-2 h-5 w-5 group-hover:animate-pulse" />
                 Learn Our Story
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button 
-                onClick={() => scrollToSection('contact')}
-                className="px-8 py-4 bg-blue-700 hover:bg-blue-600 text-white rounded-lg shadow-lg transition-all duration-300 hover:scale-105 focus:ring-4 focus:ring-blue-500/50 font-semibold text-lg border-2 border-blue-700 hover:border-blue-600"
-              >
-                Meet the Team
-              </Button>
+              <Link href="/contact">
+                <Button
+                  className="px-8 py-4 bg-blue-700 hover:bg-blue-600 text-white rounded-lg shadow-lg transition-all duration-300 focus:ring-4 focus:ring-blue-500/50 font-semibold text-lg border-2 border-blue-700 hover:border-blue-600"
+                >
+                  Meet the Team
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
-        
+
         {/* Scroll indicator - bottom center */}
         <div className="absolute bottom-0 sm:bottom-8 lg:bottom-10 inset-x-0 text-white animate-bounce z-30">
-        <div className="flex flex-col items-center justify-center text-center w-full">
-          <span className="text-sm sm:text-base mb-3 sm:mb-4 text-gray-200 font-medium drop-shadow-lg">Scroll to explore</span>
-          <div className="w-7 h-12 sm:w-8 sm:h-14 border-2 border-gray-200 rounded-full flex justify-center bg-black/20 backdrop-blur-sm">
-            <div className="w-1.5 h-4 sm:w-2 sm:h-5 bg-yellow-400 rounded-full mt-2 sm:mt-3 animate-pulse shadow-lg" />
+          <div className="flex flex-col items-center justify-center text-center w-full">
+            <span className="text-sm sm:text-base mb-3 sm:mb-4 text-gray-200 font-medium drop-shadow-lg">Scroll to explore</span>
+            <div className="w-7 h-12 sm:w-8 sm:h-14 border-2 border-gray-200 rounded-full flex justify-center bg-black/20 backdrop-blur-sm">
+              <div className="w-1.5 h-4 sm:w-2 sm:h-5 bg-yellow-400 rounded-full mt-2 sm:mt-3 animate-pulse shadow-lg" />
+            </div>
           </div>
         </div>
-      </div>
       </section>
 
       {/* Company Story */}
@@ -131,19 +134,19 @@ const About = () => {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-grid-dark-blue mb-6">Our Story</h2>
               <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                GridFlow Engineering Solutions emerged from a vision to transform Australia's 
-                power infrastructure landscape. Founded by industry veterans with 14+ years of combined experience, 
+                GridFlow Engineering Solutions emerged from a vision to transform Australia's
+                power infrastructure landscape. Founded by industry veterans with 14+ years of combined experience,
                 we bring fresh innovation backed by proven expertise to serve utilities, industrial clients, and government agencies.
               </p>
               <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                Our journey began with a simple mission: to deliver reliable, innovative, and sustainable power 
+                Our journey began with a simple mission: to deliver reliable, innovative, and sustainable power
                 engineering solutions that drive Australia's economic growth while protecting our environment.
               </p>
             </div>
             <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                alt="Engineering team reviewing electrical system blueprints" 
+              <img
+                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+                alt="Engineering team reviewing electrical system blueprints"
                 className="rounded-xl shadow-lg w-full h-auto"
               />
             </div>
@@ -161,7 +164,7 @@ const About = () => {
               The principles that guide everything we do, from project planning to delivery.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {values.map((value, index) => {
               const IconComponent = value.icon;
@@ -193,20 +196,20 @@ const About = () => {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-grid-dark-blue mb-4">Our Mission</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  To deliver innovative, reliable, and sustainable power engineering solutions that drive 
-                  Australia's transition to a clean energy future while ensuring grid stability and industrial 
-                  productivity. We are committed to excellence, safety, and environmental stewardship in 
+                  To deliver innovative, reliable, and sustainable power engineering solutions that drive
+                  Australia's transition to a clean energy future while ensuring grid stability and industrial
+                  productivity. We are committed to excellence, safety, and environmental stewardship in
                   everything we do.
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card className="bg-white rounded-xl shadow-lg">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-grid-dark-blue mb-4">Our Vision</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  To be Australia's most trusted power engineering consultancy, recognized for our technical 
-                  expertise, innovative solutions, and commitment to building a sustainable energy infrastructure 
+                  To be Australia's most trusted power engineering consultancy, recognized for our technical
+                  expertise, innovative solutions, and commitment to building a sustainable energy infrastructure
                   that powers economic growth and improves quality of life for all Australians.
                 </p>
               </CardContent>
