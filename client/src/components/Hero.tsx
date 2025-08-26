@@ -76,7 +76,7 @@ const Hero = () => {
 
         {/* Subheading */}
         <div className="animate-in slide-in-from-bottom-4 duration-1000 delay-500">
-          <p className="mt-3 text-base md:text-lg xl:text-xl max-w-2xl text-gray-100 leading-relaxed font-normal">
+          <p className="mt-0 text-base md:text-lg xl:text-xl max-w-2xl text-gray-100 leading-relaxed font-normal">
             Expert engineering solutions for energy, industry,
             infrastructure mining and renewables.
           </p>
@@ -110,7 +110,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator (improved for mobile) */}
-      <div className="absolute bottom-6 sm:bottom-8 lg:bottom-10 inset-x-0 text-white animate-bounce z-30">
+      <div className="absolute bottom-6 sm:bottom-8 lg:bottom-2 inset-x-0 text-white animate-bounce z-30">
         <div className="flex flex-col items-center justify-center text-center w-full">
           <span className="text-sm sm:text-base mb-3 sm:mb-4 text-gray-200 font-medium drop-shadow-lg">Scroll to explore</span>
           <div className="w-7 h-12 sm:w-8 sm:h-14 border-2 border-gray-200 rounded-full flex justify-center bg-black/20 backdrop-blur-sm">

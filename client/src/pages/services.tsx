@@ -273,12 +273,12 @@ const Services = () => {
     <div className="min-h-screen bg-gray-50">
       <Navigation />
 
-      {/* Hero Section - Enhanced with modern design */}
+      {/* Hero Section */}
       <section
         id="services-hero"
-        className="relative min-h-[100vh] w-full flex items-center justify-center text-white overflow-hidden"
+        className="relative min-h-screen w-full flex items-center justify-center text-white overflow-hidden"
       >
-        {/* Background with enhanced overlay */}
+        {/* Background image - clean without filters */}
         <div
           className="absolute inset-0 w-full h-full"
           style={{
@@ -289,64 +289,62 @@ const Services = () => {
           }}
         ></div>
 
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-navy-800/70 to-black/60 z-10"></div>
+        {/* Simple dark gradient for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/50 z-10"></div>
 
-        {/* Animated elements */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 via-blue-500 to-yellow-400 animate-pulse z-20" />
-
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-          <div className="text-center max-w-4xl mx-auto">
-            {/* Service badge */}
-            <div className="animate-in slide-in-from-bottom-8 duration-1000 delay-200">
-              <Badge variant="outline" className="mb-6 px-4 py-2 bg-yellow-400/20 border-yellow-400/40 text-yellow-400 text-sm font-medium">
-                <Zap className="h-4 w-4 mr-2" />
-                Complete Engineering Services
-              </Badge>
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-28 lg:pt-36 pb-16 sm:pb-20 lg:pb-24 flex flex-col items-center md:items-start justify-center text-center md:text-left min-h-[calc(100vh-80px)] sm:min-h-[calc(100vh-100px)]">
+          {/* Service badge */}
+          <div className="animate-in slide-in-from-bottom-8 duration-1000 delay-200">
+            <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-yellow-400/20 rounded-full border border-yellow-400/30 mb-6 sm:mb-8">
+              <Zap className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-yellow-400" />
+              <span className="text-xs sm:text-sm font-medium text-yellow-400">Complete Engineering Services</span>
             </div>
+          </div>
 
-            {/* Main headline */}
-            <div className="animate-in slide-in-from-bottom-6 duration-1000 delay-300">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
-                Comprehensive Power Engineering
-                <span className="text-yellow-400 block mt-2">All Services Under One Roof</span>
-              </h1>
-            </div>
+          {/* Main headline with premium typography and animations */}
+          <div className="animate-in slide-in-from-bottom-6 duration-1000 delay-300">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl mb-0 sm:mb-6 relative text-white">
+              Comprehensive Power Engineering
+              <span className="text-yellow-400 relative inline-block"> All Services Under One Roof
+                {/* Subtle glow effect */}
+                <div className="absolute inset-0 blur-sm text-yellow-400 opacity-30 animate-pulse"></div>
+              </span>
+            </h1>
+          </div>
 
-            {/* Subheading */}
-            <div className="animate-in slide-in-from-bottom-4 duration-1000 delay-500">
-              <p className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
-                From power systems study to renewable integration, automation control, and construction support—discover our complete range of electrical engineering services.
-              </p>
-            </div>
+          {/* Enhanced subheading */}
+          <div className="animate-in slide-in-from-bottom-4 duration-1000 delay-500">
+            <p className="mt-0 sm:mt-6 text-base sm:text-lg lg:text-xl max-w-3xl text-gray-200 mb-2 sm:mb-8 leading-relaxed font-medium">
+              From power systems study to renewable integration, automation control, and construction support—discover our complete range of electrical engineering services.
+            </p>
+          </div>
 
-            {/* CTAs */}
-            <div className="animate-in slide-in-from-bottom-2 duration-1000 delay-700">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {/* Enhanced CTAs with animations */}
+          <div className="animate-in slide-in-from-bottom-2 duration-1000 delay-700">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center md:items-start mt-6 sm:mt-8 lg:mt-2 w-full sm:w-auto">
+              <Button
+                onClick={() => scrollToSection('comprehensive-services')}
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-yellow-400 text-black font-bold rounded-lg shadow-lg hover:bg-yellow-300 transition-all duration-300 hover:shadow-xl focus:ring-4 focus:ring-yellow-400/50 group text-base sm:text-lg"
+              >
+                <Bolt className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:animate-pulse" />
+                <span className="hidden sm:inline">Explore All Services</span>
+                <span className="sm:hidden">Explore Services</span>
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Link href="/contact#contact-form">
                 <Button
-                  onClick={() => scrollToSection('comprehensive-services')}
-                  size="lg"
-                  className="px-8 py-4 bg-yellow-400 text-black font-bold rounded-lg shadow-lg hover:bg-yellow-300 transition-all duration-300 hover:scale-105 group"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-blue-700 hover:bg-blue-600 text-white rounded-lg shadow-lg transition-all duration-300 focus:ring-4 focus:ring-blue-500/50 font-semibold text-base sm:text-lg border-2 border-blue-700 hover:border-blue-600"
                 >
-                  <Bolt className="mr-2 h-5 w-5 group-hover:animate-pulse" />
-                  Explore All Services
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <span className="hidden sm:inline">Get Technical Consultation</span>
+                  <span className="sm:hidden">Get Consultation</span>
                 </Button>
-                <Link href="/contact#contact-form">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="px-8 py-4 border-2 border-white bg-transparent !text-white hover:!bg-white hover:!text-blue-900 transition-all duration-300 font-semibold"
-                  >
-                    Get Technical Consultation
-                  </Button>
-                </Link>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-0 sm:bottom-8 lg:bottom-0 inset-x-0 text-white animate-bounce z-30">
+        {/* Scroll indicator - bottom center */}
+        <div className="absolute bottom-6 sm:bottom-8 lg:bottom-2 inset-x-0 text-white animate-bounce z-30">
           <div className="flex flex-col items-center justify-center text-center w-full">
             <span className="text-sm sm:text-base mb-3 sm:mb-4 text-gray-200 font-medium drop-shadow-lg">Scroll to explore</span>
             <div className="w-7 h-12 sm:w-8 sm:h-14 border-2 border-gray-200 rounded-full flex justify-center bg-black/20 backdrop-blur-sm">

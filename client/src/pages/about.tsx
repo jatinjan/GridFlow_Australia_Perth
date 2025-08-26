@@ -67,18 +67,18 @@ const About = () => {
         {/* Simple dark gradient for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/50 z-10"></div>
 
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pt-32 pb-24 flex flex-col items-center md:items-start justify-center text-center md:text-left">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-28 lg:pt-36 pb-16 sm:pb-20 lg:pb-24 flex flex-col items-center md:items-start justify-center text-center md:text-left min-h-[calc(100vh-80px)] sm:min-h-[calc(100vh-100px)]">
           {/* Service badge */}
           <div className="animate-in slide-in-from-bottom-8 duration-1000 delay-200">
-            <div className="inline-flex items-center px-4 py-2 bg-yellow-400/20 rounded-full border border-yellow-400/30 mb-8">
-              <Building className="h-5 w-5 mr-2 text-yellow-400" />
-              <span className="text-sm font-medium text-yellow-400">Founded by Industry Specialists</span>
+            <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-yellow-400/20 rounded-full border border-yellow-400/30 mb-6 sm:mb-8">
+              <Building className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-yellow-400" />
+              <span className="text-xs sm:text-sm font-medium text-yellow-400">Founded by Industry Specialists</span>
             </div>
           </div>
 
           {/* Main headline with premium typography and animations */}
           <div className="animate-in slide-in-from-bottom-6 duration-1000 delay-300">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl md:mb-6 relative text-white">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl mb-4 sm:mb-6 relative text-white">
               Powering Australia's Future —
               <span className="text-yellow-400 relative inline-block"> With Fresh Innovation
                 {/* Subtle glow effect */}
@@ -89,27 +89,29 @@ const About = () => {
 
           {/* Enhanced subheading */}
           <div className="animate-in slide-in-from-bottom-4 duration-1000 delay-500">
-            <p className="mt-6 text-xl max-w-3xl text-gray-200 mb-8 leading-relaxed font-medium">
+            <p className="mt-3 sm:mt-6 text-base sm:text-lg lg:text-xl max-w-3xl text-gray-200 mb-6 sm:mb-8 leading-relaxed font-medium">
               Founded by electrical engineering specialists with extensive industry expertise. We bring fresh innovation backed by deep technical knowledge to transform Australia's power infrastructure.
             </p>
           </div>
 
           {/* Enhanced CTAs with animations */}
           <div className="animate-in slide-in-from-bottom-2 duration-1000 delay-700">
-            <div className="flex flex-col sm:flex-row gap-4 items-center md:items-start mt-2 sm:mt-10">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center md:items-start mt-6 sm:mt-8 lg:mt-10 w-full sm:w-auto">
               <Button
                 onClick={() => scrollToSection('company-story')}
-                className="px-8 py-4 bg-yellow-400 text-black font-bold rounded-lg shadow-lg hover:bg-yellow-300 transition-all duration-300 hover:shadow-xl focus:ring-4 focus:ring-yellow-400/50 group text-lg"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-yellow-400 text-black font-bold rounded-lg shadow-lg hover:bg-yellow-300 transition-all duration-300 hover:shadow-xl focus:ring-4 focus:ring-yellow-400/50 group text-base sm:text-lg"
               >
-                <Building className="mr-2 h-5 w-5 group-hover:animate-pulse" />
-                Learn Our Story
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <Building className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:animate-pulse" />
+                <span className="hidden sm:inline">Learn Our Story</span>
+                <span className="sm:hidden">Our Story</span>
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Link href="/contact">
                 <Button
-                  className="px-8 py-4 bg-blue-700 hover:bg-blue-600 text-white rounded-lg shadow-lg transition-all duration-300 focus:ring-4 focus:ring-blue-500/50 font-semibold text-lg border-2 border-blue-700 hover:border-blue-600"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-blue-700 hover:bg-blue-600 text-white rounded-lg shadow-lg transition-all duration-300 focus:ring-4 focus:ring-blue-500/50 font-semibold text-base sm:text-lg border-2 border-blue-700 hover:border-blue-600"
                 >
-                  Meet the Team
+                  <span className="hidden sm:inline">Meet the Team</span>
+                  <span className="sm:hidden">Our Team</span>
                 </Button>
               </Link>
             </div>
@@ -117,7 +119,7 @@ const About = () => {
         </div>
 
         {/* Scroll indicator - bottom center */}
-        <div className="absolute bottom-0 sm:bottom-8 lg:bottom-10 inset-x-0 text-white animate-bounce z-30">
+        <div className="absolute bottom-6 sm:bottom-8 lg:bottom-10 inset-x-0 text-white animate-bounce z-30">
           <div className="flex flex-col items-center justify-center text-center w-full">
             <span className="text-sm sm:text-base mb-3 sm:mb-4 text-gray-200 font-medium drop-shadow-lg">Scroll to explore</span>
             <div className="w-7 h-12 sm:w-8 sm:h-14 border-2 border-gray-200 rounded-full flex justify-center bg-black/20 backdrop-blur-sm">
