@@ -63,7 +63,7 @@ const Home = () => {
           {/* Enhanced subheading */}
           <div className="animate-in slide-in-from-bottom-4 duration-1000 delay-500">
             <p className="mt-2 sm:mt-6 text-base sm:text-lg lg:text-xl max-w-3xl text-gray-200 mb-4 sm:mb-8 leading-relaxed font-medium">
-              Expert engineering solutions for energy, industry, infrastructure mining and renewables. We bring fresh innovation backed by deep technical knowledge to power Australia's future.
+              Expert engineering solutions for energy, industry, infrastructure, mining and renewables. We bring fresh innovation backed by deep technical knowledge to power Australia's future.
             </p>
           </div>
 

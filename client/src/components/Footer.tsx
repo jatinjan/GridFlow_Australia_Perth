@@ -151,7 +151,7 @@ const Footer = () => {
                     Maintenance
                   </button>
                 </li>
-                <li><a href="/services" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-center lg:text-left">Consulting</a></li>
+                <li><a href="/services" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-center lg:text-left">Consulting and Design</a></li>
               </ul>
             </div>
 
