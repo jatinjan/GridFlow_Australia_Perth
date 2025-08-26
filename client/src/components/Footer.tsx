@@ -114,7 +114,7 @@ const Footer = () => {
                 <li>
                   <button 
                     onClick={() => navigateToService('power-systems-engineering')}
-                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-left bg-transparent border-none cursor-pointer"
+                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-center lg:text-left bg-transparent border-none cursor-pointer w-full"
                   >
                     Power Systems
                   </button>
@@ -122,7 +122,7 @@ const Footer = () => {
                 <li>
                   <button 
                     onClick={() => navigateToService('renewable-energy-storage-systems')}
-                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-left bg-transparent border-none cursor-pointer"
+                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-center lg:text-left bg-transparent border-none cursor-pointer w-full"
                   >
                     Renewable Energy
                   </button>
@@ -130,7 +130,7 @@ const Footer = () => {
                 <li>
                   <button 
                     onClick={() => navigateToService('industrial-automation-control')}
-                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-left bg-transparent border-none cursor-pointer"
+                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-center lg:text-left bg-transparent border-none cursor-pointer w-full"
                   >
                     Industrial Automation
                   </button>
@@ -138,7 +138,7 @@ const Footer = () => {
                 <li>
                   <button 
                     onClick={() => navigateToService('power-safety-compliance')}
-                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-left bg-transparent border-none cursor-pointer"
+                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-center lg:text-left bg-transparent border-none cursor-pointer w-full"
                   >
                     Electrical Safety
                   </button>
@@ -146,12 +146,12 @@ const Footer = () => {
                 <li>
                   <button 
                     onClick={() => navigateToService('maintenance-support')}
-                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-left bg-transparent border-none cursor-pointer"
+                    className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-center lg:text-left bg-transparent border-none cursor-pointer w-full"
                   >
                     Maintenance
                   </button>
                 </li>
-                <li><a href="/services" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1">Consulting</a></li>
+                <li><a href="/services" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base block py-1 text-center lg:text-left">Consulting</a></li>
               </ul>
             </div>
 
