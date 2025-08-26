@@ -50,12 +50,12 @@ const Navigation = () => {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center justify-center flex-1">
-          <ul className="flex items-center space-x-6 xl:space-x-8 list-none text-sm xl:text-base font-semibold">
+        <nav className="hidden xl:flex items-center justify-center flex-1">
+          <ul className="flex items-center space-x-2 xl:space-x-4 list-none text-xs xl:text-base font-semibold">
             <li>
               <a
                 href="/#services-power-systems-design-analysis"
-                className="relative px-3 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 text-white/90 hover:text-yellow-300 hover:bg-white/5 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10"
+                className="relative px-2 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 text-white/90 hover:text-yellow-300 hover:bg-white/5 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10"
                 onClick={(e) => {
                   const event = new Event('forceHighlight');
                   (event as any).hash = 'services-power-systems-design-analysis';
@@ -68,7 +68,7 @@ const Navigation = () => {
             <li>
               <a
                 href="/#services-lines-and-cables-design"
-                className="relative px-3 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 text-white/90 hover:text-yellow-300 hover:bg-white/5 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10"
+                className="relative px-2 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 text-white/90 hover:text-yellow-300 hover:bg-white/5 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10"
                 onClick={(e) => {
                   const event = new Event('forceHighlight');
                   (event as any).hash = 'services-lines-and-cables-design';
@@ -81,7 +81,7 @@ const Navigation = () => {
             <li>
               <a
                 href="/#services-industrial-automation"
-                className="relative px-3 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 text-white/90 hover:text-yellow-300 hover:bg-white/5 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10"
+                className="relative px-2 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 text-white/90 hover:text-yellow-300 hover:bg-white/5 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10"
                 onClick={(e) => {
                   const event = new Event('forceHighlight');
                   (event as any).hash = 'services-industrial-automation';
@@ -94,7 +94,7 @@ const Navigation = () => {
             <li>
               <a
                 href="/#services-construction-support"
-                className="relative px-3 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 text-white/90 hover:text-yellow-300 hover:bg-white/5 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10"
+                className="relative px-2 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 text-white/90 hover:text-yellow-300 hover:bg-white/5 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10"
                 onClick={(e) => {
                   const event = new Event('forceHighlight');
                   (event as any).hash = 'services-construction-support';
@@ -107,7 +107,7 @@ const Navigation = () => {
             <li>
               <Link href="/services">
                 <span
-                  className={`relative px-3 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10 ${
+                  className={`relative px-2 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10 ${
                     isActive("/services")
                       ? "text-yellow-300 bg-white/10 border-white/20"
                       : "text-white/90 hover:text-yellow-300 hover:bg-white/5"
@@ -126,7 +126,7 @@ const Navigation = () => {
             <li>
               <Link href="/">
                 <span
-                  className="relative px-3 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 text-white/90 hover:text-yellow-300 hover:bg-white/5 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10"
+                  className="relative px-2 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 text-white/90 hover:text-yellow-300 hover:bg-white/5 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10"
                   onClick={(e) => {
                     setTimeout(() => {
                       const element = document.getElementById('industries');
@@ -146,7 +146,7 @@ const Navigation = () => {
             <li>
               <Link href="/about">
                 <span
-                  className={`relative px-3 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10 ${
+                  className={`relative px-2 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10 ${
                     isActive("/about")
                       ? "text-yellow-300 bg-white/10 border-white/20"
                       : "text-white/90 hover:text-yellow-300 hover:bg-white/5"
@@ -156,11 +156,24 @@ const Navigation = () => {
                 </span>
               </Link>
             </li>
+            <li>
+              <Link href="/contact">
+                <span
+                  className={`relative px-2 py-2 cursor-pointer whitespace-nowrap no-underline transition-all duration-300 rounded-lg backdrop-blur-sm border border-transparent hover:border-white/10 ${
+                    isActive("/contact")
+                      ? "text-yellow-300 bg-white/10 border-white/20"
+                      : "text-white/90 hover:text-yellow-300 hover:bg-white/5"
+                  }`}
+                >
+                  Contact
+                </span>
+              </Link>
+            </li>
           </ul>
         </nav>
 
         {/* Mobile menu button */}
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <Button
             variant="ghost"
             size="icon"
@@ -178,7 +191,7 @@ const Navigation = () => {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden border-t border-white/20 bg-black/80 backdrop-blur-md">
+        <div className="xl:hidden border-t border-white/20 bg-black/80 backdrop-blur-md">
           <div className="px-4 pt-2 pb-3 space-y-1">
             <a
               href="/#services-power-systems-design-analysis"
@@ -264,6 +277,14 @@ const Navigation = () => {
             >
               <span className="block px-4 py-3 text-base font-medium text-white/90 hover:text-yellow-300 hover:bg-white/10 rounded-lg transition-all duration-300">
                 About
+              </span>
+            </Link>
+            <Link
+              href="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <span className="block px-4 py-3 text-base font-medium text-white/90 hover:text-yellow-300 hover:bg-white/10 rounded-lg transition-all duration-300">
+                Contact
               </span>
             </Link>
           </div>
