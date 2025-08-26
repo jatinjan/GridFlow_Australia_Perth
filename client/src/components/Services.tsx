@@ -162,16 +162,16 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-20 bg-grid-light-gray" id="services">
+    <section className="py-12 sm:py-16 lg:py-20 bg-grid-light-gray" id="services">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20 fade-in-up">
-          <div className="heading-sm text-grid-electric-blue mb-4">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20 fade-in-up">
+          <div className="heading-sm text-grid-electric-blue mb-3 sm:mb-4">
             OUR SERVICES
           </div>
-          <h2 className="heading-lg text-grid-deep-navy mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-grid-deep-navy mb-4 sm:mb-6 px-2 leading-tight">
             Comprehensive Power Engineering Solutions
           </h2>
-          <p className="text-grid-medium-gray text-xl max-w-4xl mx-auto leading-relaxed">
+          <p className="text-grid-medium-gray text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed px-2">
             Delivering critical electrical infrastructure solutions across
             Australia. From feasibility studies to commissioning, we provide
             technical excellence backed by proven expertise and innovative
@@ -179,14 +179,14 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <Card
               key={index}
               id={service.id}
-              className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-1000 border border-gray-100 ${
+              className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 h-full flex flex-col ${
                 highlightedCard === service.id 
-                  ? 'ring-4 ring-grid-electric-blue ring-opacity-75 shadow-2xl scale-105 animate-pulse' 
+                  ? 'ring-4 ring-grid-electric-blue ring-opacity-75 shadow-2xl sm:scale-105 animate-pulse' 
                   : ''
               }`}
               data-testid={`service-card-${service.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
@@ -194,38 +194,38 @@ const Services = () => {
                 background: highlightedCard === service.id ? '#f0f8ff' : '' 
               }}
             >
-              <CardContent className="p-8">
+              <CardContent className="p-4 sm:p-6 lg:p-8 flex flex-col h-full">
                 {service.image && (
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-48 object-cover rounded-lg mb-6"
+                    className="w-full h-40 sm:h-48 object-cover rounded-lg mb-4 sm:mb-6"
                     loading="lazy"
                     data-testid={`service-image-${service.title.toLowerCase().replace(/\s+/g, '-')}`}
                   />
                 )}
-                <h3 className="text-xl font-bold text-grid-dark-blue mb-4" data-testid={`service-title-${service.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}>
+                <h3 className="text-lg sm:text-xl font-bold text-grid-dark-blue mb-3 sm:mb-4 leading-tight" data-testid={`service-title-${service.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}>
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base flex-grow">
                   {service.description}
                 </p>
-                <ul className="text-gray-600 space-y-3 mb-6">
+                <ul className="text-gray-600 space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
-                      <Check className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <span>{feature}</span>
+                      <Check className="h-4 w-4 sm:h-5 sm:w-5 text-green-500 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm sm:text-base">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 <Button
                   onClick={() => (window.location.href = "/services")}
                   variant="link"
-                  className="text-grid-blue hover:text-grid-dark-blue font-semibold p-0 group"
+                  className="text-grid-blue hover:text-grid-dark-blue font-semibold p-0 group text-sm sm:text-base self-start mt-auto"
                   data-testid={`service-learn-more-${service.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
                 >
                   Learn More{" "}
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </CardContent>
             </Card>
