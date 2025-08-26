@@ -13,7 +13,7 @@ const EngineeringConsulting = () => {
               Our expert team of power engineers brings proven experience
               together with innovation and advanced technical software to
               deliver comprehensive solutions for your electrical infrastructure
-              need. From initial concept through final implementation, we
+              design and management services. From initial concept through final implementation, we
               provide trusted engineering consulting that ensures optimal
               performance and reliability.
             </p>

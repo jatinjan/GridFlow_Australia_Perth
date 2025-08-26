@@ -77,9 +77,8 @@ const Hero = () => {
         {/* Subheading */}
         <div className="animate-in slide-in-from-bottom-4 duration-1000 delay-500">
           <p className="mt-3 text-base md:text-lg xl:text-xl max-w-2xl text-gray-100 leading-relaxed font-normal">
-            Expert engineering solutions for energy, industry, and
-            infrastructure. Innovative power systems study for Western
-            Australia.
+            Expert engineering solutions for energy, industry,
+            infrastructure mining and renewables.
           </p>
         </div>
 
