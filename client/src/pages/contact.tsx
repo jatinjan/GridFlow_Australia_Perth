@@ -276,49 +276,49 @@ const ContactPage = () => {
           }}></div>
         </div>
 
-        <div className="relative z-30 w-full max-w-7xl mx-auto px-6 pt-32 pb-24 text-center">
+        <div className="relative z-30 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-24 text-center">
           {/* Service badge */}
           <div className="animate-in slide-in-from-bottom-8 duration-1000 delay-200">
-            <div className="inline-flex items-center px-6 py-3 bg-transparent rounded-full border-2 border-grid-vibrant-yellow mb-8 shadow-xl backdrop-blur-sm">
-              <Zap className="h-5 w-5 mr-2 text-grid-vibrant-yellow" />
-              <span className="text-sm font-bold text-grid-vibrant-yellow tracking-wide">Ready to Connect</span>
+            <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-transparent rounded-full border-2 border-grid-vibrant-yellow mb-6 sm:mb-8 shadow-xl backdrop-blur-sm">
+              <Zap className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-grid-vibrant-yellow" />
+              <span className="text-xs sm:text-sm font-bold text-grid-vibrant-yellow tracking-wide">Ready to Connect</span>
             </div>
           </div>
 
           {/* Main headline with better contrast */}
           <div className="animate-in slide-in-from-bottom-6 duration-1000 delay-300">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 relative">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 sm:mb-6 relative px-2">
               <span className="text-white drop-shadow-2xl">Let's Build the</span>
-              <span className="block text-grid-vibrant-yellow mt-2 relative drop-shadow-2xl">
+              <span className="block text-grid-vibrant-yellow mt-1 sm:mt-2 relative drop-shadow-2xl">
                 Future Together
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-grid-vibrant-yellow to-transparent rounded-full shadow-lg"></div>
+                <div className="absolute -bottom-1 sm:-bottom-2 left-1/2 transform -translate-x-1/2 w-24 sm:w-32 h-1 bg-gradient-to-r from-transparent via-grid-vibrant-yellow to-transparent rounded-full shadow-lg"></div>
               </span>
             </h1>
           </div>
 
           {/* Enhanced subheading with better visibility */}
           <div className="animate-in slide-in-from-bottom-4 duration-1000 delay-500">
-            <p className="mt-8 text-xl max-w-4xl mx-auto text-white mb-12 leading-relaxed drop-shadow-lg font-medium">
+            <p className="mt-6 sm:mt-8 text-lg sm:text-xl max-w-4xl mx-auto text-white mb-8 sm:mb-12 leading-relaxed drop-shadow-lg font-medium px-2">
               Your power engineering project starts with a conversation. Connect with Australia's leading electrical engineers and let's turn your vision into reality.
             </p>
           </div>
 
           {/* Enhanced CTAs */}
           <div className="animate-in slide-in-from-bottom-2 duration-1000 delay-700">
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">
               <Button
                 onClick={() => scrollToSection('contact-form')}
-                className="px-10 py-4 bg-grid-vibrant-yellow text-grid-deep-navy font-bold rounded-xl shadow-2xl hover:bg-yellow-300 transition-all duration-300 hover:scale-105 hover:shadow-yellow-400/25 focus:ring-4 focus:ring-yellow-400/50 group text-lg border-2 border-grid-vibrant-yellow"
+                className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 bg-grid-vibrant-yellow text-grid-deep-navy font-bold rounded-xl shadow-2xl hover:bg-yellow-300 transition-all duration-300 hover:scale-105 hover:shadow-yellow-400/25 focus:ring-4 focus:ring-yellow-400/50 group text-base sm:text-lg border-2 border-grid-vibrant-yellow"
               >
-                <Send className="mr-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <Send className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                 Start Your Project
-                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
                 onClick={() => scrollToSection('contact-options')}
-                className="px-10 py-4 bg-transparent hover:bg-white/10 text-white rounded-xl shadow-lg transition-all duration-300 hover:scale-105 focus:ring-4 focus:ring-white/20 font-semibold text-lg border-2 border-white/30 hover:border-white/50 backdrop-blur-sm"
+                className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 bg-transparent hover:bg-white/10 text-white rounded-xl shadow-lg transition-all duration-300 hover:scale-105 focus:ring-4 focus:ring-white/20 font-semibold text-base sm:text-lg border-2 border-white/30 hover:border-white/50 backdrop-blur-sm"
               >
-                <Target className="mr-3 h-5 w-5" />
+                <Target className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
                 Explore Options
               </Button>
             </div>
@@ -337,7 +337,7 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Options */}
-      <section id="contact-options" className="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+      <section id="contact-options" className="py-16 sm:py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-[0.02]">
           <div className="absolute inset-0" style={{
@@ -347,20 +347,20 @@ const ContactPage = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-grid-electric-blue/10 text-grid-electric-blue rounded-full text-sm font-semibold mb-4">
               <MessageSquare className="h-4 w-4 mr-2" />
               Get In Touch
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-grid-deep-navy mb-6 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-grid-deep-navy mb-4 sm:mb-6 tracking-tight px-2">
               How Can We <span className="text-grid-electric-blue">Help You?</span>
             </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+            <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed px-4">
               Choose the best way to connect with our expert team based on your specific needs and project requirements.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {contactOptions.map((option, index) => {
               const IconComponent = option.icon;
               return (
@@ -368,21 +368,21 @@ const ContactPage = () => {
                   {/* Gradient background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${option.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
 
-                  <CardContent className="p-8 text-center relative">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${option.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      <IconComponent className="h-8 w-8 text-white" />
+                  <CardContent className="p-6 sm:p-8 text-center relative">
+                    <div className={`w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br ${option.color} rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <IconComponent className="h-7 w-7 sm:h-8 sm:w-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-grid-deep-navy mb-3 group-hover:text-grid-electric-blue transition-colors">{option.title}</h3>
-                    <p className="text-gray-600 mb-4 leading-relaxed">{option.description}</p>
-                    <div className="mb-6">
-                      <div className="inline-flex items-center px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600">
+                    <h3 className="text-lg sm:text-xl font-bold text-grid-deep-navy mb-2 sm:mb-3 group-hover:text-grid-electric-blue transition-colors">{option.title}</h3>
+                    <p className="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">{option.description}</p>
+                    <div className="mb-4 sm:mb-6">
+                      <div className="inline-flex items-center px-3 py-1 bg-gray-100 rounded-full text-xs sm:text-sm text-gray-600">
                         <Mail className="h-3 w-3 mr-1" />
-                        admin@gridflow.com.au
+                        <span className="break-all">admin@gridflow.com.au</span>
                       </div>
                     </div>
-                    <Button className={`bg-gradient-to-r ${option.color} hover:shadow-lg text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 group-hover:scale-105 border-0`}>
+                    <Button className={`w-full sm:w-auto bg-gradient-to-r ${option.color} hover:shadow-lg text-white font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-xl transition-all duration-300 group-hover:scale-105 border-0 text-sm sm:text-base`}>
                       {option.action}
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </CardContent>
                 </Card>
@@ -393,7 +393,7 @@ const ContactPage = () => {
       </section>
 
       {/* Main Contact Form */}
-      <section id="contact-form" className="py-24 bg-gradient-to-br from-slate-900 via-grid-deep-navy to-slate-900 relative overflow-hidden">
+      <section id="contact-form" className="py-16 sm:py-24 bg-gradient-to-br from-slate-900 via-grid-deep-navy to-slate-900 relative overflow-hidden">
         {/* Background elements with reduced opacity */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-72 h-72 bg-grid-electric-blue rounded-full blur-3xl"></div>
@@ -401,31 +401,31 @@ const ContactPage = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-grid-vibrant-yellow text-grid-deep-navy rounded-full text-sm font-semibold mb-6 shadow-lg">
+          <div className="mb-12 sm:mb-16 text-center">
+            <div className="inline-flex items-center px-4 py-2 bg-grid-vibrant-yellow text-grid-deep-navy rounded-full text-sm font-semibold mb-4 sm:mb-6 shadow-lg">
               <Send className="h-4 w-4 mr-2" />
               Ready to Connect
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 tracking-tight px-2">
               Let's Start the <span className="text-grid-vibrant-yellow">Conversation</span>
             </h2>
-            <p className="text-gray-200 text-lg max-w-3xl mx-auto leading-relaxed">
+            <p className="text-gray-200 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed px-4">
               Fill out the form below or reach out directly. Our team of experts will get back to you within 24 hours.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-12">
             {/* Contact Form */}
             <div className="lg:col-span-3">
               <Card className="bg-white rounded-3xl shadow-2xl border-0 overflow-hidden">
-                <CardHeader className="bg-gradient-to-r from-grid-deep-navy via-grid-charcoal to-grid-deep-navy text-white p-8">
-                  <CardTitle className="text-2xl font-bold flex items-center text-white">
-                    <MessageSquare className="h-6 w-6 mr-3 text-white" />
+                <CardHeader className="bg-gradient-to-r from-grid-deep-navy via-grid-charcoal to-grid-deep-navy text-white p-6 sm:p-8">
+                  <CardTitle className="text-xl sm:text-2xl font-bold flex items-center text-white">
+                    <MessageSquare className="h-5 w-5 sm:h-6 sm:w-6 mr-2 sm:mr-3 text-white" />
                     Send Us a Message
                   </CardTitle>
-                  <p className="text-gray-200 mt-2 font-medium">We'll respond within 24 hours</p>
+                  <p className="text-gray-200 mt-2 font-medium text-sm sm:text-base">We'll respond within 24 hours</p>
                 </CardHeader>
-                <CardContent className="p-8">
+                <CardContent className="p-6 sm:p-8">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
@@ -540,23 +540,23 @@ const ContactPage = () => {
             </div>
 
             {/* Contact Information */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-2 space-y-6 sm:space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-6 tracking-tight">Get in Touch</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 tracking-tight px-2 lg:px-0">Get in Touch</h3>
 
                 {/* Email Card */}
-                <Card className="bg-white/95 backdrop-blur-sm rounded-2xl border-0 mb-6 shadow-xl">
-                  <CardContent className="p-6">
+                <Card className="bg-white/95 backdrop-blur-sm rounded-2xl border-0 mb-4 sm:mb-6 shadow-xl">
+                  <CardContent className="p-4 sm:p-6">
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-grid-electric-blue to-blue-600 rounded-xl flex items-center justify-center mr-4">
-                        <Mail className="h-7 w-7 text-white" />
+                      <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-grid-electric-blue to-blue-600 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+                        <Mail className="h-5 w-5 sm:h-7 sm:w-7 text-white" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-lg font-bold text-grid-deep-navy mb-2">Email Us</h4>
-                        <p className="text-gray-600 text-sm mb-3">Quick response guaranteed</p>
-                        <div className="inline-flex items-center px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">
-                          <Mail className="h-3 w-3 mr-2" />
-                          admin@gridflow.com.au
+                        <h4 className="text-base sm:text-lg font-bold text-grid-deep-navy mb-1 sm:mb-2">Email Us</h4>
+                        <p className="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">Quick response guaranteed</p>
+                        <div className="inline-flex items-center px-2 sm:px-3 py-1 bg-gray-100 rounded-full text-xs sm:text-sm text-gray-700">
+                          <Mail className="h-3 w-3 mr-1 sm:mr-2" />
+                          <span className="break-all">admin@gridflow.com.au</span>
                         </div>
                       </div>
                     </div>
@@ -564,18 +564,18 @@ const ContactPage = () => {
                 </Card>
 
                 {/* Phone Card */}
-                <Card className="bg-white/95 backdrop-blur-sm rounded-2xl border-0 mb-6 shadow-xl">
-                  <CardContent className="p-6">
+                <Card className="bg-white/95 backdrop-blur-sm rounded-2xl border-0 mb-4 sm:mb-6 shadow-xl">
+                  <CardContent className="p-4 sm:p-6">
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4">
-                        <Phone className="h-7 w-7 text-white" />
+                      <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+                        <Phone className="h-5 w-5 sm:h-7 sm:w-7 text-white" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-lg font-bold text-grid-deep-navy mb-2">Call Us</h4>
-                        <p className="text-gray-600 text-sm mb-3">Speak directly with our team</p>
-                        <div className="space-y-2">
-                          <div className="inline-flex items-center px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">
-                            <Phone className="h-3 w-3 mr-2" />
+                        <h4 className="text-base sm:text-lg font-bold text-grid-deep-navy mb-1 sm:mb-2">Call Us</h4>
+                        <p className="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">Speak directly with our team</p>
+                        <div className="space-y-1 sm:space-y-2">
+                          <div className="inline-flex items-center px-2 sm:px-3 py-1 bg-gray-100 rounded-full text-xs sm:text-sm text-gray-700">
+                            <Phone className="h-3 w-3 mr-1 sm:mr-2" />
                             +61 8 6365 9012
                           </div>
                           <p className="text-xs text-gray-500">Perth Office</p>
@@ -586,19 +586,19 @@ const ContactPage = () => {
                 </Card>
 
                 {/* Business Hours Card */}
-                <Card className="bg-white/95 backdrop-blur-sm rounded-2xl border-0 shadow-xl mb-6">
-                  <CardContent className="p-6">
+                <Card className="bg-white/95 backdrop-blur-sm rounded-2xl border-0 shadow-xl mb-4 sm:mb-6">
+                  <CardContent className="p-4 sm:p-6">
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl flex items-center justify-center mr-4">
-                        <Clock className="h-7 w-7 text-white" />
+                      <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+                        <Clock className="h-5 w-5 sm:h-7 sm:w-7 text-white" />
                       </div>
-                      <div>
-                        <h4 className="text-lg font-bold text-grid-deep-navy mb-2">Business Hours</h4>
-                        <div className="text-gray-600 text-sm space-y-1">
+                      <div className="flex-1">
+                        <h4 className="text-base sm:text-lg font-bold text-grid-deep-navy mb-1 sm:mb-2">Business Hours</h4>
+                        <div className="text-gray-600 text-xs sm:text-sm space-y-1">
                           <p className="font-medium">Monday - Friday</p>
                           <p>8:00 AM - 6:00 PM AWST</p>
-                          <div className="inline-flex items-center px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-medium mt-2">
-                            <div className="w-2 h-2 bg-emerald-500 rounded-full mr-2 animate-pulse"></div>
+                          <div className="inline-flex items-center px-2 sm:px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-medium mt-1 sm:mt-2">
+                            <div className="w-2 h-2 bg-emerald-500 rounded-full mr-1 sm:mr-2 animate-pulse"></div>
                             Available Now
                           </div>
                         </div>
@@ -608,20 +608,20 @@ const ContactPage = () => {
                 </Card>
 
                 {/* Office Location */}
-                <Card className="bg-white/95 backdrop-blur-sm rounded-2xl border-0 shadow-xl mb-6">
-                  <CardContent className="p-6">
+                <Card className="bg-white/95 backdrop-blur-sm rounded-2xl border-0 shadow-xl mb-4 sm:mb-6">
+                  <CardContent className="p-4 sm:p-6">
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mr-4">
-                        <MapPin className="h-7 w-7 text-white" />
+                      <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+                        <MapPin className="h-5 w-5 sm:h-7 sm:w-7 text-white" />
                       </div>
-                      <div>
-                        <h4 className="text-lg font-bold text-grid-deep-navy mb-2">Perth Office</h4>
-                        <div className="text-gray-600 text-sm space-y-1">
+                      <div className="flex-1">
+                        <h4 className="text-base sm:text-lg font-bold text-grid-deep-navy mb-1 sm:mb-2">Perth Office</h4>
+                        <div className="text-gray-600 text-xs sm:text-sm space-y-1">
                           <p>Central Park</p>
                           <p>152-158 St Georges Terrace</p>
                           <p>Perth WA 6000</p>
-                          <div className="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium mt-2">
-                            <MapPin className="w-2 h-2 mr-2" />
+                          <div className="inline-flex items-center px-2 sm:px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium mt-1 sm:mt-2">
+                            <MapPin className="w-2 h-2 mr-1 sm:mr-2" />
                             Headquarters
                           </div>
                         </div>
@@ -631,14 +631,14 @@ const ContactPage = () => {
                 </Card>
 
                 {/* Response Time */}
-                <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-grid-deep-navy rounded-xl flex items-center justify-center mr-4">
-                      <Zap className="h-6 w-6 text-grid-vibrant-yellow" />
+                <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-xl">
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-grid-deep-navy rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+                      <Zap className="h-5 w-5 sm:h-7 sm:w-7 text-grid-vibrant-yellow" />
                     </div>
-                    <div>
-                      <h4 className="text-lg font-bold text-grid-deep-navy mb-1">Quick Response</h4>
-                      <p className="text-grid-deep-navy text-sm font-medium">We typically respond within 2-4 hours during business hours</p>
+                    <div className="flex-1">
+                      <h4 className="text-base sm:text-lg font-bold text-grid-deep-navy mb-1">Quick Response</h4>
+                      <p className="text-grid-deep-navy text-xs sm:text-sm font-medium">We typically respond within 2-4 hours during business hours</p>
                     </div>
                   </div>
                 </div>
@@ -649,7 +649,7 @@ const ContactPage = () => {
       </section>
 
       {/* Professional CTA Section */}
-      <section className="py-32 bg-white relative overflow-hidden">
+      <section className="py-20 sm:py-32 bg-white relative overflow-hidden">
         {/* Subtle background pattern */}
         <div className="absolute inset-0 opacity-[0.02]">
           <div className="absolute inset-0" style={{
@@ -660,95 +660,95 @@ const ContactPage = () => {
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header Section */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-5 py-2 bg-grid-deep-navy text-white rounded-full text-sm font-medium mb-8 shadow-lg">
+          <div className="text-center mb-16 sm:mb-20">
+            <div className="inline-flex items-center px-4 sm:px-5 py-2 bg-grid-deep-navy text-white rounded-full text-sm font-medium mb-6 sm:mb-8 shadow-lg">
               <Bolt className="h-4 w-4 mr-2" />
               Ready to Get Started?
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-grid-deep-navy mb-8 leading-tight tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-grid-deep-navy mb-6 sm:mb-8 leading-tight tracking-tight px-2">
               Transform Your Vision into
-              <span className="block text-grid-electric-blue mt-2">Power Engineering Excellence</span>
+              <span className="block text-grid-electric-blue mt-1 sm:mt-2">Power Engineering Excellence</span>
             </h2>
-            <p className="text-gray-600 text-xl max-w-4xl mx-auto leading-relaxed font-medium">
+            <p className="text-gray-600 text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed font-medium px-4">
               Join industry leaders who trust GridFlow to deliver world-class power engineering solutions across Australia.
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-24">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-16 sm:mb-24 px-4">
             <Button
               onClick={() => scrollToSection('contact-form')}
-              className="bg-grid-deep-navy hover:bg-grid-charcoal text-white font-semibold px-10 py-4 text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl group border-0 min-w-[280px]"
+              className="w-full sm:w-auto bg-grid-deep-navy hover:bg-grid-charcoal text-white font-semibold px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl group border-0 sm:min-w-[280px]"
             >
-              <Send className="mr-3 h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
+              <Send className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-0.5 transition-transform" />
               Start Your Project Today
-              <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-0.5 transition-transform" />
             </Button>
             <Button
               onClick={() => scrollToSection('contact-options')}
-              className="border-2 border-grid-deep-navy bg-transparent hover:bg-gray-50 text-grid-deep-navy px-10 py-4 text-lg rounded-lg transition-all duration-300 font-semibold group min-w-[280px]"
+              className="w-full sm:w-auto border-2 border-grid-deep-navy bg-transparent hover:bg-gray-50 text-grid-deep-navy px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-lg transition-all duration-300 font-semibold group sm:min-w-[280px]"
             >
-              <MessageSquare className="mr-3 h-5 w-5" />
+              <MessageSquare className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
               Explore Our Services
             </Button>
           </div>
 
                     {/* Trust Indicators - Modern Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16 sm:mb-20">
             <div className="text-center group">
-              <div className="w-24 h-24 bg-grid-electric-blue rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border-2 border-white relative">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-grid-electric-blue rounded-2xl mx-auto mb-4 sm:mb-6 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border-2 border-white relative">
                 <div className="absolute inset-0 bg-white/10 rounded-2xl"></div>
-                <Zap className="h-12 w-12 text-white relative z-10" strokeWidth={2.5} />
+                <Zap className="h-8 w-8 sm:h-12 sm:w-12 text-white relative z-10" strokeWidth={2.5} />
               </div>
-              <h4 className="text-grid-deep-navy font-bold text-lg mb-2">24hr Response</h4>
-              <p className="text-gray-600 text-sm">Guaranteed quick turnaround</p>
+              <h4 className="text-grid-deep-navy font-bold text-base sm:text-lg mb-1 sm:mb-2">24hr Response</h4>
+              <p className="text-gray-600 text-xs sm:text-sm">Guaranteed quick turnaround</p>
             </div>
             
             <div className="text-center group">
-              <div className="w-24 h-24 bg-emerald-600 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border-2 border-white relative">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-emerald-600 rounded-2xl mx-auto mb-4 sm:mb-6 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border-2 border-white relative">
                 <div className="absolute inset-0 bg-white/10 rounded-2xl"></div>
-                <Users className="h-12 w-12 text-white relative z-10" strokeWidth={2.5} />
+                <Users className="h-8 w-8 sm:h-12 sm:w-12 text-white relative z-10" strokeWidth={2.5} />
               </div>
-              <h4 className="text-grid-deep-navy font-bold text-lg mb-2">Expert Engineers</h4>
-              <p className="text-gray-600 text-sm">Certified professionals</p>
+              <h4 className="text-grid-deep-navy font-bold text-base sm:text-lg mb-1 sm:mb-2">Expert Engineers</h4>
+              <p className="text-gray-600 text-xs sm:text-sm">Certified professionals</p>
             </div>
             
             <div className="text-center group">
-              <div className="w-24 h-24 bg-grid-vibrant-yellow rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border-2 border-white relative">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-grid-vibrant-yellow rounded-2xl mx-auto mb-4 sm:mb-6 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border-2 border-white relative">
                 <div className="absolute inset-0 bg-black/5 rounded-2xl"></div>
-                <Target className="h-12 w-12 text-grid-deep-navy relative z-10" strokeWidth={2.5} />
+                <Target className="h-8 w-8 sm:h-12 sm:w-12 text-grid-deep-navy relative z-10" strokeWidth={2.5} />
               </div>
-              <h4 className="text-grid-deep-navy font-bold text-lg mb-2">Proven Results</h4>
-              <p className="text-gray-600 text-sm">200+ successful projects</p>
+              <h4 className="text-grid-deep-navy font-bold text-base sm:text-lg mb-1 sm:mb-2">Proven Results</h4>
+              <p className="text-gray-600 text-xs sm:text-sm">200+ successful projects</p>
             </div>
             
             <div className="text-center group">
-              <div className="w-24 h-24 bg-purple-600 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border-2 border-white relative">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-purple-600 rounded-2xl mx-auto mb-4 sm:mb-6 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border-2 border-white relative">
                 <div className="absolute inset-0 bg-white/10 rounded-2xl"></div>
-                <Globe className="h-12 w-12 text-white relative z-10" strokeWidth={2.5} />
+                <Globe className="h-8 w-8 sm:h-12 sm:w-12 text-white relative z-10" strokeWidth={2.5} />
               </div>
-              <h4 className="text-grid-deep-navy font-bold text-lg mb-2">Australia Wide</h4>
-              <p className="text-gray-600 text-sm">Nationwide coverage</p>
+              <h4 className="text-grid-deep-navy font-bold text-base sm:text-lg mb-1 sm:mb-2">Australia Wide</h4>
+              <p className="text-gray-600 text-xs sm:text-sm">Nationwide coverage</p>
             </div>
           </div>
 
           {/* Stats Section - Professional Card */}
-          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-16 shadow-inner border border-gray-200">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 sm:p-16 shadow-inner border border-gray-200">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-16 text-center">
               <div>
-                <div className="text-5xl md:text-6xl font-bold text-grid-deep-navy mb-4">200+</div>
-                <p className="text-gray-700 font-semibold text-lg">Projects Completed</p>
-                <p className="text-gray-500 text-sm mt-2">Across major Australian cities</p>
+                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-grid-deep-navy mb-3 sm:mb-4">200+</div>
+                <p className="text-gray-700 font-semibold text-base sm:text-lg">Projects Completed</p>
+                <p className="text-gray-500 text-xs sm:text-sm mt-1 sm:mt-2">Across major Australian cities</p>
               </div>
               <div>
-                <div className="text-5xl md:text-6xl font-bold text-grid-deep-navy mb-4">15+</div>
-                <p className="text-gray-700 font-semibold text-lg">Years Experience</p>
-                <p className="text-gray-500 text-sm mt-2">Industry-leading expertise</p>
+                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-grid-deep-navy mb-3 sm:mb-4">15+</div>
+                <p className="text-gray-700 font-semibold text-base sm:text-lg">Years Experience</p>
+                <p className="text-gray-500 text-xs sm:text-sm mt-1 sm:mt-2">Industry-leading expertise</p>
               </div>
               <div>
-                <div className="text-5xl md:text-6xl font-bold text-grid-deep-navy mb-4">24hr</div>
-                <p className="text-gray-700 font-semibold text-lg">Response Time</p>
-                <p className="text-gray-500 text-sm mt-2">Fast, reliable communication</p>
+                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-grid-deep-navy mb-3 sm:mb-4">24hr</div>
+                <p className="text-gray-700 font-semibold text-base sm:text-lg">Response Time</p>
+                <p className="text-gray-500 text-xs sm:text-sm mt-1 sm:mt-2">Fast, reliable communication</p>
               </div>
             </div>
           </div>
