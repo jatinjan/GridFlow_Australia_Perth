@@ -13,9 +13,9 @@ import emailjs from '@emailjs/browser';
 const RECAPTCHA_SITE_KEY = "6LdDRrIrAAAAAIDwSOpBpgwAaue7tVzN-d40MK4u";
 
 // EmailJS configuration - Replace with your actual EmailJS credentials
-const EMAILJS_SERVICE_ID = "service_5qettsv";
-const EMAILJS_TEMPLATE_ID = "template_hl39txj"; 
-const EMAILJS_PUBLIC_KEY = "D1Hja_w6KAtKNGEha";
+const EMAILJS_SERVICE_ID = "service_qvpsq7c";
+const EMAILJS_TEMPLATE_ID = "template_hal6wh9"; 
+const EMAILJS_PUBLIC_KEY = "ZnvBqVGDHhPsGHmY2";
 
 // Declare grecaptcha for TypeScript
 declare global {
