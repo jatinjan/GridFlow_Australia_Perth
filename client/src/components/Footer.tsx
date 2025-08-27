@@ -67,7 +67,7 @@ const Footer = () => {
   );
 
   return (
-    <footer className="bg-grid-dark-gradient text-white relative overflow-hidden">
+    <footer className="bg-[#595d62] text-white relative overflow-hidden">
       {/* Power pulse animation */}
       <div className="absolute top-0 left-0 w-full h-1 power-pulse" />
       
@@ -77,11 +77,19 @@ const Footer = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Left Column - Company Info */}
             <div className="lg:col-span-1 fade-in-up text-center lg:text-left">
-              <img 
-                src="/logo.png" 
-                alt="GridFlow - Power Engineering Solutions" 
-                className="h-16 sm:h-20 w-auto mb-6 brightness-150 drop-shadow-xl logo-glow mx-auto lg:mx-0"
-              />
+              <div className="mb-6 mx-auto lg:mx-0 w-fit">
+                <div className="bg-white backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white">
+                  <img 
+                    src="/logo-white-bg.png" 
+                    alt="GridFlow - Power Engineering Solutions" 
+                    className="h-16 sm:h-20 w-auto transition-all duration-300 hover:scale-[1.02]"
+                    onError={(e) => {
+                      // Fallback to original logo if the new one fails to load
+                      (e.target as HTMLImageElement).src = "/logo.png";
+                    }}
+                  />
+                </div>
+              </div>
               <p className="text-gray-300 mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed max-w-sm mx-auto lg:mx-0">
                 Your partner in power engineering — delivering safe, scalable, and mission-critical infrastructure across Australia.
               </p>
