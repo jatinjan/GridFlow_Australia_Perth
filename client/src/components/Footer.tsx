@@ -212,6 +212,20 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Credit section */}
+      <div className="bg-slate-950 py-3 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-gray-400 text-xs">
+              Designed and developed by{' '}
+              <span className="text-blue-400 font-medium">
+                Digiboost
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };
