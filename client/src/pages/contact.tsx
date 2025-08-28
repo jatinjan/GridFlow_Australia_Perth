@@ -283,17 +283,10 @@ const ContactPage = () => {
           }}
         ></div>
 
-        {/* Strong dark overlay for better text visibility */}
-        <div className="absolute inset-0 bg-black/70 z-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-grid-deep-navy/80 via-grid-charcoal/70 to-grid-deep-navy/80 z-15"></div>
+        {/* Simple dark overlay for text readability - matching other pages */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/50 z-10"></div>
 
-        {/* Subtle grid pattern overlay */}
-        <div className="absolute inset-0 opacity-5 z-20">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
-          }}></div>
-        </div>
+
 
         <div className="relative z-30 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-24 text-center">
           {/* Service badge */}
