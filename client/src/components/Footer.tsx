@@ -203,7 +203,10 @@ const Footer = () => {
       <div className="bg-slate-950 py-3 border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-2 text-center">
-            <p className="text-gray-400 text-xs">©️ Copyright 2025 | GridFlow Pty Ltd | Privacy</p>
+            <p className="text-gray-400 text-xs">
+              ©️ Copyright 2025 | GridFlow Pty Ltd |{' '}
+              <a href="/privacy" className="hover:text-white transition-colors">Privacy</a>
+            </p>
             <p className="text-gray-400 text-xs">
               Designed and Developed by{' '}
               <span className="text-blue-400 font-medium">

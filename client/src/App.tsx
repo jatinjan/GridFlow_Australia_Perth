@@ -14,6 +14,7 @@ import ConstructionSupport from "@/pages/construction-support";
 import CaseStudies from "@/pages/case-studies";
 import News from "@/pages/news";
 import ContactPage from "@/pages/contact";
+import Privacy from "@/pages/privacy";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -30,6 +31,7 @@ function Router() {
       <Route path="/case-studies" component={CaseStudies} />
       <Route path="/news" component={News} />
       <Route path="/contact" component={ContactPage} />
+      <Route path="/privacy" component={Privacy} />
       <Route component={NotFound} />
     </Switch>
   );
