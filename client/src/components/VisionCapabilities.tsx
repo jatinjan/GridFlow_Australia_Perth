@@ -25,7 +25,7 @@ const VisionCapabilities = () => {
       icon: Award,
       title: "14+ Years Founder Expertise",
       description:
-        "Proven founder experience in power systems study and electrical infrastructure",
+        "Proven founder experience in power engineering, infrastructure,planning, design and project management",
     },
     {
       icon: Users,

@@ -179,20 +179,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom copyright bar - HIDDEN */}
-      {/* <div className="border-t border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">© 2025 GridFlow Engineering Solutions. All rights reserved.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Policy & privacy</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms & conditions</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       {/* Acknowledgement bar */}
       <div className="bg-slate-900 py-4 sm:py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -213,12 +199,13 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Credit section */}
+      {/* Copyright and Credit section */}
       <div className="bg-slate-950 py-3 border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+          <div className="flex flex-col items-center gap-2 text-center">
+            <p className="text-gray-400 text-xs">©️ Copyright 2025 | GridFlow Pty Ltd | Privacy</p>
             <p className="text-gray-400 text-xs">
-              Designed and developed by{' '}
+              Designed and Developed by{' '}
               <span className="text-blue-400 font-medium">
                 Digiboost
               </span>
