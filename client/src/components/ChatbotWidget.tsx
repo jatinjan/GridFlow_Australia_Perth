@@ -38,6 +38,7 @@ const ChatbotWidget = ({
   const [isLoading, setIsLoading] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const [hasNewMessage, setHasNewMessage] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   
@@ -55,6 +56,18 @@ const ChatbotWidget = ({
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Mobile detection
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     if (isOpen && inputRef.current) {
@@ -252,34 +265,22 @@ const ChatbotWidget = ({
         zIndex: 9999
       }}
     >
-      {/* Chat Window */}
-      <div className={`mb-4 transition-all duration-500 ease-in-out transform ${
-        position === 'bottom-right' ? 'origin-bottom-right' : 'origin-bottom-left'
-      } ${
-        isOpen 
-          ? 'opacity-100 scale-100 translate-y-0' 
-          : 'opacity-0 scale-95 translate-y-4 pointer-events-none'
-      }`}>
-        <div className="bg-white rounded-xl shadow-2xl border border-gray-100 flex flex-col overflow-hidden" 
-             style={{ 
-               marginLeft: position === 'bottom-right' ? 'auto' : '0',
-               width: 'min(380px, calc(100vw - 32px))',
-               height: 'min(500px, calc(100vh - 120px))',
-               maxHeight: '500px'
-             }}>
-          {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-3 sm:px-4 py-3 flex items-center justify-between relative">
-            <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
-              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center p-1 flex-shrink-0">
+      {/* Mobile Fullscreen Modal */}
+      {isMobile && isOpen && (
+        <div className="fixed inset-0 z-[10000] bg-white flex flex-col mobile-chat-modal">
+          {/* Mobile Header */}
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-4 flex items-center justify-between shadow-lg">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center p-1">
                 <img 
                   src="/logo.png" 
                   alt="GridFlow Logo" 
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div className="min-w-0 flex-1">
-                <h3 className="text-white font-medium text-sm truncate">GridFlow Assistant</h3>
-                <p className="text-blue-100 text-xs truncate">Power Engineering Expert</p>
+              <div>
+                <h3 className="text-white font-semibold text-lg">GridFlow Assistant</h3>
+                <p className="text-blue-100 text-sm">Power Engineering Expert</p>
               </div>
             </div>
             
@@ -287,28 +288,28 @@ const ChatbotWidget = ({
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(false)}
-              className="text-white hover:bg-white/10 h-8 w-8 rounded-lg"
+              className="text-white hover:bg-white/10 h-10 w-10 rounded-lg"
             >
-              <X className="h-4 w-4" />
+              <X className="h-6 w-6" />
             </Button>
           </div>
 
-          {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 bg-gray-50">
+          {/* Mobile Messages */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
             {messages.map((message) => (
               <div
                 key={message.id}
                 className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
-                <div className={`max-w-[85%] sm:max-w-[80%] ${
+                <div className={`max-w-[80%] ${
                   message.role === 'user'
-                    ? 'bg-blue-600 text-white rounded-lg rounded-br-sm'
-                    : 'bg-white text-gray-800 rounded-lg rounded-bl-sm shadow-sm border border-gray-100'
-                } px-3 py-2`}>
-                  <div className="text-sm leading-relaxed">
+                    ? 'bg-blue-600 text-white rounded-2xl rounded-br-md'
+                    : 'bg-white text-gray-800 rounded-2xl rounded-bl-md shadow-sm border border-gray-100'
+                } px-4 py-3`}>
+                  <div className="text-base leading-relaxed">
                     {message.role === 'assistant' ? formatMessageContent(message.content) : message.content}
                   </div>
-                  <p className={`text-xs mt-1 ${
+                  <p className={`text-xs mt-2 ${
                     message.role === 'user' ? 'text-blue-100' : 'text-gray-400'
                   }`}>
                     {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
@@ -317,16 +318,16 @@ const ChatbotWidget = ({
               </div>
             ))}
             
-            {/* Typing Indicator */}
+            {/* Mobile Typing Indicator */}
             {isTyping && (
               <div className="flex justify-start">
-                <div className="bg-white text-gray-800 rounded-lg rounded-bl-sm shadow-sm border border-gray-100 px-3 py-2 max-w-[85%]">
-                  <div className="flex items-center space-x-2">
-                    <span className="text-xs text-gray-500">GridFlow Assistant is typing</span>
+                <div className="bg-white text-gray-800 rounded-2xl rounded-bl-md shadow-sm border border-gray-100 px-4 py-3 max-w-[80%]">
+                  <div className="flex items-center space-x-3">
+                    <span className="text-sm text-gray-500">GridFlow Assistant is typing</span>
                     <div className="flex space-x-1">
-                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce"></div>
-                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                      <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce"></div>
+                      <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                      <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                     </div>
                   </div>
                 </div>
@@ -336,33 +337,146 @@ const ChatbotWidget = ({
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input */}
-          <div className="p-3 border-t border-gray-200 bg-white">
-            <div className="flex space-x-2">
+          {/* Mobile Input - Fixed at bottom */}
+          <div className="p-4 border-t border-gray-200 bg-white safe-area-bottom">
+            <div className="flex space-x-3">
               <Input
                 ref={inputRef}
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="How can we help?"
+                placeholder="Type your message..."
                 disabled={isLoading}
-                className="flex-1 border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-lg text-sm min-w-0"
+                className="flex-1 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 rounded-xl text-base py-3 px-4 min-h-[48px]"
               />
               <Button
                 onClick={sendMessage}
                 disabled={isLoading || !inputValue.trim()}
-                className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-3 sm:px-4 disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+                className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-4 py-3 disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0 min-h-[48px] min-w-[48px]"
               >
                 {isLoading ? (
-                  <Loader2 className="h-4 w-4 animate-spin" />
+                  <Loader2 className="h-5 w-5 animate-spin" />
                 ) : (
-                  <Send className="h-4 w-4" />
+                  <Send className="h-5 w-5" />
                 )}
               </Button>
             </div>
           </div>
         </div>
-      </div>
+      )}
+
+      {/* Desktop Chat Window */}
+      {!isMobile && (
+        <div className={`mb-4 transition-all duration-500 ease-in-out transform ${
+          position === 'bottom-right' ? 'origin-bottom-right' : 'origin-bottom-left'
+        } ${
+          isOpen 
+            ? 'opacity-100 scale-100 translate-y-0' 
+            : 'opacity-0 scale-95 translate-y-4 pointer-events-none'
+        }`}>
+          <div className="bg-white rounded-xl shadow-2xl border border-gray-100 flex flex-col overflow-hidden" 
+               style={{ 
+                 marginLeft: position === 'bottom-right' ? 'auto' : '0',
+                 width: '380px',
+                 height: '500px'
+               }}>
+            {/* Desktop Header */}
+            <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-3 flex items-center justify-between relative">
+              <div className="flex items-center space-x-3 min-w-0 flex-1">
+                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center p-1 flex-shrink-0">
+                  <img 
+                    src="/logo.png" 
+                    alt="GridFlow Logo" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-white font-medium text-sm truncate">GridFlow Assistant</h3>
+                  <p className="text-blue-100 text-xs truncate">Power Engineering Expert</p>
+                </div>
+              </div>
+              
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsOpen(false)}
+                className="text-white hover:bg-white/10 h-8 w-8 rounded-lg"
+              >
+                <X className="h-4 w-4" />
+              </Button>
+            </div>
+
+            {/* Desktop Messages */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50">
+              {messages.map((message) => (
+                <div
+                  key={message.id}
+                  className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                >
+                  <div className={`max-w-[80%] ${
+                    message.role === 'user'
+                      ? 'bg-blue-600 text-white rounded-lg rounded-br-sm'
+                      : 'bg-white text-gray-800 rounded-lg rounded-bl-sm shadow-sm border border-gray-100'
+                  } px-3 py-2`}>
+                    <div className="text-sm leading-relaxed">
+                      {message.role === 'assistant' ? formatMessageContent(message.content) : message.content}
+                    </div>
+                    <p className={`text-xs mt-1 ${
+                      message.role === 'user' ? 'text-blue-100' : 'text-gray-400'
+                    }`}>
+                      {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    </p>
+                  </div>
+                </div>
+              ))}
+              
+              {/* Desktop Typing Indicator */}
+              {isTyping && (
+                <div className="flex justify-start">
+                  <div className="bg-white text-gray-800 rounded-lg rounded-bl-sm shadow-sm border border-gray-100 px-3 py-2 max-w-[85%]">
+                    <div className="flex items-center space-x-2">
+                      <span className="text-xs text-gray-500">GridFlow Assistant is typing</span>
+                      <div className="flex space-x-1">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce"></div>
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
+              <div ref={messagesEndRef} />
+            </div>
+
+            {/* Desktop Input */}
+            <div className="p-3 border-t border-gray-200 bg-white">
+              <div className="flex space-x-2">
+                <Input
+                  ref={inputRef}
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="How can we help?"
+                  disabled={isLoading}
+                  className="flex-1 border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-lg text-sm min-w-0"
+                />
+                <Button
+                  onClick={sendMessage}
+                  disabled={isLoading || !inputValue.trim()}
+                  className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-4 disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+                >
+                  {isLoading ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Send className="h-4 w-4" />
+                  )}
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Support Bot Widget */}
       <div className="relative flex justify-end">
@@ -538,6 +652,24 @@ const ChatbotWidget = ({
             .chatbot-float-animation {
               animation: none !important;
             }
+          }
+
+          /* Safe area handling for mobile */
+          .safe-area-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+          }
+
+          /* Prevent zoom on input focus on iOS */
+          @media screen and (max-width: 767px) {
+            input[type="text"], input[type="email"], input[type="tel"], textarea {
+              font-size: 16px !important;
+            }
+          }
+
+          /* Mobile fullscreen modal styles */
+          .mobile-chat-modal {
+            height: 100vh;
+            height: 100dvh; /* Dynamic viewport height for better mobile support */
           }
         `}
       </style>
