@@ -318,49 +318,59 @@ const ChatbotWidget = ({
               </div>
             ))}
             
-            {/* Mobile Typing Indicator */}
-            {isTyping && (
-              <div className="flex justify-start">
-                <div className="bg-white text-gray-800 rounded-2xl rounded-bl-md shadow-sm border border-gray-100 px-4 py-3 max-w-[80%]">
-                  <div className="flex items-center space-x-3">
-                    <span className="text-sm text-gray-500">GridFlow Assistant is typing</span>
-                    <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce"></div>
-                      <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                      <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
+
             
             <div ref={messagesEndRef} />
           </div>
 
           {/* Mobile Input - Fixed at bottom */}
-          <div className="p-4 border-t border-gray-200 bg-white safe-area-bottom">
-            <div className="flex space-x-3">
-              <Input
-                ref={inputRef}
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                onKeyPress={handleKeyPress}
-                placeholder="Type your message..."
-                disabled={isLoading}
-                className="flex-1 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 rounded-xl text-base py-3 px-4 min-h-[48px]"
-              />
+          <div className="p-2 bg-white border-t border-gray-100 mobile-input-container">
+            <div className="flex items-end space-x-3">
+              {/* Input Container with modern styling */}
+              <div className="flex-1 relative">
+                <Input
+                  ref={inputRef}
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Type your message..."
+                  disabled={isLoading}
+                  className="mobile-input-field w-full border-2 border-gray-200 focus:border-blue-500 focus:ring-0 rounded-2xl text-base py-4 px-5 pr-12 min-h-[56px] bg-gray-50 focus:bg-white transition-all duration-200 placeholder:text-gray-400 resize-none"
+                  style={{
+                    boxShadow: 'none',
+                    outline: 'none'
+                  }}
+                />
+                
+                {/* Input decoration */}
+                <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
+                  {inputValue.trim() && !isLoading && (
+                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                  )}
+                </div>
+              </div>
+              
+              {/* Send Button with improved design */}
               <Button
                 onClick={sendMessage}
                 disabled={isLoading || !inputValue.trim()}
-                className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-4 py-3 disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0 min-h-[48px] min-w-[48px]"
+                className={`rounded-2xl p-4 min-h-[56px] min-w-[56px] flex-shrink-0 transition-all duration-200 shadow-lg ${
+                  inputValue.trim() && !isLoading
+                    ? 'mobile-send-button-active bg-blue-600 hover:bg-blue-700 text-white shadow-blue-500/25 hover:shadow-blue-500/40 scale-100'
+                    : 'bg-gray-200 text-gray-400 shadow-gray-200/50 scale-95'
+                } disabled:cursor-not-allowed`}
               >
                 {isLoading ? (
-                  <Loader2 className="h-5 w-5 animate-spin" />
+                  <Loader2 className="h-6 w-6 animate-spin" />
                 ) : (
-                  <Send className="h-5 w-5" />
+                  <Send className={`h-6 w-6 transition-transform duration-200 ${
+                    inputValue.trim() ? 'scale-110' : 'scale-100'
+                  }`} />
                 )}
               </Button>
             </div>
+            
+
           </div>
         </div>
       )}
@@ -435,7 +445,7 @@ const ChatbotWidget = ({
                 <div className="flex justify-start">
                   <div className="bg-white text-gray-800 rounded-lg rounded-bl-sm shadow-sm border border-gray-100 px-3 py-2 max-w-[85%]">
                     <div className="flex items-center space-x-2">
-                      <span className="text-xs text-gray-500">GridFlow Assistant is typing</span>
+                      <span className="text-xs text-gray-500">GridFlow Assistant is typing...</span>
                       <div className="flex space-x-1">
                         <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce"></div>
                         <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
@@ -472,6 +482,13 @@ const ChatbotWidget = ({
                     <Send className="h-4 w-4" />
                   )}
                 </Button>
+              </div>
+              
+              {/* Desktop Helper Text */}
+              <div className="mt-2 px-1">
+                <p className="text-xs text-gray-400">
+                  Ask about power systems, electrical engineering, or project consultation
+                </p>
               </div>
             </div>
           </div>
@@ -663,6 +680,21 @@ const ChatbotWidget = ({
           @media screen and (max-width: 767px) {
             input[type="text"], input[type="email"], input[type="tel"], textarea {
               font-size: 16px !important;
+            }
+            
+            /* Enhanced mobile input styling */
+            .mobile-input-container {
+              background: linear-gradient(145deg, #f8fafc 0%, #f1f5f9 100%);
+            }
+            
+            .mobile-input-field:focus {
+              transform: translateY(-1px);
+              box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+            }
+            
+            .mobile-send-button-active {
+              background: linear-gradient(145deg, #2563eb 0%, #1d4ed8 100%);
+              box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
             }
           }
 
