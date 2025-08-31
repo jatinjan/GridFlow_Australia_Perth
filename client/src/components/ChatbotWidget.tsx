@@ -246,33 +246,40 @@ const ChatbotWidget = ({
       className="fixed z-[9999]"
       style={{ 
         position: 'fixed',
-        bottom: position === 'bottom-right' ? '75px' : '75px',
+        bottom: '20px',
         right: position === 'bottom-right' ? '16px' : 'auto',
         left: position === 'bottom-left' ? '16px' : 'auto',
         zIndex: 9999
       }}
     >
       {/* Chat Window */}
-      <div className={`mb-4 transition-all duration-500 ease-in-out transform origin-bottom-right ${
+      <div className={`mb-4 transition-all duration-500 ease-in-out transform ${
+        position === 'bottom-right' ? 'origin-bottom-right' : 'origin-bottom-left'
+      } ${
         isOpen 
           ? 'opacity-100 scale-100 translate-y-0' 
           : 'opacity-0 scale-95 translate-y-4 pointer-events-none'
       }`}>
-        <div className="bg-white rounded-xl shadow-2xl border border-gray-100 w-80 sm:w-96 h-[500px] flex flex-col overflow-hidden" 
-             style={{ marginLeft: position === 'bottom-right' ? 'auto' : '0' }}>
+        <div className="bg-white rounded-xl shadow-2xl border border-gray-100 flex flex-col overflow-hidden" 
+             style={{ 
+               marginLeft: position === 'bottom-right' ? 'auto' : '0',
+               width: 'min(380px, calc(100vw - 32px))',
+               height: 'min(500px, calc(100vh - 120px))',
+               maxHeight: '500px'
+             }}>
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-3 flex items-center justify-between relative">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center p-1">
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-3 sm:px-4 py-3 flex items-center justify-between relative">
+            <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
+              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center p-1 flex-shrink-0">
                 <img 
                   src="/logo.png" 
                   alt="GridFlow Logo" 
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div>
-                <h3 className="text-white font-medium text-sm">GridFlow Assistant</h3>
-                <p className="text-blue-100 text-xs">Power Engineering Expert</p>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-white font-medium text-sm truncate">GridFlow Assistant</h3>
+                <p className="text-blue-100 text-xs truncate">Power Engineering Expert</p>
               </div>
             </div>
             
@@ -287,13 +294,13 @@ const ChatbotWidget = ({
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50">
+          <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 bg-gray-50">
             {messages.map((message) => (
               <div
                 key={message.id}
                 className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
-                <div className={`max-w-[85%] ${
+                <div className={`max-w-[85%] sm:max-w-[80%] ${
                   message.role === 'user'
                     ? 'bg-blue-600 text-white rounded-lg rounded-br-sm'
                     : 'bg-white text-gray-800 rounded-lg rounded-bl-sm shadow-sm border border-gray-100'
@@ -339,12 +346,12 @@ const ChatbotWidget = ({
                 onKeyPress={handleKeyPress}
                 placeholder="How can we help?"
                 disabled={isLoading}
-                className="flex-1 border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-lg text-sm"
+                className="flex-1 border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-lg text-sm min-w-0"
               />
               <Button
                 onClick={sendMessage}
                 disabled={isLoading || !inputValue.trim()}
-                className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-3 sm:px-4 disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
               >
                 {isLoading ? (
                   <Loader2 className="h-4 w-4 animate-spin" />
@@ -357,33 +364,184 @@ const ChatbotWidget = ({
         </div>
       </div>
 
-      {/* Chat Toggle Button */}
+      {/* Support Bot Widget */}
       <div className="relative flex justify-end">
-        <Button
+        {/* Main Support Bot Widget */}
+        <div 
           onClick={() => {
             setIsOpen(!isOpen);
             if (!isOpen) {
               setHasNewMessage(false);
             }
           }}
-          className={`w-14 h-14 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl ${
-            isOpen 
-              ? 'bg-red-500 hover:bg-red-600' 
-              : 'bg-blue-600 hover:bg-blue-700'
+          className={`relative cursor-pointer transition-all duration-500 transform hover:scale-105 active:scale-95 ${
+            isOpen ? 'mb-4' : ''
           }`}
         >
-          {isOpen ? (
-            <X className="h-5 w-5 text-white" />
-          ) : (
-            <div className="relative">
-              <MessageCircle className="h-5 w-5 text-white" />
-              {hasNewMessage && (
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border border-white"></div>
-              )}
-            </div>
+          {/* Widget Container - Animated between full widget and small circle */}
+          <div className={`bg-white rounded-full border border-gray-100 flex items-center transition-all duration-500 ease-in-out ${
+            isOpen 
+              ? 'w-12 h-12 p-0 justify-center shadow-xl' 
+              : 'py-2 px-2 sm:px-3 space-x-0 sm:space-x-4 shadow-2xl sm:min-w-[200px] justify-center sm:justify-start'
+          }`}
+          style={{
+            minWidth: isOpen ? '48px' : '60px',
+            maxWidth: isOpen ? '48px' : 'min(250px, calc(100vw - 32px))',
+            boxShadow: isOpen 
+              ? '0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(239, 68, 68, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1)'
+              : '0 25px 50px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(37, 99, 235, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1)',
+            animation: !isOpen ? 'gentleFloat 2s ease-in-out infinite' : 'none'
+          }}>
+            
+            {/* When chat is closed - Full widget */}
+            {!isOpen && (
+              <>
+                {/* Bot Icon Circle */}
+                <div className="relative">
+                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-lg"
+                       style={{
+                         animation: 'iconBreathe 3s ease-in-out infinite',
+                         boxShadow: '0 8px 16px rgba(37, 99, 235, 0.3), 0 0 20px rgba(37, 99, 235, 0.1)'
+                       }}>
+                    <Bot className="h-7 w-7 text-white transition-transform duration-300"
+                         style={{
+                           animation: 'iconGlow 2s ease-in-out infinite alternate'
+                         }} />
+                  </div>
+                  
+                  {/* Online Status Indicator */}
+                  <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white shadow-sm"
+                       style={{
+                         animation: 'statusPulse 2s ease-in-out infinite',
+                         boxShadow: '0 0 10px rgba(34, 197, 94, 0.4)'
+                       }}>
+                    <div className="w-full h-full bg-green-500 rounded-full animate-pulse"></div>
+                  </div>
+                  
+                  {/* New message notification */}
+                  {hasNewMessage && (
+                    <div className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full border-2 border-white flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">!</span>
+                    </div>
+                  )}
+                </div>
+                
+                {/* Text Content - Hidden on mobile */}
+                <div className="hidden sm:flex flex-1 opacity-100 transition-opacity duration-300 min-w-0 flex-col">
+                  <h3 className="text-gray-900 font-semibold text-sm truncate">GridFlow Assistant</h3>
+                  <p className="text-green-600 text-xs font-medium">Online</p>
+                </div>
+              </>
+            )}
+            
+            {/* When chat is open - Small close button */}
+            {isOpen && (
+              <div className="w-full h-full flex items-center justify-center bg-red-500 rounded-full transition-all duration-300">
+                <X className="h-6 w-6 text-white transition-transform duration-200 hover:rotate-90" />
+              </div>
+            )}
+          </div>
+          
+          {/* Enhanced glow effect - adapts to button size */}
+          <div className={`absolute inset-0 rounded-full blur-xl -z-10 transition-all duration-500 ${
+            isOpen 
+              ? 'bg-red-500/20' 
+              : 'bg-blue-500/15'
+          }`}
+          style={{
+            animation: isOpen ? 'glowPulse 2s ease-in-out infinite' : 'breatheGlow 4s ease-in-out infinite'
+          }}></div>
+          
+          {/* Sparkle effects when closed */}
+          {!isOpen && (
+            <>
+              <div className="chatbot-sparkle absolute -top-2 -right-2 w-2 h-2 bg-yellow-400 rounded-full opacity-70"
+                   style={{
+                     animation: 'sparkle 3s ease-in-out infinite'
+                   }}></div>
+              <div className="chatbot-sparkle absolute -bottom-2 -left-2 w-1.5 h-1.5 bg-blue-300 rounded-full opacity-60"
+                   style={{
+                     animation: 'sparkle 3s ease-in-out infinite reverse',
+                     animationDelay: '1.5s'
+                   }}></div>
+            </>
           )}
-        </Button>
+        </div>
       </div>
+      
+      {/* Custom CSS Animations */}
+      <style>
+        {`
+          @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); }
+          }
+          
+          @keyframes iconBreathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+          }
+          
+          @keyframes iconGlow {
+            0% { filter: brightness(1); }
+            100% { filter: brightness(1.1); }
+          }
+          
+          @keyframes statusPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+          }
+          
+          @keyframes breatheGlow {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+          }
+          
+          @keyframes glowPulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+          }
+          
+          @keyframes sparkle {
+            0%, 100% { 
+              opacity: 0.7; 
+              transform: scale(1) rotate(0deg); 
+            }
+            25% { 
+              opacity: 1; 
+              transform: scale(1.2) rotate(90deg); 
+            }
+            50% { 
+              opacity: 0.5; 
+              transform: scale(0.8) rotate(180deg); 
+            }
+            75% { 
+              opacity: 1; 
+              transform: scale(1.1) rotate(270deg); 
+            }
+          }
+
+          /* Mobile optimizations */
+          @media (max-width: 640px) {
+            .chatbot-widget {
+              bottom: 16px !important;
+              right: 12px !important;
+              left: 12px !important;
+            }
+            
+            .chatbot-sparkle {
+              display: none;
+            }
+          }
+          
+          @media (max-width: 480px) {
+            .chatbot-float-animation {
+              animation: none !important;
+            }
+          }
+        `}
+      </style>
+
     </div>
   );
 };
