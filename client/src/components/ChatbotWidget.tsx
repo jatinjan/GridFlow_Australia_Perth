@@ -23,7 +23,7 @@ const ChatbotWidget = ({
   accentColor = 'var(--grid-vibrant-yellow)'
 }: ChatbotWidgetProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const webhookUrl = "https://dpkkmishra.app.n8n.cloud/webhook/f6341847-ecbd-4268-aa9f-a27766c187c3/chat"
+  const webhookUrl = "https://kiva17.app.n8n.cloud/webhook/fcfcf688-b2c9-485b-979a-d002d6f812d8/chat"
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
